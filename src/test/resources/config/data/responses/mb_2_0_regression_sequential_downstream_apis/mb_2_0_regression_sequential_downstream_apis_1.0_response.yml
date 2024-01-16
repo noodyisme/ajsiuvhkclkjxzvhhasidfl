@@ -1,0 +1,21 @@
+mb_2_0_regression_sequential_downstream_apis_basic_resp:
+  policyResponseBody:
+    policyVersion: '#string'
+    policyName: '#string'
+    domain: '#string'
+    policyJsonSchema:
+      $schema: '#string'
+      type: '#string'
+      properties:
+        governmentDocumentId:
+          type: '#string'
+          minLength: '#number'
+        customerReferenceId:
+          type: '#string'
+          minLength: '#number'
+      required: [
+        '#string',
+        '#string'
+      ]
+    step: '#null'
+  policyStatus: 'SUCCESS'

@@ -1,0 +1,23 @@
+mb_2_0_regression_parameter_validation_successful_resp:
+  policyResponseBody:
+    dateTime: '2021-11-09T14:20:49+0000'
+    phoneNumber: '1234567890'
+    stateCode: 'VA'
+    isEnrolled: '#boolean'
+  policyStatus: 'SUCCESS'
+
+mb_2_0_regression_parameter_validation_schema_failure_resp:
+  policyResponseBody: null
+  errorInformation:
+    id: '0'
+    text: 'Schema Validation Failure'
+    developerText: '#string'
+  policyStatus: 'INVALID'
+
+mb_2_0_regression_parameter_validation_successful_missing_boolean_resp:
+  policyResponseBody:
+    dateTime: '2021-11-09T14:20:49+0000'
+    phoneNumber: '1234567890'
+    stateCode: 'VA'
+    isEnrolled: null
+  policyStatus: 'SUCCESS'

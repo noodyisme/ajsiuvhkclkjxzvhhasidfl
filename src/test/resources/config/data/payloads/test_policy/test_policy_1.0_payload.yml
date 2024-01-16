@@ -1,0 +1,42 @@
+############################ validating test_policy payload with mandatory fields ########################
+
+test_policy_required_fields_req:
+  firstName: Mark
+  lastName: Justin
+  email: 'mark.justin@gmail.com'
+  mobilePhoneNumber: '2001001107'
+  addressLine1: 2001 Melrose Drive
+  city: Flowerpoint
+  stateCode: GA
+  postalCode: '61888'
+  countryCode: US
+  dateOfBirth: '19990201'
+  taxId: 123456789'
+  optInMethod: TCO
+  optInTimestamp: '2016-03-18T00:13:37.667Z'
+  optInId: '123456'
+  optInDuration: 'ONE'
+  brandCode: 'SONY'
+  originator: TABLET
+
+
+############################ validating test_policy payload Passing null values in Mandatory fields ########################
+
+
+test_policy_missing_first_name_req:
+  lastName: Justin
+  mobilePhoneNumber: '2001001107'
+  email: 'mark.justin@gmail.com'
+  addressLine1: 2001 Melrose Drive
+  city: Flowerpoint
+  stateCode: GA
+  postalCode: '61888'
+  countryCode: US
+  dateOfBirth: '19990201'
+  taxId: 123456789'
+  optInMethod: TCO
+  optInTimestamp: '2016-03-18T00:13:37.667Z'
+  optInId: '123456'
+  optInDuration: 'ONE'
+  brandCode: 'SONY'
+  originator: 'TABLET'

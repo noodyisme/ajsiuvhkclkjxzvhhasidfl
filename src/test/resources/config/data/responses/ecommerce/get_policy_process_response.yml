@@ -1,0 +1,86 @@
+ecommerce_successfull_resp:
+  policyResponseBody:
+    riskAssessment: "CHALLENGE"
+    riskAssessmentLevel: "HIGH"
+    eligibleMethods:
+      - authenticator: "OTP"
+        payload:
+          - contactPointId: 1
+            deliveryMedium: "SMS"
+            deviceStability: "STABLE"
+            maskedContactPoint: '#string'
+  policyStatus: "SUCCESS"
+  metadata:
+    policyProcessId: '#string'
+    policyName: "ecommerce_step_up"
+    policyVersion: '2.0'
+    stepExpirationTimestamp: '#string'
+    availableNextSteps:
+      - "four_confirm_challenge"
+      - "two_initiate_challenge"
+    stepsCompleted:
+      - "start"
+
+policy_process_successfull_resp:
+  policyProcessId: '#string'
+  policyName: 'ecommerce_step_up'
+  policyVersion: '2.0'
+  stepExpirationTimestamp: '#string'
+  availableNextSteps:
+    - "four_confirm_challenge"
+    - "two_initiate_challenge"
+  stepsCompleted:
+    - "start"
+
+policy_process_error_resp:
+  id: '#string'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: []
+  developerText: 'Requested resource not found'
+  errorDetails:
+    - id: '200001'
+      text:
+      developerText: '#string'
+
+policy_process_404_error_resp:
+  id: '#string'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText: 'Requested resource not found'
+  errorDetails:
+    - id: '200001'
+      text:
+      developerText: 'HTTP 404 Not Found'
+
+
+policy_process_403_error_resp:
+  type: '#string'
+  id: '200008'
+  text: 'Our system experienced an error. Please try again later.'
+  developerText: 'An Api-Key is required to access our API Platform. Please visit the
+    API Portal to sign up: https://developer.kdc.capitalone.com/.'
+  errorDetails:
+    - type: '#string'
+      id: '200008'
+      developerText: 'Full authentication is required to access this resource'
+  actions: []
+
+policy_process_405_error_resp:
+  id: '200099'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText:
+  errorDetails:
+    - id: '200099'
+      text:
+      developerText: 'HTTP 405 Method Not Allowed'
+
+policy_process_406_error_resp:
+  id: '200099'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: []
+  developerText:
+  errorDetails:
+    - id: '200099'
+      text:
+      developerText: 'HTTP 406 Not Acceptable'

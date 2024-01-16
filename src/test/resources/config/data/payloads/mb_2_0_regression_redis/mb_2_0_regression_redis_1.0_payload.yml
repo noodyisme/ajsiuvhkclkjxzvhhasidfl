@@ -1,0 +1,8 @@
+mb_2_0_regression_redis_step1_req:
+  firstName: 'Rich'
+
+mb_2_0_regression_redis_step2_req:
+  lastName: 'Fairbank'
+
+mb_2_0_regression_redis_step3_req:
+  {}

@@ -1,0 +1,38 @@
+{
+  "vendorExtendedResult": "Y",
+  "keepAliveTimestamp": "2050-02-23 18:42:45",
+  "linkExpiryTimestamp": "2050-02-23 18:37:45",
+  "documentExpirationStatus": "NotExpired",
+  "referenceIdLocked": false,
+  "documentStatus": "test_documentStatus",
+  "mediaType": "2D",
+  "numberOfAttempts": "1",
+  "customerDetails": {},
+  "documentData": {
+    "address": {
+      "addressLine1": "test_addressLine1",
+      "addressLine2": "test_addressLine2",
+      "city": "test_city",
+      "postalCode": "test_postalCode",
+      "state": "test_state"
+    },
+    "biographic": {
+      "documentBirthDate": "1955-05-15",
+      "documentNumber": "pLG8SDMOz",
+      "documentType": "Driver License",
+      "expirationDate": "test_expirationDate",
+      "firstName": "Unique",
+      "gender": "F",
+      "inputDocumentDetails": {},
+      "issueDate": "test_issueDate",
+      "issueStateCode": "test_issueStateCode",
+      "issueStateName": "Georgia",
+      "middleName": "Id",
+      "replacementDate": "test_replacementDate",
+      "surName": "Blank"
+    },
+    "countryCode": "test_countryCode"
+  },
+  "vendorExtendedStatus": "DocumentProcessOK",
+  "referenceId": "test_referenceId"
+}

@@ -1,0 +1,132 @@
+account_lookup_journey_missing_customerReferenceId_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.customerReferenceIds: is missing but it is required]"
+
+account_lookup_journey_missing_govid_barcode_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.govtIdRequest.barcode: is missing but it is required]"
+
+account_lookup_journey_missing_customerReferenceId_Null_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.customerReferenceIds[0]: must be at least 1 characters long]"
+
+
+account_lookup_journey_Dob_mismatch_resp:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: cKJ7CRGUp9PU7z2PcZC4+g==
+        customerMatchStatus: Failed
+        matchFailureReason: DateOfBirthMismatch
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_successfull_matching_resp:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: v7sEVXl7IIJ7QcfbgAhhkg==
+        customerMatchStatus: Passed
+        matchFailureReason:
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_journey_Failed_resp:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: v7sEVXl7IIJ7QcfbgAhhkg==
+        customerMatchStatus: Failed
+        matchFailureReason: DateOfBirthMismatch
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+
+account_lookup_journey_invalid_customerRefId_resp:
+  policyResponseBody:
+    matchingResult:
+        - customerReferenceId: v7s
+          customerMatchStatus: NonDefinitive
+          matchFailureReason:
+            id: '202020'
+            text: Downstream API error
+            developerText: |-
+              Downstream API "customerInformation" returned 403: body="{"developerText":"Access denied due to permission: defaultGlobalAllow","id":200006,"text":"Looks like we need to fix something, so we're working on it. Try again in a bit, or give us a call at 1-877-383-4802."}
+              "
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+
+
+account_lookup_journey_invalid_skipInvalidCustomerRefId_resp:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: v7sEVXl7IIJ7QcfbgAhhkg==
+        customerMatchStatus: Passed
+        matchFailureReason:
+      - customerReferenceId: abc
+        customerMatchStatus: NonDefinitive
+        matchFailureReason:
+          id: '202020'
+          text: Downstream API error
+          developerText: |-
+            Downstream API "customerInformation" returned 403: body="{"developerText":"Access denied due to permission: defaultGlobalAllow","id":200006,"text":"Looks like we need to fix something, so we're working on it. Try again in a bit, or give us a call at 1-877-383-4802."}
+            "
+      - customerReferenceId: fgk
+        customerMatchStatus: NonDefinitive
+        matchFailureReason:
+          id: '202020'
+          text: Downstream API error
+          developerText: |-
+            Downstream API "customerInformation" returned 403: body="{"developerText":"Access denied due to permission: defaultGlobalAllow","id":200006,"text":"Looks like we need to fix something, so we're working on it. Try again in a bit, or give us a call at 1-877-383-4802."}
+            "
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_journey_Unknown_resp:
+  policyResponseBody:
+    documentValidityStatus: Unknown
+    documentFailureReason: BadPicture
+  policyStatus: SUCCESS
+
+account_lookup_journey_emptyModel_resp:
+  policyResponseBody:
+  policyStatus: FAILURE
+  errorInformation:
+    id: '202020'
+    text: Downstream API error
+    developerText: 'The verification domain policy "barcode_retrieve" version "1.0"
+      (post method) returned the following error "{errorInfo={id=0, text=Schema Validation
+      Failure, developerText=[$.model: must be at least 1 characters long]}, policyStatus=INVALID,
+      results=null}"'
+account_lookup_journey_documentValidityStatus_documentFailureReason_resp:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: v7sEVXl7IIJ7QcfbgAhhkg==
+        customerMatchStatus: Passed
+        matchFailureReason:
+      - customerReferenceId: cz6z3JphKPOzhgyYTAXstg==
+        customerMatchStatus: NonDefinitive
+        matchFailureReason:
+          id: '202020'
+          text: Downstream API error
+          developerText: |-
+            Downstream API "customerInformation" returned 403: body="{"developerText":"Access denied due to permission: defaultGlobalAllow","id":200006,"text":"Looks like we need to fix something, so we're working on it. Try again in a bit, or give us a call at 1-877-383-4802."}
+            "
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS

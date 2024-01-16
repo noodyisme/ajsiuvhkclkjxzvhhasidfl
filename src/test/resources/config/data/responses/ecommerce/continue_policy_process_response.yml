@@ -1,0 +1,146 @@
+ecommerce_successfull_resp:
+  policyResponseBody:
+    riskAssessment: "CHALLENGE"
+    riskAssessmentLevel: "HIGH"
+    eligibleMethods:
+      - authenticator: "OTP"
+        payload:
+          - contactPointId: 1
+            deliveryMedium: "SMS"
+            deviceStability: "STABLE"
+            maskedContactPoint: '#string'
+  policyStatus: "SUCCESS"
+  metadata:
+    policyProcessId: '#string'
+    policyName: "ecommerce_step_up"
+    policyVersion: '2.0'
+    stepExpirationTimestamp: '#string'
+    availableNextSteps:
+      - "four_confirm_challenge"
+      - "two_initiate_challenge"
+    stepsCompleted:
+      - "start"
+
+continue_policy_process_successfull_resp:
+  policyResponseBody:
+    challengeConfirmationStatus: 'SUCCESS'
+  policyStatus: 'SUCCESS'
+
+continue_policy_process_error_resp:
+  id: '#string'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText: 'Requested resource not found'
+  errorDetails:
+    - id: '#string'
+      text:
+      developerText: '#string'
+
+continue_policy_process_404_error_resp:
+  id: '#string'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText: 'Requested resource not found'
+  errorDetails:
+    - id: '#string'
+      text:
+      developerText: '#string'
+
+
+continue_policy_process_403_error_resp:
+  type: '#string'
+  id: '200008'
+  text: 'Our system experienced an error. Please try again later.'
+  developerText: 'An Api-Key is required to access our API Platform. Please visit the
+    API Portal to sign up: https://developer.kdc.capitalone.com/.'
+  errorDetails:
+    - type: '#string'
+      id: '200008'
+      developerText: 'Full authentication is required to access this resource'
+  actions: []
+
+continue_policy_process_405_error_resp:
+  id: '200099'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText:
+  errorDetails:
+    - id: '200099'
+      text:
+      developerText: 'HTTP 405 Method Not Allowed'
+
+continue_policy_process_406_error_resp:
+  id: '200099'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: []
+  developerText:
+  errorDetails:
+    - id: '200099'
+      text:
+      developerText: 'HTTP 406 Not Acceptable'
+
+ecommerce_step2_successfull_resp:
+  policyResponseBody:
+    pinAuthenticationToken: "#string"
+    sendPinStatus: "SUCCESS"
+    sendPinStatusReason: '#ignore'
+  policyStatus: "SUCCESS"
+  metadata:
+    policyProcessId: '#string'
+    policyName: "ecommerce_step_up"
+    policyVersion: '2.0'
+    stepExpirationTimestamp: '#string'
+    availableNextSteps:
+      - "four_confirm_challenge"
+      - "two_initiate_challenge"
+      - "three_validate_challenge"
+    stepsCompleted:
+      - "start"
+      - "two_initiate_challenge"
+ecommerce_step3_pindata_notfound_resp:
+  policyResponseBody: null
+  errorInformation:
+    id: '202020'
+    text: Downstream API error
+    developerText: >-
+      The secondaryauth domain policy "ecommerce_secondary_auth_validate" version
+      "1.0" (post method) returned the following error "{errorInfo={id=200002,
+      text=Unexpected error, developerText=java.lang.Exception: 404:201059:Accept
+      PIN:Pin data not found}, policyStatus=FAILURE, results=null}"
+  policyStatus: FAILURE
+
+ecommerce_step3_executed_before_step2_resp:
+  id: '200001'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText: 'Requested resource not found'
+  errorDetails:
+    - id: '200001'
+      text:
+      developerText: 'Step three_validate_challenge is not available in [four_confirm_challenge, two_initiate_challenge]'
+
+ecommerce_challenge_low_resp:
+  policyResponseBody:
+    riskAssessment: "CHALLENGE"
+    riskAssessmentLevel: "LOW"
+    eligibleMethods:
+      - authenticator: "GOOGLEPLATFORMAUTH"
+  policyStatus: "SUCCESS"
+  metadata:
+    policyProcessId: '#string'
+    policyName: "ecommerce_step_up"
+    policyVersion: '2.0'
+    stepExpirationTimestamp: '#string'
+    availableNextSteps:
+      - "four_confirm_challenge"
+    stepsCompleted:
+      - "start"
+ecommerce_step2_not_allowed_platdformauth_resp:
+  id: '200001'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText: 'Requested resource not found'
+  errorDetails:
+    - id: '200001'
+      text:
+      developerText: 'Step two_initiate_challenge is not available in [four_confirm_challenge]'

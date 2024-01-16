@@ -1,0 +1,117 @@
+################################################## ANCHORS ##################################################
+addressLine1: &addressLine1 '1217 DOLAN DR'
+addressLine2: &addressLine2 ''
+city: &city 'SUN PRAIRIE'
+countryCode: &countryCode 'US'
+firstName: &firstName 'EMERITA'
+lastName: &lastName 'COLLINS'
+middleName: &middleName ''
+mobilePhoneNumber: &mobilePhoneNumber '8043398750'
+postalCode: &postalCode '53590'
+stateCode: &stateCode 'WI'
+taxId: &taxId '666010758'
+taxIdToken: &taxIdToken '666010758'
+
+completeReqBody: &completeReqBody
+  addressLine1: *addressLine1
+  addressLine2: *addressLine2
+  city: *city
+  countryCode: *countryCode
+  firstName: *firstName
+  lastName: *lastName
+  middleName: *middleName
+  mobilePhoneNumber: *mobilePhoneNumber
+  postalCode: *postalCode
+  stateCode: *stateCode
+  taxId: *taxId
+  taxIdToken: *taxIdToken
+
+partialReqBody: &partialReqBody
+  addressLine2: *addressLine2
+  middleName: *middleName
+  mobilePhoneNumber: *mobilePhoneNumber
+  taxId: *taxId
+  taxIdToken: *taxIdToken
+
+################################################# PAYLOADS ##################################################
+cardfraud_empath_obv_missing_addressLine1_req:
+  <<: *partialReqBody
+  city: *city
+  countryCode: *countryCode
+  firstName: *firstName
+  lastName: *lastName
+  postalCode: *postalCode
+  stateCode: *stateCode
+
+cardfraud_empath_obv_missing_city_req:
+  <<: *partialReqBody
+  addressLine1: *addressLine1
+  countryCode: *countryCode
+  firstName: *firstName
+  lastName: *lastName
+  postalCode: *postalCode
+  stateCode: *stateCode
+
+cardfraud_empath_obv_missing_countryCode_req:
+  <<: *partialReqBody
+  addressLine1: *addressLine1
+  city: *city
+  firstName: *firstName
+  lastName: *lastName
+  postalCode: *postalCode
+  stateCode: *stateCode
+
+cardfraud_empath_obv_missing_firstName_req:
+  <<: *partialReqBody
+  addressLine1: *addressLine1
+  city: *city
+  countryCode: *countryCode
+  lastName: *lastName
+  postalCode: *postalCode
+  stateCode: *stateCode
+
+cardfraud_empath_obv_missing_lastName_req:
+  <<: *partialReqBody
+  addressLine1: *addressLine1
+  city: *city
+  countryCode: *countryCode
+  firstName: *firstName
+  postalCode: *postalCode
+  stateCode: *stateCode
+
+cardfraud_empath_obv_missing_postalCode_req:
+  <<: *partialReqBody
+  addressLine1: *addressLine1
+  city: *city
+  countryCode: *countryCode
+  firstName: *firstName
+  lastName: *lastName
+  stateCode: *stateCode
+
+cardfraud_empath_obv_missing_stateCode_req:
+  <<: *partialReqBody
+  addressLine1: *addressLine1
+  city: *city
+  countryCode: *countryCode
+  firstName: *firstName
+  lastName: *lastName
+  postalCode: *postalCode
+
+cardfraud_empath_obv_unsupported_countryCode_value_req:
+  <<: *completeReqBody
+  countryCode: 'UK'
+
+cardfraud_empath_obv_unsupported_mobilePhoneNumber_value_req:
+  <<: *completeReqBody
+  mobilePhoneNumber: 'abcdefghij'
+
+cardfraud_empath_obv_unsupported_postalCode_value_req:
+  <<: *completeReqBody
+  postalCode: 'abcde'
+
+cardfraud_empath_obv_unsupported_stateCode_value_req:
+  <<: *completeReqBody
+  stateCode: 'AB'
+
+cardfraud_empath_obv_success_req:
+  <<: *completeReqBody

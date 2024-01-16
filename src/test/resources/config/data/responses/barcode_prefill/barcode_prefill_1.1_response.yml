@@ -1,0 +1,179 @@
+govid_barcode_prefill_journey_response:
+  policyResponseBody:
+    govtIdResponse:
+      vendorExtendedResult: Y
+      linkExpiryTimestamp: '#string'
+      keepAliveTimestamp: '#ignore'
+      documentExpirationStatus: NotExpired
+      referenceIdLocked: false
+      documentStatus: Passed
+      mediaType: 2D
+      numberOfAttempts: '1'
+      customerDetails: { }
+      documentData:
+        address:
+          addressLine1: 177 Rooster Lane
+          addressLine2: Apt 3d
+          city: Peoria
+          postalCode: '51283'
+          state: AZ
+        biographic:
+          documentBirthDate: '1968-12-15'
+          documentNumber: aYEVf9EEE
+          documentType: Driver License
+          expirationDate: '2050-09-30'
+          firstName: Avery
+          gender: M
+          inputDocumentDetails: { }
+          issueDate: '2016-04-25'
+          issueStateCode: AZ
+          issueStateName: Arizona
+          middleName: J
+          replacementDate: '2016-04-25'
+          surName: Sample III
+        countryCode: US
+      vendorExtendedStatus: DocumentProcessOK
+      referenceId: '#string'
+  policyStatus: SUCCESS
+
+
+govid_barcode_prefill_journey_missing_barcode_resp:
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.govtIdRequest.barcode: is missing but it is required]"
+  policyStatus: INVALID
+  policyResponseBody:
+
+
+govid_barcode_prefill_journey_missing_barcodedeviceId_resp:
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.govtIdRequest.barcode: is missing but it is required, $.govtIdRequest.deviceId:
+      is missing but it is required]"
+  policyStatus: INVALID
+  policyResponseBody:
+
+
+govid_barcode_prefill_journey_missing_allfields_resp:
+  policyResponseBody:
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.originator: is missing but it is required, $.brandCode: is missing
+      but it is required, $.govtIdRequest: null found, object expected]"
+  policyStatus: INVALID
+
+
+govid_barcode_prefil_journey_missing_linkExpiryTimestamp_resp:
+  policyResponseBody:
+    errorInfo:
+      id: '202020'
+      text: Downstream API error
+      developerText: 'Downstream API "govidsendalert" returned 400: body="{"type":"errorResponse","id":"200000","text":"Our
+        system experienced an error. Please try again later.","developerText":"Request
+        validation error","errorDetails":[{"type":"errorDetail","id":"200000","developerText":"linkExpiryTimestamp
+        is missing, but is required if sending a notification"}],"actions":[]}"'
+    policyStatus: FAILURE
+    results:
+  policyStatus: SUCCESS
+
+
+govid_barcode_prefil_journey_invalid_businessuni_resp:
+  policyResponseBody:
+  policyStatus: FAILURE
+  errorInformation:
+    id: '202020'
+    text: Downstream API error
+    developerText: 'The verification domain policy "barcode_retrieve" version "1.1"
+      (post method) returned the following error "{errorInfo={id=202020, text=Downstream
+      API error, developerText=Downstream API "govidsendalert" returned 400: body="{"type":"errorResponse","id":"200000","text":"Our
+      system experienced an error. Please try again later.","developerText":"Request
+      validation error","errorDetails":[{"type":"errorDetail","id":"200000","text":"Our system experienced an error. Please try again later.","developerText":"businessUnit
+      is invalid"}],"actions":[]}"}, policyStatus=FAILURE, results=null}"'
+
+
+govid_barcode_prefil_journey_invalid_location_resp:
+  policyResponseBody:
+  policyStatus: FAILURE
+  errorInformation:
+    id: '202020'
+    text: Downstream API error
+    developerText: 'The verification domain policy "barcode_retrieve" version "1.1"
+      (post method) returned the following error "{errorInfo={id=0, text=Schema Validation
+      Failure, developerText=[$.location: does not have a value in the enumeration [AL,
+      AK, AR, AZ, CA, CO, CT, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME,
+      MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SC, SD,
+      TN, TX, UT, VA, VT, WA, WI, WV, WY, AS, DC, GU, PR, VI]]}, policyStatus=INVALID,
+      results=null}"'
+
+
+govid_barcode_prefil_journey_invalid_barcode_resp:
+  policyStatus: SUCCESS
+  policyResponseBody:
+    govtIdResponse:
+      vendorExtendedResult: '1'
+      linkExpiryTimestamp: '#string'
+      keepAliveTimestamp: '#ignore'
+      documentExpirationStatus: Unknown
+      referenceIdLocked: false
+      documentStatus: Unknown
+      mediaType: 1D
+      numberOfAttempts: '1'
+      customerDetails: { }
+      documentData:
+        address: { }
+        biographic:
+          inputDocumentDetails: { }
+      vendorExtendedStatus: Document1DDocument
+      referenceId: '#string'
+
+
+govid_barcode_prefil_journey_emptybarcode_resp:
+  policyStatus: SUCCESS
+  policyResponseBody:
+    errorInformation:
+      id: '0'
+      text: Schema Validation Failure
+      developerText: "[$.barcode: must be at least 1 characters long]"
+    policyStatus: '#string'
+    results:
+
+
+govid_barcode_prefil_journey_emptyLinkExpiry_resp:
+  policyStatus: SUCCESS
+  policyResponseBody:
+    errorInfo:
+      id: '0'
+      text: Schema Validation Failure
+      developerText: "[$.linkExpiryTimestamp:  is an invalid date-time]"
+    policyStatus: '#string'
+    results:
+
+
+govid_barcode_prefil_journey_emptyBusinessUnitLocation_resp:
+  policyResponseBody:
+  policyStatus: FAILURE
+  errorInformation:
+    id: '202020'
+    text: Downstream API error
+    developerText: 'The verification domain policy "barcode_retrieve" version "1.1"
+      (post method) returned the following error "{errorInfo={id=0, text=Schema Validation
+      Failure, developerText=[$.businessUnit: must be at least 1 characters long, $.location:
+      does not have a value in the enumeration [AL, AK, AR, AZ, CA, CO, CT, DE, FL,
+      GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE,
+      NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VA, VT, WA, WI, WV,
+      WY, AS, DC, GU, PR, VI]]}, policyStatus=INVALID, results=null}"'
+
+
+govid_barcode_prefil_journey_emptyModel_resp:
+  policyResponseBody:
+  policyStatus: FAILURE
+  errorInformation:
+    id: '202020'
+    text: Downstream API error
+    developerText: 'The verification domain policy "barcode_retrieve" version "1.1"
+      (post method) returned the following error "{errorInfo={id=0, text=Schema Validation
+      Failure, developerText=[$.model: must be at least 1 characters long]}, policyStatus=INVALID,
+      results=null}"'

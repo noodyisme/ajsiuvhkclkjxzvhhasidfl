@@ -1,0 +1,180 @@
+################################################## ANCHORS ##################################################
+appendCookieSuccess: &appendCookieSuccess 'SUCCESS'
+appendCookieBoth: &appendCookieBoth 'BOTH'
+appendCookieFailure: &appendCookieFailure 'FAILURE'
+
+applicationId: &applicationId '1234'
+businessUnit: &businessUnit 'TTV_FRAUD_POSTBOOK'
+bankBusinessUnit: &bankBusinessUnit '360'
+model: &model 'TAPFPB'
+bankModel: &bankModel 'BANKAOPREBK'
+copyText: &copyText 'TAPFPB'
+bankCopyText: &bankCopyText 'BKAO'
+linkExpiryTimestamp: &linkExpiryTimestamp '2030-05-11T13:55:13'
+keepAliveTimestamp: &keepAliveTimestamp '2030-05-11T13:56:13'
+notificationText: &notificationText 'TAPVER'
+notificationChannel: &notificationChannel 'SMS'
+phoneNumberItems: &phoneNumberItems
+  phoneNumber: '1234567890'
+  phoneType: 'MOBILE'
+redirectionDetails: &redirectionDetails
+  cookieValue: &cookieValue 'cookieValue'
+  appendCookie: *appendCookieSuccess
+  successUrl: &successUrlValue 'successURLValue'
+  failureUrl: &failureUrlValue 'failureURLValue'
+
+defaultStep1Req: &defaultStep1Req
+  applicationId: *applicationId
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationText: *notificationText
+  notificationChannel: *notificationChannel
+  phoneNumberItems: *phoneNumberItems
+  redirectionDetails: *redirectionDetails
+
+bankStep1Req: &bankStep1Req
+  applicationId: *applicationId
+  businessUnit: *bankBusinessUnit
+  model: *bankModel
+  copyText: *bankCopyText
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationText: *notificationText
+  notificationChannel: *notificationChannel
+  phoneNumberItems: *phoneNumberItems
+  redirectionDetails: *redirectionDetails
+
+################################################## PAYLOADS ##################################################
+t2v_deeplink_missing_applicationId_req:
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationText: *notificationText
+  notificationChannel: *notificationChannel
+  phoneNumberItems: *phoneNumberItems
+  redirectionDetails: *redirectionDetails
+
+t2v_deeplink_missing_businessUnit_req:
+  applicationId: *applicationId
+  model: *model
+  copyText: *copyText
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationText: *notificationText
+  notificationChannel: *notificationChannel
+  phoneNumberItems: *phoneNumberItems
+  redirectionDetails: *redirectionDetails
+
+t2v_deeplink_missing_model_req:
+  applicationId: *applicationId
+  businessUnit: *businessUnit
+  copyText: *copyText
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationText: *notificationText
+  notificationChannel: *notificationChannel
+  phoneNumberItems: *phoneNumberItems
+  redirectionDetails: *redirectionDetails
+
+t2v_deeplink_missing_copyText_req:
+  applicationId: *applicationId
+  businessUnit: *businessUnit
+  model: *model
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationText: *notificationText
+  notificationChannel: *notificationChannel
+  phoneNumberItems: *phoneNumberItems
+  redirectionDetails: *redirectionDetails
+
+t2v_deeplink_missing_linkExpiryTimestamp_req:
+  applicationId: *applicationId
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationText: *notificationText
+  notificationChannel: *notificationChannel
+  phoneNumberItems: *phoneNumberItems
+  redirectionDetails: *redirectionDetails
+
+t2v_deeplink_missing_keepAliveTimestamp_req:
+  applicationId: *applicationId
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  notificationText: *notificationText
+  notificationChannel: *notificationChannel
+  phoneNumberItems: *phoneNumberItems
+  redirectionDetails: *redirectionDetails
+
+t2v_deeplink_missing_notificationText_req:
+  applicationId: *applicationId
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationChannel: *notificationChannel
+  phoneNumberItems: *phoneNumberItems
+  redirectionDetails: *redirectionDetails
+
+t2v_deeplink_missing_notificationChannel_req:
+  applicationId: *applicationId
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationText: *notificationText
+  phoneNumberItems: *phoneNumberItems
+  redirectionDetails: *redirectionDetails
+
+t2v_deeplink_missing_phoneNumberItems_req:
+  applicationId: *applicationId
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationText: *notificationText
+  notificationChannel: *notificationChannel
+  redirectionDetails: *redirectionDetails
+
+t2v_deeplink_missing_redirectionDetails_req:
+  applicationId: *applicationId
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  linkExpiryTimestamp: *linkExpiryTimestamp
+  keepAliveTimestamp: *keepAliveTimestamp
+  notificationText: *notificationText
+  notificationChannel: *notificationChannel
+  phoneNumberItems: *phoneNumberItems
+
+t2v_deeplink_happy_or_unhappy_path_1_step_1_req:
+  <<: *defaultStep1Req
+
+t2v_deeplink_happy_or_unhappy_path_2_step_1_req:
+  <<: *defaultStep1Req
+  redirectionDetails:
+    <<: *redirectionDetails
+    appendCookie: *appendCookieBoth
+
+t2v_deeplink_happy_or_unhappy_path_3_step_1_req:
+  <<: *defaultStep1Req
+  redirectionDetails:
+    <<: *redirectionDetails
+    appendCookie: *appendCookieFailure
+
+t2v_deeplink_happy_or_unhappy_path_bank_step_1_req:
+  <<: *bankStep1Req
+  redirectionDetails:
+    <<: *redirectionDetails
+    appendCookie: *appendCookieBoth

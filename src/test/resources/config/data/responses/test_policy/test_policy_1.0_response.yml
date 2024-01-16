@@ -1,0 +1,15 @@
+test_policy_response:
+  policyResponseBody:
+    policyStatus: 'SUCCESS'
+    results:
+      users: '#array'
+  policyStatus: 'SUCCESS'
+
+test_policy_missing_first_name_resp:
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: '[$.firstName: is missing but it is required]'
+  policyResponseBody: null
+  policyStatus: 'INVALID'
+  

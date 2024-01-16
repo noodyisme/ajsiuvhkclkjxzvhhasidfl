@@ -1,0 +1,95 @@
+############################ validating smart stepup v 2.0 with mandatory fields ########################
+smart_stepup_v2_response:
+  policyResponseBody:
+    policyContentTypeParameter: string
+    policyResponseBody:
+      riskAssessmentStatus: ALLOW
+      transactionInfo: string
+      preferredMethods:
+        - order: int
+          authenticator: OTP | PRESTO
+          deliveryMechanism:
+            - deviceAssociation: Known | UnKnown
+              deviceTrust: TRUSTED | UNTRUSTED
+              deviceStability: STABLE | UNSTABLE | EXPIRED | NA
+              deliveryMedium: SMS | MAV | VOICE | PHYSICAL
+              mediumStability: STABLE | UNSTABLE | EXPIRED | NA
+          authenticatorStability: STABLE | UNSTABLE | EXPIRED | NA
+          verificationInstructions: string
+    policyStatus: SUCCESS
+  policyStatus: SUCCESS
+  metadata:
+    policyName: smart_stepup
+    policyVersion: '2.0'
+    availableNextSteps:
+      - step2
+    stepsCompleted:
+      - start
+
+
+  ############################ validating smart stepup v 2.0 with 403 ########################
+ecommerce_http_403_resp:
+  id: '200008'
+  text: Our system experienced an error. Please try again later.
+  type: errorResponse
+  developerText: 'An Api-Key is required to access our API Platform. Please visit the
+    API Portal to sign up: https://developer.kdc.capitalone.com/.'
+  actions: [ ]
+  errorDetails:
+    - id: '200008'
+      type: errorDetail
+      developerText: Full authentication is required to access this resource
+
+  ############################ validating smart stepup v 2.0 with 403 ########################
+policy_definitions_error_resp:
+  id: '200001'
+  text: Our system experienced an error. Please try again later.
+  developerText: Requested resource not found
+  actions: [ ]
+  errorDetails:
+    - id: '200001'
+      text:
+      developerText: 'Unknown policy: smart_stepup_2.0/sample/test'
+
+  ############################ validating smart stepup v 2.0 with 403 ########################
+continue_policy_process_406_error_resp:
+  id: '200099'
+  text: Our system experienced an error. Please try again later.
+  developerText:
+  actions: [ ]
+  errorDetails:
+    - id: '200099'
+      text:
+      developerText: HTTP 406 Not Acceptable
+
+############################ Validating step 3 response ########################
+smart_stepup_v2_step3_response:
+  policyResponseBody:
+    result:
+      head:
+        result: string
+        targetTokenLevel: string
+        transactionInfo: string
+      payload:
+        validateMethodResponse:
+          authenticator: OTP
+          otpValidateResponse:
+            pinAcceptanceStatus: ACCEPTED
+            profileStatus: UNLOCKED
+            pinAuthenticationRemainingAttempts: 0
+  policyStatus: SUCCESS
+
+############################ Validating step 2 response ########################
+smart_stepup_v2_step2_response:
+  results:
+    result:
+      head:
+        result: string
+        transactionInfo: string
+      payload:
+        initiateChallengeResponse:
+          authenticator: OTP
+          otpInitiateChallengeResponse:
+            pinAuthenticationToken: 12b5ed61a71169d9b61bbd7cc8cfe9762d12c786
+
+

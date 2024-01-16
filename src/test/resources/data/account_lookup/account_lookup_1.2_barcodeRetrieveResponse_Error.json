@@ -1,0 +1,7 @@
+{
+  "errorInformation": {
+    "id": "202020",
+    "text": "Downstream API error",
+    "developerText": "The verification domain policy \"barcode_retrieve\" version \"1.1\" (post method) returned the following error \"{errorInfo={id=0, text=Schema Validation Failure, developerText=[$.model: must be at least 1 characters long]}, policyStatus=INVALID, results=null}\""
+  }
+}

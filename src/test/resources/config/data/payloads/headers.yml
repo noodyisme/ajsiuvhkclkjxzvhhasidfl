@@ -1,0 +1,113 @@
+masterbuilder_headers:
+    API-Key: MOBILE
+    Accept: application/json;v=2
+    Content-Type: application/json
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-US
+    Client-Correlation-Id: heimdallRegression
+    Channel-Type: web
+    Country-Code: US
+
+masterbuilder_header_NoAPIKey:
+    API-Key:
+    Accept: application/json;v=2
+    Content-Type: application/json
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-US
+    Client-Correlation-Id: heimdallRegression
+    Channel-Type: web
+    Country-Code: US
+
+masterbuilder_header_client_IP:
+    API-Key: MOBILE
+    Accept: application/json;v=2
+    Content-Type: application/json
+    Customer-IP-Address: ""
+    Accept-Language: en-US
+    Client-Correlation-Id: heimdallRegression
+    Channel-Type: web
+    Country-Code: US
+
+header_client_IP_invalid:
+    API-Key: MOBILE
+    Accept: application/json;v=2
+    Content-Type: application/json
+    Customer-IP-Address: 127.0.0
+    Accept-Language: en-US
+    Client-Correlation-Id: heimdallRegression
+    Channel-Type: web
+    Country-Code: US
+
+header_client_corr_ID:
+    API-Key: MOBILE
+    Accept: application/json;v=2
+    Content-Type: application/json
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-US
+    Client-Correlation-Id:
+    Channel-Type: web
+    Country-Code: US
+
+header_channel_type:
+    API-Key: MOBILE
+    Accept: application/json;v=2
+    Content-Type: application/json
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-US
+    Client-Correlation-Id: heimdallRegression
+    Channel-Type:
+    Country-Code: US
+
+header_Accept_lan:
+    API-Key: MOBILE
+    Accept: application/json;v=2
+    Content-Type: application/json
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language:
+    Client-Correlation-Id: heimdallRegression
+    Channel-Type: web
+    Country-Code: US
+
+header_Accept_val:
+    API-Key: MOBILE
+    Accept:
+    Content-Type: application/json
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-us
+    Client-Correlation-Id: heimdallRegression
+    Channel-Type: web
+    Country-Code: US
+
+header_no_contentType:
+    API-Key: MOBILE
+    Accept: application/json;v=2
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-US
+    Client-Correlation-Id: heimdallRegression
+    Channel-Type: web
+    Country-Code: US
+
+nonmandatory_headers:
+    API-Key: MOBILE
+    Accept: application/json;v=2
+    Content-Type: application/json
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-us
+    Client-Correlation-Id: heimdallRegression
+    Channel-Type: web
+
+invalidAccept_val:
+     API-Key: MOBILE
+     Accept: application/json;v=3
+     Content-Type: application/json
+     Customer-IP-Address: 127.0.0.1
+     Accept-Language: en-us
+     Client-Correlation-Id: heimdallRegression
+     Channel-Type: web
+
+sso_token_headers:
+    Client-IP: "127.0.01"
+    Accept: "application/json;v=3"
+    Content-Type: "application/json"
+    Channel-Type: WEB
+    Client-Correlation-Id: SepRelTU3

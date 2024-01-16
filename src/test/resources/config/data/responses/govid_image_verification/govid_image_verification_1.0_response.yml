@@ -1,0 +1,15 @@
+govid_image_verification_response:
+  policyResponseBody:
+    requestStatus: Success
+    referenceId: '#string'
+    url: '#string'
+  policyStatus: SUCCESS
+
+govid_image_verification_missing_businessunit_response:
+  policyResponseBody: null
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: '[$.businessUnit: is missing but it is required]'
+

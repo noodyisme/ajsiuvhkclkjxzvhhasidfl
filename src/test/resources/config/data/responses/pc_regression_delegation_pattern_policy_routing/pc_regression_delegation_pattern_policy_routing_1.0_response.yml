@@ -1,0 +1,19 @@
+pc_regression_basic_successful_resp:
+  policyResponseBody:
+    dateTime: '2021-12-12T14:20:49+0000'
+    phoneNumber: '1234567890'
+    stateCode: 'VA'
+    isEnrolled: '#boolean'
+  policyStatus: 'SUCCESS'
+
+pc_regression_basic_bad_request_resp:
+  id: "200001"
+  text: "Our system experienced an error. Please try again later."
+  actions: []
+  developerText: "Requested resource not found"
+  errorDetails:
+    -
+      id: "200001"
+      text: null
+      developerText: "HTTP 404 Not Found"
+

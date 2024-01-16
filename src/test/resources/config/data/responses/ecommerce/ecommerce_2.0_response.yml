@@ -1,0 +1,200 @@
+ecommerce_successfull_resp:
+  policyResponseBody:
+    riskAssessment: "CHALLENGE"
+    riskAssessmentLevel: "HIGH"
+    eligibleMethods:
+      - authenticator: "OTP"
+        payload:
+          - contactPointId: 1
+            deliveryMedium: "SMS"
+            deviceStability: "STABLE"
+            maskedContactPoint: '#string'
+  policyStatus: "SUCCESS"
+  metadata:
+    policyProcessId: '#string'
+    policyName: "ecommerce_step_up"
+    policyVersion: '2.0'
+    stepExpirationTimestamp: '#string'
+    availableNextSteps:
+      - "four_confirm_challenge"
+      - "two_initiate_challenge"
+    stepsCompleted:
+      - "start"
+
+ecommerce_shared_id_error_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.transactionIdentifiers.sharedID: must be at least 1 characters long]"
+
+ecommerce_vender_id_error_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.transactionIdentifiers.vendorID: must be at least 1 characters long]"
+
+ecommerce_profile_reference_id_error_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.transactionIdentifiers.profileReferenceID: must be at least 1 characters long]"
+
+ecommerce_account_reference_id_error_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.transactionIdentifiers.accountReferenceID: must be at least 1 characters long]"
+
+ecommerce_stage_error_resp:
+  policyResponseBody:
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.transactionIdentifiers.stage: does not have a value in the enumeration
+      [CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_ENROLLMENT, CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_CHECKOUT], $.transactionIdentifiers.stage:
+      must be at least 1 characters long]"
+  policyStatus: INVALID
+
+ecommerce_null_event_name_error_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.eventName: must be at least 1 characters long, $.eventName: does
+      not have a value in the enumeration [CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_ENROLLMENT, CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_CHECKOUT]]"
+
+ecommerce_null_risk_signal_data_error_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.riskSignals.riskSignalData: must be at least 1 characters long]"
+
+ecommerce_ip_address_error_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.commonRiskSignals.environmentalDetails.ipAddress: must be at
+        least 1 characters long]"
+
+ecommerce_null_date_error_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.customerRiskDetails.accountActivity.enrollment_timestamp:  is
+      an invalid date-time]"
+
+ecommerce_invaild_date_error_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.customerRiskDetails.accountActivity.enrollment_timestamp: 2021-07-14
+        is an invalid date-time]"
+
+ecommerce_number_format_error_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.customerRiskDetails.numberOfGoogleAccountsTiedToFPAN: string
+      found, integer expected]"
+
+ecommerce_invaild_mandatory_fields_resp:
+  policyResponseBody:
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.transactionIdentifiers.stage: does not have a value in the enumeration
+      [CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_ENROLLMENT, CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_CHECKOUT], $.transactionIdentifiers.stage:
+      must be at least 1 characters long, $.transactionIdentifiers.profileReferenceID:
+      must be at least 1 characters long, $.transactionIdentifiers.vendorID: must be
+      at least 1 characters long, $.transactionIdentifiers.sharedID: must be at least
+      1 characters long, $.eventName: must be at least 1 characters long, $.eventName:
+      does not have a value in the enumeration [CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_ENROLLMENT,
+      CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_CHECKOUT], $.commonRiskSignals.environmentalDetails.ipAddress:
+      must be at least 1 characters long]"
+  policyStatus: INVALID
+
+ecommerce_invaild_boolean_resp:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.customerRiskDetails.accountActivity.less_than_1_day: string found,
+      boolean expected]"
+
+ecommerce_http_403_resp:
+  type: 'errorResponse'
+  id: '200008'
+  text: 'Our system experienced an error. Please try again later.'
+  developerText: '#string'
+  errorDetails:
+    - type: 'errorDetail'
+      id: '200008'
+      developerText: '#string'
+  actions: [ ]
+
+ecommerce_http_405_resp:
+  id: '200099'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: []
+  developerText:
+  errorDetails:
+    - id: '200099'
+      text:
+      developerText: 'HTTP 405 Method Not Allowed'
+
+ecommerce_http_406_resp:
+  id: '200099'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText:
+  errorDetails:
+    - id: '200099'
+      text:
+      developerText: 'HTTP 406 Not Acceptable'
+
+ecommerce_risk_assesment_decline_resp:
+  policyResponseBody:
+    riskAssessment: "DECLINE"
+  policyStatus: "SUCCESS"
+
+ecommerce_risk_assesment_allow_resp:
+  policyResponseBody:
+    riskAssessment: "ALLOW"
+  policyStatus: "SUCCESS"
+
+ecommerce_challenge_low_resp:
+  policyResponseBody:
+    riskAssessment: "CHALLENGE"
+    riskAssessmentLevel: "LOW"
+    eligibleMethods:
+      - authenticator: "GOOGLEPLATFORMAUTH"
+  policyStatus: "SUCCESS"
+  metadata:
+    policyProcessId: '#string'
+    policyName: "ecommerce_step_up"
+    policyVersion: '2.0'
+    stepExpirationTimestamp: '#string'
+    availableNextSteps:
+      - "four_confirm_challenge"
+    stepsCompleted:
+      - "start"

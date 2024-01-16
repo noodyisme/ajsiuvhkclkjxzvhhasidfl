@@ -1,0 +1,98 @@
+mb_2_0_regression_config_management_no_header_resp:
+  policyResponseBody: 'customer.code=default-code'
+  policyStatus: 'SUCCESS'
+  metadata:
+    policyProcessId: '#string'
+    policyName: 'mb_2_0_regression_config_management'
+    policyVersion: '1.0'
+    stepExpirationTimestamp: '#regex \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,6}){0,1}'
+    availableNextSteps: [
+        'step2'
+    ]
+    stepsCompleted: [
+        'start'
+    ]
+
+mb_2_0_regression_config_management_mobile_header_resp:
+  policyResponseBody: 'customer.code=enterprise-mobile'
+  policyStatus: 'SUCCESS'
+  metadata:
+    policyProcessId: '#string'
+    policyName: 'mb_2_0_regression_config_management'
+    policyVersion: '1.0'
+    stepExpirationTimestamp: '#regex \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,6}){0,1}'
+    availableNextSteps: [
+        'step2'
+    ]
+    stepsCompleted: [
+        'start'
+    ]
+
+mb_2_0_regression_config_management_web_header_resp:
+  policyResponseBody: 'customer.code=enterprise-web'
+  policyStatus: 'SUCCESS'
+  metadata:
+    policyProcessId: '#string'
+    policyName: 'mb_2_0_regression_config_management'
+    policyVersion: '1.0'
+    stepExpirationTimestamp: '#regex \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,6}){0,1}'
+    availableNextSteps: [
+        'step2'
+    ]
+    stepsCompleted: [
+        'start'
+    ]
+
+mb_2_0_regression_config_management_invalid_attribute_resp:
+  policyResponseBody: null
+  policyStatus: 'FAILURE'
+  errorInformation:
+    id: '201216'
+    text: 'Invalid or missing request attributes.'
+    developerText: '#ignore'
+
+mb_2_0_regression_config_management_invalid_or_missing_business_event_resp:
+  id: "201218"
+  text: "Invalid or missing Business Event header."
+  developerText: '#ignore'
+  actions: '#ignore'
+  errorDetails: '#ignore'
+
+
+mb_2_0_regression_config_management_business_event_does_not_exist_resp:
+  policyResponseBody: null
+  policyStatus: 'FAILURE'
+  errorInformation:
+    id: '201218'
+    text: 'Invalid Business Event'
+    developerText: '#ignore'
+
+mb_2_0_regression_config_management_app_resp:
+  policyResponseBody: 'customer.code=app-level'
+  policyStatus: 'SUCCESS'
+  metadata:
+    policyProcessId: '#string'
+    policyName: 'mb_2_0_regression_config_management'
+    policyVersion: '1.0'
+    stepExpirationTimestamp: '#regex \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,6}){0,1}'
+    availableNextSteps: [
+      'step2'
+    ]
+    stepsCompleted: [
+      'start'
+    ]
+
+mb_2_0_regression_config_management_app_and_event_resp:
+  policyResponseBody: 'customer.code=config-full'
+  policyStatus: 'SUCCESS'
+  metadata:
+    policyProcessId: '#string'
+    policyName: 'mb_2_0_regression_config_management'
+    policyVersion: '1.0'
+    stepExpirationTimestamp: '#regex \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,6}){0,1}'
+    availableNextSteps: [
+      'step2'
+    ]
+    stepsCompleted: [
+      'start'
+    ]

@@ -1,0 +1,149 @@
+############################ Missing Required Headers ########################
+mb_missing_correlationId_res:
+  developerText: '#string'
+  id: 200008
+  text: '#string'
+
+mb_missing_APIKey_res:
+  id: 200008
+  text: '#string'
+  developerText: '#string'
+  
+mb_missing_customerIp_res:
+  id: 200008
+  text: '#string'
+  developerText: '#string'  
+  
+mb_missing_channelType_res:
+  id: 200008
+  text: '#string'
+  developerText: '#string'
+  
+mb_missing_contentType_res:
+  id: 200008
+  text: '#string'
+  developerText: '#string'
+
+############################ The requested policy does not exist ########################
+nonexistent_policy_res:
+  id: '200001'
+  text: '#string'
+  actions: '#array'
+  developerText: Requested resource not found
+  errorDetails: '#array'
+  
+############################ Process Initiator Error Responses ########################
+
+mb_invalid_process_initiator_res:
+  type: errorResponse
+  id: '201216'
+  text: Invalid or missing request attributes.
+  developerText: Invalid or missing request attributes.
+  errorDetails:
+    - type: errorDetail
+      id: '201216'
+      developerText: 'com.capitalone.dsd.identity.masterbuilder.service.exception.AttributeValidationException:
+      Requested Process Workflow not found/not available.'
+  actions: []
+
+############################ Process Digest Missing or Expired Responses ########################
+
+mb_expired_pd_res:
+  type: errorResponse
+  id: '202192'
+  text: Expired processDigest for process.
+  developerText: Expired processDigest for process.
+  actions: []
+
+mb_missing_pd_res:
+  type: errorResponse
+  id: '201216'
+  text: Invalid or missing request attributes.
+  developerText: "Invalid or missing request attributes.Invalid Attributes: processInitiator"
+  errorDetails:
+    - type: errorDetail
+      id: '201216'
+      developerText: 'com.capitalone.dsd.identity.masterbuilder.service.exception.AttributeValidationException:
+      Requested Process Workflow not found/not available.'
+  actions: []
+
+############################ Workflow Request Invalid Types ########################
+
+mb_invalid_phone_resp:
+  type: errorResponse
+  id: '201216'
+  text: Invalid or missing request attributes.
+  developerText: 'Invalid or missing request attributes.Invalid Attributes: mobilePhoneNumber'
+  errorDetails:
+    - type: errorDetail
+      id: '201216'
+      developerText: 'com.capitalone.dsd.identity.masterbuilder.service.exception.AttributeValidationException:
+      Attribute "mobilePhoneNumber" must be ten digits'
+  actions: []
+
+
+mb_invalid_dob_resp:
+  type: errorResponse
+  id: '201216'
+  text: Invalid or missing request attributes.
+  developerText: 'Invalid or missing request attributes.Invalid Attributes: dateOfBirth'
+  errorDetails:
+    - type: errorDetail
+      id: '201216'
+      developerText: 'com.capitalone.dsd.identity.masterbuilder.service.exception.AttributeValidationException:
+      Attribute "dateOfBirth" must be a valid YYYY-MM-DD date'
+  actions: [] 
+  
+  
+mb_invalid_stateCode_resp:
+  type: errorResponse
+  id: '201216'
+  text: Invalid or missing request attributes.
+  developerText: 'Invalid or missing request attributes.Invalid Attributes: stateCode'
+  errorDetails:
+    - type: errorDetail
+      id: '201216'
+      developerText: 'com.capitalone.dsd.identity.masterbuilder.service.exception.AttributeValidationException:
+      Attribute "stateCode" must be one of the following state codes: [AK, AL, AR, AS,
+      AZ, CA, CO, CT, DC, DE, FL, GA, GU, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME,
+      MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, PR, RI, SC,
+      SD, TN, TX, UT, VA, VI, VT, WA, WI, WV, WY]'
+  actions: []
+
+mb_invalid_countryCode_resp:
+  type: errorResponse
+  id: '201216'
+  text: Invalid or missing request attributes.
+  developerText: 'Invalid or missing request attributes.Invalid Attributes: countryCode'
+  errorDetails:
+    - type: errorDetail
+      id: '201216'
+      developerText: 'com.capitalone.dsd.identity.masterbuilder.service.exception.AttributeValidationException:
+      Attribute "countryCode" must be a valid ISO-3166 alpha-2 country code'
+  actions: [] 
+  
+mb_invalid_preferredLanguage_resp:
+  type: errorResponse
+  id: '201216'
+  text: Invalid or missing request attributes.
+  developerText: 'Invalid or missing request attributes.Invalid Attributes: preferredLanguage'
+  errorDetails:
+    - type: errorDetail
+      id: '201216'
+      developerText: 'com.capitalone.dsd.identity.masterbuilder.service.exception.AttributeValidationException:
+      Attribute "preferredLanguage" must be one of the following values: [en-CA, en-US,
+      es-US, fr-CA] (case-sensitive)'
+  actions: [] 
+
+mb_invalid_govId_originator_resp:
+  type: errorResponse
+  id: '201216'
+  text: Invalid or missing request attributes.
+  developerText: 'Invalid or missing request attributes.Invalid Attributes: originator'
+  errorDetails:
+    - type: errorDetail
+      id: '201216'
+      developerText: 'com.capitalone.dsd.identity.masterbuilder.service.exception.AttributeValidationException: 
+      Attribute "originator" must be one of the following values: [AGENT, BATCH, REALTIME] (case-sensitive)'
+  actions: [] 
+  

@@ -1,0 +1,84 @@
+header_all_val:
+    API-Key: MOBILE
+    Accept: application/json;v=1
+    Content-Type: "multipart/form-data"
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-us
+    Client-Correlation-Id: PolicyCoreRegression
+    Channel-Type: Web
+    productId: IdentityPlatform-PolicyCore-NONPROD
+
+header_no_ccid:
+    API-Key: MOBILE
+    Accept: application/json
+    Content-Type: "multipart/form-data"
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-uss
+    Channel-Type: Web
+    productId: t2v-ivr-product
+
+header_no_productId:
+    API-Key: MOBILE
+    Accept: application/json
+    Content-Type: "multipart/form-data"
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-us
+    Client-Correlation-Id: PolicyCoreRegression
+    Channel-Type: Web
+
+header_wrong_productId:
+    API-Key: MOBILE
+    Accept: application/json
+    Content-Type: "multipart/form-data"
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-us
+    Client-Correlation-Id: PolicyCoreRegression
+    Channel-Type: Web
+    productId: t2v-ivr-product_1
+
+
+header_wrong_contentType:
+    API-Key: MOBILE
+    Accept: application/json
+    Content-Type: application/json
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-us
+    Client-Correlation-Id: PolicyCoreRegression
+    Channel-Type: Web
+    productId: IdentityPlatform-PolicyCore-NONPROD
+    
+header_empty_contentType:
+    API-Key: MOBILE
+    Accept: application/json;v=1
+    Customer-IP-Address: 127.0.0.1
+    Accept-Language: en-us
+    Client-Correlation-Id: PolicyCoreRegression
+    Channel-Type: Web
+    productId: IdentityPlatform-PolicyCore-NONPROD
+    
+header_empty_customerIPChannelType:  
+    API-Key: MOBILE
+    Accept: application/json
+    Content-Type: "multipart/form-data"  
+    Accept-Language: en-us
+    Client-Correlation-Id: PolicyCoreRegression
+    productId: IdentityPlatform-PolicyCore-NONPROD
+    
+header_wrong_ChannelType:  
+    API-Key: MOBILE
+    Accept: application/json
+    Content-Type: "multipart/form-data"
+    Accept-Language: en-us
+    Client-Correlation-Id: PolicyCoreRegression
+    productId: IdentityPlatform-PolicyCore-NONPROD
+    Channel-Type: abc
+    
+header_wrong_customerIP:  
+    API-Key: MOBILE
+    Accept: application/json
+    Content-Type: "multipart/form-data"
+    Accept-Language: en-us
+    Client-Correlation-Id: PolicyCoreRegression
+    productId: IdentityPlatform-PolicyCore-NONPROD
+    Customer-IP-Address: abc
+    

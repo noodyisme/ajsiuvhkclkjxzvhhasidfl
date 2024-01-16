@@ -1,0 +1,28 @@
+############################ validating google autofill payload with mandatory fields ########################
+
+google_autofill_req:
+  transactionIdentifiers:
+    sharedID: '123456'
+    vendorID: GOOGLE
+    profileReferenceID: c/Y+YYIdf15jRpyVgGtgy3XWtpDDGzPYFJKWYVKJNai1HhYXD+ZmmI7x3Pwda0Wx
+    accountReferenceID: test
+    stage: checkout
+  commonRiskSignals:
+    environmentalDetails:
+      ipAddress: 104.207.160.1
+      channelSurface: CHROME_DESKTOP
+      channelTypeForEnrollment: PUSH_PROVISIONING
+
+############################ validating google autofill payload Passing null values in Mandatory fields ########################
+
+google_autofill_missing_profilereferenceid_req:
+  transactionIdentifiers:
+    sharedID: '123456'
+    vendorID: GOOGLE
+    accountReferenceID: test
+    stage: checkout
+  commonRiskSignals:
+    environmentalDetails:
+      ipAddress: 104.207.160.1
+      channelSurface: CHROME_DESKTOP
+      channelTypeForEnrollment: PUSH_PROVISIONING

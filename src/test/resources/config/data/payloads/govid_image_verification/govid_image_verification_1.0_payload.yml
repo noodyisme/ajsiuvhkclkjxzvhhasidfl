@@ -1,0 +1,79 @@
+############################ validating govid_image_verification payload with mandatory fields ########################
+
+govid_image_verification_req:
+  businessUnit: CARDFRAUD
+  channel: Web
+  model: WMTRTPREBKT2A
+  targetGroup: AB
+  sorId: '17'
+  useGlobalConfiguration: true
+  attemptCount: 5
+  authenticationType: Full
+  copyText: WMTBCIMG
+  isEnterpriseImagingEnabled: true
+  isMatchingEnabled: false
+  isStreamingDataPlatformEnabled: true
+  isVelocityCheckEnabled: false
+  storePii: true
+  storeImage: true
+  preferredLanguage: EN-US
+  linkExpiryTimestamp: '2022-12-30T22:08:00.000Z'
+  keepAliveTimestamp: '2022-12-30T22:56:00.000Z'
+  customerDetails:
+    caseId: CaseID1002
+    accountReferenceId: ''
+    customerReferenceId: test-Intellicheck
+    applicationId: '2012753205'
+    lastFourCardNumber: '1809'
+    fullName: GUILLAUME FILION
+    firstName: GUILLAUME
+    middleName: ''
+    lastName: FILION
+    birthDate: '1985-11-28'
+    email: a.v@capitalone.com
+    phoneNumber: '1000000091'
+  notificationDetails:
+    notificationText: GOVSMS
+    notificationChannel: SMS
+  additionalDetails:
+    uniqueId: Uni888
+
+############################ validating govid_image_verification payload Passing null values in Mandatory fields ########################
+
+govid_image_verification_missing_businessunit_req:
+  channel: Web
+  model: WMTRTPREBKT2A
+  targetGroup: AB
+  sorId: '17'
+  useGlobalConfiguration: true
+  attemptCount: 5
+  authenticationType: Full
+  copyText: WMTBCIMG
+  isEnterpriseImagingEnabled: true
+  isMatchingEnabled: false
+  isStreamingDataPlatformEnabled: true
+  isVelocityCheckEnabled: false
+  storePii: true
+  storeImage: true
+  preferredLanguage: EN-US
+  linkExpiryTimestamp: '2022-12-30T22:08:00.000Z'
+  keepAliveTimestamp: '2022-12-30T22:56:00.000Z'
+  customerDetails:
+    caseId: CaseID1002
+    accountReferenceId: ''
+    customerReferenceId: test-Intellicheck
+    applicationId: '2012753205'
+    lastFourCardNumber: '1809'
+    fullName: GUILLAUME FILION
+    firstName: GUILLAUME
+    middleName: ''
+    lastName: FILION
+    birthDate: '1985-11-28'
+    email: a.v@capitalone.com
+    phoneNumber: '1000000091'
+  notificationDetails:
+    notificationText: GOVSMS
+    notificationChannel: SMS
+  additionalDetails:
+    uniqueId: Uni888
+

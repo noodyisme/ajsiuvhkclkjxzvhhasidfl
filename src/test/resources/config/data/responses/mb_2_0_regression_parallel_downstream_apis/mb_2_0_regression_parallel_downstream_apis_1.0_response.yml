@@ -1,0 +1,5 @@
+mb_2_0_regression_parallel_downstream_apis_successful_resp:
+  policyResponseBody:
+    - '#object'
+    - '#object'
+  policyStatus: 'SUCCESS'

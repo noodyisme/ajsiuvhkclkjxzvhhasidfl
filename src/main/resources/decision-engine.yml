@@ -1,0 +1,28 @@
+# Decision Engine related
+evaluator.factory: com.capitalone.identity.identitybuilder.decisionengine.evaluator.drools.DroolsEvaluatorFactory
+evalOperationTimeoutMs: 5000
+# set to one hour so load operations do not time out (restricts loading errors to content problems, not environment)
+loadOperationTimeoutMs: 60000
+
+# sdp properties # Leave this!
+business.application: BAIDENTITYSERVICESADMINISTRATION
+
+## https://confluence.kdc.capitalone.com/display/Sentinulls/Decision+Engine+v1.2.0+to+v2.X.X
+# Identity Builder Decision Engine values
+devex.client.id: ${IDB-DECISION-AUDIT-CLIENT-ID:}
+devex.client.secret: ${IDB-DECISION-AUDIT-CLIENT-SECRET:}
+
+## https://github.cloud.capitalone.com/identitybuilder/identity-builder-dmn-simulator/blob/master/Bogiefile#L222-L225
+devex.environment.config: ${IDB-DECISION-AUDIT-DEVEX-ENV-CONFIG:}
+devex.environment.url: ${IDB-DECISION-AUDIT-DEVEX-ENV-URL:}
+fanin.host: ${IDB-DECISION-AUDIT-FANIN-HOST:}
+fanin.rest.port: ${IDB-DECISION-AUDIT-FANIN-PORT:443}
+schema.name: identity_identitybuilder_decisionengine_evaluated
+batch.max.record.limit: 100
+wait.between.batches: 150
+concurrent.connections: 4
+initial.backoff: 250
+retry.timeout: 3000
+max.allowed.retries: 3
+preemptive.fallback: true
+max.queue.size: 100000

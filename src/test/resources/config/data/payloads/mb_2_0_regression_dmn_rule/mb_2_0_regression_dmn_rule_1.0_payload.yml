@@ -1,0 +1,5 @@
+mb_2_0_regression_dmn_rule_successful_true_req:
+  isAlwaysChallenge: true
+
+mb_2_0_regression_dmn_rule_successful_false_req:
+  isAlwaysChallenge: false

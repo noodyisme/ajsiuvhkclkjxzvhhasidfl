@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="chassis.logs.location">target/logs</Property>
+        <Property name="appenderPatternLayout">[%t] %d{dd MMM yyyy HH:mm:ss,SSS} %-5p %-15c{1} [%X]: %cm%ex%n</Property>
+        <!-- You can adjust this based on how log files will be accessed. 10 MB is a decent size that you can open in Vi editor or other text editor tools -->
+        <Property name="maxLogFileSize">10 MB</Property>
+        <!-- You can increase this based on how much log you need per application instance(container) and what is the logging rate for the API -->
+        <Property name="maxLogFiles">25</Property>
+        <!--The following variables can be overridden as jvm args during application startup. If log4j2 does not find these system variables then it will use these default values-->
+        <Property name="IDB_DE_LOGLEVEL">${env:IDB_DE_LOGLEVEL:-ERROR}</Property>
+        <Property name="IDB_SDP_LOGLEVEL">${env:IDB_SDP_LOGLEVEL:-ERROR}</Property>
+        <Property name="CAP1_LOGLEVEL">${env:CAP1_LOGLEVEL:-ERROR}</Property>
+        <Property name="PERF_LOGLEVEL">${env:PERF_LOGLEVEL:-ERROR}</Property>
+        <Property name="ROOT_LOGLEVEL">${env:ROOT_LOGLEVEL:-ERROR}</Property>
+    </Properties>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="${appenderPatternLayout}"/>
+        </Console>
+        <RollingRandomAccessFile name="APPLOGFILE" fileName="${sys:chassis.logs.location}/app.log"
+                                 filePattern="${sys:chassis.logs.location}/app-%i.log.gz" append="true">
+            <PatternLayout pattern="${appenderPatternLayout}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${maxLogFileSize}"/>
+            </Policies>
+            <DefaultRolloverStrategy max="${maxLogFiles}"/>
+        </RollingRandomAccessFile>
+        <RollingRandomAccessFile name="SYSLOGFILE" fileName="${sys:chassis.logs.location}/sys.log"
+                                 filePattern="${sys:chassis.logs.location}/sys-%i.log.gz" append="true">
+            <PatternLayout pattern="${appenderPatternLayout}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${maxLogFileSize}"/>
+            </Policies>
+            <DefaultRolloverStrategy max="${maxLogFiles}"/>
+        </RollingRandomAccessFile>
+        <RollingRandomAccessFile name="PERFLOGFILE" fileName="${sys:chassis.logs.location}/perf.log"
+                                 filePattern="${sys:chassis.logs.location}/perf-%i.log.gz" append="true">
+            <PatternLayout pattern="${appenderPatternLayout}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${maxLogFileSize}"/>
+            </Policies>
+            <DefaultRolloverStrategy max="${maxLogFiles}"/>
+        </RollingRandomAccessFile>
+        <RollingRandomAccessFile name="WSTRACEFILE" fileName="${sys:chassis.logs.location}/wstrace.log"
+                                 filePattern="${sys:chassis.logs.location}/wstrace-%i.log.gz" append="true">
+            <PatternLayout pattern="${appenderPatternLayout}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="${maxLogFileSize}"/>
+            </Policies>
+            <DefaultRolloverStrategy max="${maxLogFiles}"/>
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+        <!-- ******************************************* -->
+        <!-- application categories                      -->
+        <!-- ******************************************* -->
+        <Logger name="com.capitalone" level="${sys:CAP1_LOGLEVEL}" additivity="false" includeLocation="false">
+            <AppenderRef ref="APPLOGFILE"/>
+        </Logger>
+        <logger name="PerfLog" level="${sys:PERF_LOGLEVEL}" additivity="false">
+            <AppenderRef ref="PERFLOGFILE"/>
+        </logger>
+        <logger name="IdentityBuilderSdpAuditLogger" level="${sys:IDB_SDP_LOGLEVEL}" additivity="false">
+            <AppenderRef ref="APPLOGFILE"/>
+        </logger>
+        <logger name="DecisionEngineEventLogger" level="${sys:IDB_DE_LOGLEVEL}" additivity="false">
+            <AppenderRef ref="APPLOGFILE"/>
+        </logger>
+        <Root level="${sys:ROOT_LOGLEVEL}" includeLocation="false">
+            <AppenderRef ref="APPLOGFILE"/>
+        </Root>
+    </Loggers>
+</Configuration>

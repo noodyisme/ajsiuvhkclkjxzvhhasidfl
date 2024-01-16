@@ -1,0 +1,17 @@
+{
+  "govtIdRequest": {
+    "barcode": " test_barcode ",
+    "deviceId": " test_deviceId",
+    "location": " test_location",
+    "businessUnit": " test_businessUnit",
+    "model": " test_model",
+    "copyText": " test_copyText",
+    "configId": " test_configId"
+  },
+  "customerReferenceIds": [
+    " customerReferenceIds"
+  ],
+  "originator": "POS",
+  "brandCode": "WILLIAMSSONOMAPLCC",
+  "stepName": "start"
+}

@@ -1,0 +1,9 @@
+{
+  "results": null,
+  "policyStatus": "FAILURE",
+  "errorInfo": {
+    "id": "202020",
+    "text": "Downstream API error",
+    "developerText": "Downstream API \"customerInformation\" returned 400: body=\"{\"text\":\"Our system experienced an error. Please try again later. For help right now, you can call us at 1-866-750-0873.\",\"developerText\":\"Request validation error\",\"id\":200001}\n\""
+  }
+}

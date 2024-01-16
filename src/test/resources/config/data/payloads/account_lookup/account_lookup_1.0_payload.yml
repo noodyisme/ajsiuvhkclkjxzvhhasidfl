@@ -1,0 +1,147 @@
+############################ validating govid_barcode_prefil_journey payload with mandatory fields ########################
+ account_lookup_missing_customerReferenceId_fields_req:
+   govtIdRequest:
+     barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDMwMC1NMDdETDFaQUJMQU5LCjFaVlVOSVFVRQoxWlhJRAoxWkIxNDkgVFVNQkxFIFJVTgoxWlVBcHQgNDUKMVpDU1RPQ0tCUklER0UKMVpER0EKMVpFMzAyODEKMVpGNjM1MDE0OTU3CjFaR0MKMVpIQQoxWklYCjFaSzM3OAoxWkxGZW1hbGUKMVpONjAKMVpPMTUwCjFaUE1hcm9vbgoxWlFCbGFjawoxWlJHQQoxWlNHRU9SR0lBCjFaV05vCjFaMURvY0NhdGVnb3J5fkRMCjFaMn5Jc1JlYWxJRH5ObwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjEwLzA0LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDUKMlpCMjUKMlpDMjA1MAoyWkQwNQoyWkUxNQoyWkYxOTU1CjJaRzEwCjJaSDA0CjJaSTIwMTYK
+     deviceId: '123'
+     location: NJ
+     businessUnit: CARDFRAUD
+     model: WSACTLKP
+     copyText: DEFAULT
+   originator: POS
+   brandCode: WILLIAMSSONOMAPLCC
+
+ account_lookup_missing_govid_barcode_missing_req:
+   govtIdRequest:
+     deviceId: '123'
+     location: NJ
+     businessUnit: CARDFRAUD
+     model: WSACTLKP
+     copyText: DEFAULT
+   customerReferenceIds:
+     - v7sEVXl7IIJ7QcfbgAhhkg==
+     - abc
+     - fgk
+   originator: POS
+   brandCode: WILLIAMSSONOMAPLCC
+
+ account_lookup_customerReferenceId_Null_req:
+   govtIdRequest:
+     barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDMwMC1NMDdETDFaQUJMQU5LCjFaVlVOSVFVRQoxWlhJRAoxWkIxNDkgVFVNQkxFIFJVTgoxWlVBcHQgNDUKMVpDU1RPQ0tCUklER0UKMVpER0EKMVpFMzAyODEKMVpGNjM1MDE0OTU3CjFaR0MKMVpIQQoxWklYCjFaSzM3OAoxWkxGZW1hbGUKMVpONjAKMVpPMTUwCjFaUE1hcm9vbgoxWlFCbGFjawoxWlJHQQoxWlNHRU9SR0lBCjFaV05vCjFaMURvY0NhdGVnb3J5fkRMCjFaMn5Jc1JlYWxJRH5ObwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjEwLzA0LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDUKMlpCMjUKMlpDMjA1MAoyWkQwNQoyWkUxNQoyWkYxOTU1CjJaRzEwCjJaSDA0CjJaSTIwMTYK
+     deviceId: '123'
+     location: NJ
+     businessUnit: CARDFRAUD
+     model: WSACTLKP
+     copyText: DEFAULT
+   customerReferenceIds:
+     - ''
+   originator: POS
+   brandCode: WILLIAMSSONOMAPLCC
+
+ account_lookup_dob_mismatch_req:
+   govtIdRequest:
+     barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAyNTRDMS1CMTRETDFaQVBBU1NFRAoxWlZHRU9SR0lBCjFaQjE2NSBISURERU4gQlJPT0sgVFJBSUwKMVpDRkFZRVRURVZJTExFCjFaREdBCjFaRTMwMjE1CjFaRlI1MTQ5ODA5NzI3NAoxWkdGUAoxWkhWCjFaSU5PTkUKMVpLMjg5CjFaTE1hbGUKMVpONjkKMVpPMTQ1IGxiCjFaUEJsYWNrCjFaUkdBCjFaU0dFT1JHSUEKMVpXTm8KMVoxSXNSZWFsSUR+WWVzCjJaQTAxCjJaQjAxCjJaQzIwMjQKMlpEMDIKMlpFMjQKMlpGMTk1NQoyWkcwMgoyWkgwMgoyWkkyMDIwCg==
+     deviceId: '123'
+     location: NJ
+     businessUnit: CARDFRAUD
+     model: WSACTLKP
+     copyText: DEFAULT
+   customerReferenceIds:
+     - cKJ7CRGUp9PU7z2PcZC4+g==
+   originator: POS
+   brandCode: WILLIAMSSONOMAPLCC
+
+ account_lookup_successfull_matching_req:
+   govtIdRequest:
+     barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDMwMC1NMDdETDFaQUJMQU5LCjFaVlVOSVFVRQoxWlhJRAoxWkIxNDkgVFVNQkxFIFJVTgoxWlVBcHQgNDUKMVpDU1RPQ0tCUklER0UKMVpER0EKMVpFMzAyODEKMVpGNjM1MDE0OTU3CjFaR0MKMVpIQQoxWklYCjFaSzM3OAoxWkxGZW1hbGUKMVpONjAKMVpPMTUwCjFaUE1hcm9vbgoxWlFCbGFjawoxWlJHQQoxWlNHRU9SR0lBCjFaV05vCjFaMURvY0NhdGVnb3J5fkRMCjFaMn5Jc1JlYWxJRH5ObwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjEwLzA0LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDUKMlpCMjUKMlpDMjA1MAoyWkQwNQoyWkUxNQoyWkYxOTU1CjJaRzEwCjJaSDA0CjJaSTIwMTYK
+     deviceId: '123'
+     location: NJ
+     businessUnit: CARDFRAUD
+     model: WSACTLKP
+     copyText: DEFAULT
+   customerReferenceIds:
+     - v7sEVXl7IIJ7QcfbgAhhkg==
+   originator: POS
+   brandCode: WILLIAMSSONOMAPLCC
+
+ account_lookup_journey_Failed_req:
+   govtIdRequest:
+     barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAyNTRDMS1CMTRETDFaQVBBU1NFRAoxWlZHRU9SR0lBCjFaQjE2NSBISURERU4gQlJPT0sgVFJBSUwKMVpDRkFZRVRURVZJTExFCjFaREdBCjFaRTMwMjE1CjFaRlI1MTQ5ODA5NzI3NAoxWkdGUAoxWkhWCjFaSU5PTkUKMVpLMjg5CjFaTE1hbGUKMVpONjkKMVpPMTQ1IGxiCjFaUEJsYWNrCjFaUkdBCjFaU0dFT1JHSUEKMVpXTm8KMVoxSXNSZWFsSUR+WWVzCjJaQTAxCjJaQjAxCjJaQzIwMjQKMlpEMDIKMlpFMjQKMlpGMTk1NQoyWkcwMgoyWkgwMgoyWkkyMDIwCg==
+     deviceId: '123'
+     location: NJ
+     businessUnit: CARDFRAUD
+     model: WSACTLKP
+     copyText: DEFAULT
+   customerReferenceIds:
+     - v7sEVXl7IIJ7QcfbgAhhkg==
+   originator: POS
+   brandCode: WILLIAMSSONOMAPLCC
+
+ account_lookup_journey_invalid_customerRefId_req:
+   govtIdRequest:
+     barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDMwMC1NMDdETDFaQUJMQU5LCjFaVlVOSVFVRQoxWlhJRAoxWkIxNDkgVFVNQkxFIFJVTgoxWlVBcHQgNDUKMVpDU1RPQ0tCUklER0UKMVpER0EKMVpFMzAyODEKMVpGNjM1MDE0OTU3CjFaR0MKMVpIQQoxWklYCjFaSzM3OAoxWkxGZW1hbGUKMVpONjAKMVpPMTUwCjFaUE1hcm9vbgoxWlFCbGFjawoxWlJHQQoxWlNHRU9SR0lBCjFaV05vCjFaMURvY0NhdGVnb3J5fkRMCjFaMn5Jc1JlYWxJRH5ObwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjEwLzA0LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDUKMlpCMjUKMlpDMjA1MAoyWkQwNQoyWkUxNQoyWkYxOTU1CjJaRzEwCjJaSDA0CjJaSTIwMTYK
+     deviceId: '123'
+     location: NJ
+     businessUnit: CARDFRAUD
+     model: WSACTLKP
+     copyText: DEFAULT
+   customerReferenceIds:
+     - v7s
+   originator: POS
+   brandCode: WILLIAMSSONOMAPLCC
+
+ account_lookup_journey_invalid_skipInvalidCustomerRefId_req:
+   govtIdRequest:
+     barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDMwMC1NMDdETDFaQUJMQU5LCjFaVlVOSVFVRQoxWlhJRAoxWkIxNDkgVFVNQkxFIFJVTgoxWlVBcHQgNDUKMVpDU1RPQ0tCUklER0UKMVpER0EKMVpFMzAyODEKMVpGNjM1MDE0OTU3CjFaR0MKMVpIQQoxWklYCjFaSzM3OAoxWkxGZW1hbGUKMVpONjAKMVpPMTUwCjFaUE1hcm9vbgoxWlFCbGFjawoxWlJHQQoxWlNHRU9SR0lBCjFaV05vCjFaMURvY0NhdGVnb3J5fkRMCjFaMn5Jc1JlYWxJRH5ObwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjEwLzA0LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDUKMlpCMjUKMlpDMjA1MAoyWkQwNQoyWkUxNQoyWkYxOTU1CjJaRzEwCjJaSDA0CjJaSTIwMTYK
+     deviceId: '123'
+     location: NJ
+     businessUnit: CARDFRAUD
+     model: WSACTLKP
+     copyText: DEFAULT
+   customerReferenceIds:
+     - v7sEVXl7IIJ7QcfbgAhhkg==
+     - abc
+     - fgk
+   originator: POS
+   brandCode: WILLIAMSSONOMAPLCC
+
+ account_lookup_journey_Unknown_req:
+   govtIdRequest:
+     barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDMwMC1NMDdETDFaQUJMQU5LCjFaVlVOSVFVRQoxWlhJRAoxWkIxNDkgVFVNQkxFIFJVTgoxWlVBcHQgNDUKMVpDU1RPQ0tCUklER0UKMVpER0EKMVpFMzAyODEKMVpGNjM1MDE0OTU3CjFaR0MKMVpIQQoxWklYCjFaSzM3OAoxWkxGZW1hbGUKMVpONjAKMVpPMTUwCjFaUE1h5vCjFaMURvY0NhdGVnb3J5fkRMCjFaMn5Jc1JlYWxJRH5ObwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjEwLzA0LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDUKMlpCMjUKMlpDMjA1MAoyWkQwNQoyWkUxNQoyWkYxOTU1CjJaRzEwCjJaSDA0CjJaSTIwMTYK
+     deviceId: '123'
+     location: NJ
+     businessUnit: CARDFRAUD
+     model: WSACTLKP
+     copyText: DEFAULT
+   customerReferenceIds:
+     - v7sEVXl7IIJ7QcfbgAhhkg==
+   originator: POS
+   brandCode: WILLIAMSSONOMAPLCC
+
+ account_lookup_journey_emptyModel_req:
+   govtIdRequest:
+     barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDMwMC1NMDdETDFaQUJMQU5LCjFaVlVOSVFVRQoxWlhJRAoxWkIxNDkgVFVNQkxFIFJVTgoxWlVBcHQgNDUKMVpDU1RPQ0tCUklER0UKMVpER0EKMVpFMzAyODEKMVpGNjM1MDE0OTU3CjFaR0MKMVpIQQoxWklYCjFaSzM3OAoxWkxGZW1hbGUKMVpONjAKMVpPMTUwCjFaUE1hcm9vbgoxWlFCbGFjawoxWlJHQQoxWlNHRU9SR0lBCjFaV05vCjFaMURvY0NhdGVnb3J5fkRMCjFaMn5Jc1JlYWxJRH5ObwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjEwLzA0LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDUKMlpCMjUKMlpDMjA1MAoyWkQwNQoyWkUxNQoyWkYxOTU1CjJaRzEwCjJaSDA0CjJaSTIwMTYK
+     deviceId: '123'
+     location: NJ
+     businessUnit: CARDFRAUD
+     model: ''
+     copyText: DEFAULT
+   customerReferenceIds:
+     - v7sEVXl7IIJ7QcfbgAhhkg==
+     - abc
+     - fgk
+   originator: POS
+   brandCode: WILLIAMSSONOMAPLCC
+
+ account_lookup_journey_documentValidityStatus_documentFailureReason_req:
+    govtIdRequest:
+      barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDMwMC1NMDdETDFaQUJMQU5LCjFaVlVOSVFVRQoxWlhJRAoxWkIxNDkgVFVNQkxFIFJVTgoxWlVBcHQgNDUKMVpDU1RPQ0tCUklER0UKMVpER0EKMVpFMzAyODEKMVpGNjM1MDE0OTU3CjFaR0MKMVpIQQoxWklYCjFaSzM3OAoxWkxGZW1hbGUKMVpONjAKMVpPMTUwCjFaUE1hcm9vbgoxWlFCbGFjawoxWlJHQQoxWlNHRU9SR0lBCjFaV05vCjFaMURvY0NhdGVnb3J5fkRMCjFaMn5Jc1JlYWxJRH5ObwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjEwLzA0LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDUKMlpCMjUKMlpDMjA1MAoyWkQwNQoyWkUxNQoyWkYxOTU1CjJaRzEwCjJaSDA0CjJaSTIwMTYK
+      deviceId: '123'
+      location: NJ
+      businessUnit: CARDFRAUD
+      model: WSACTLKP
+      copyText: DEFAULT
+    customerReferenceIds:
+      - v7sEVXl7IIJ7QcfbgAhhkg==
+      - cz6z3JphKPOzhgyYTAXstg==
+    originator: POS
+    brandCode: WILLIAMSSONOMAPLCC

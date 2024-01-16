@@ -1,0 +1,11 @@
+idbcore_regression_sequential_service_with_timeouts_basic_resp:
+  policyResponseBody: {}
+  policyStatus: SUCCESS
+
+idbcore_regression_sequential_service_with_timeouts_basic_resp2:
+  policyResponseBody: null
+  policyStatus: FAILURE
+  errorInformation:
+    id: '202020'
+    text: Downstream API error
+    developerText: '#string'

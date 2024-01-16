@@ -1,0 +1,83 @@
+######## Required Fields Missing Tests ########################################
+
+account_lookup_missing_govtIdRequest_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.govtIdRequest: is missing but it is required]"
+
+account_lookup_missing_customerReferenceIds_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.customerReferenceIds: is missing but it is required]"
+
+account_lookup_missing_brandCode_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.brandCode: is missing but it is required]"
+
+account_lookup_missing_originator_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.originator: is missing but it is required]"
+
+######## Required govtIdRequest Fields Missing Tests ##########################
+
+account_lookup_missing_govtIdRequest_barcode_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.govtIdRequest.barcode: is missing but it is required]"
+
+account_lookup_missing_govtIdRequest_deviceId_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.govtIdRequest.deviceId: is missing but it is required]"
+
+account_lookup_missing_govtIdRequest_businessUnit_field_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.govtIdRequest.businessUnit: is missing but it is required]"
+
+account_lookup_missing_govtIdRequest_model_field_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.govtIdRequest.model: is missing but it is required]"
+
+account_lookup_missing_govtIdRequest_copyText_field_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.govtIdRequest.copyText: is missing but it is required]"
+
+account_lookup_missing_govtIdRequest_configId_field_response:
+  policyResponseBody:
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: "[$.govtIdRequest.configId: is missing but it is required]"

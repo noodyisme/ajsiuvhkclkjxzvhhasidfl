@@ -1,0 +1,169 @@
+behaviour_sec_successfull_resp:
+  policyResponseBody:
+    insightSession:
+      - vendorData:
+          vendorScoreSource: '#string'
+          vendorResponseStatus: '#string'
+          errorDescription: ''
+          customerBehaviorInsightId: '#string'
+          isBot: true
+          botDescriptionFlags:
+            - '#string'
+          isRemoteAccess: true
+          remoteAccessProtocolScores:
+            - protocolName: '#string'
+              score: 0
+          remoteAccessDescriptionFlags:
+            - '#string'
+          isTrained: true
+          isDeviceChanged: true
+          deviceChangedDescriptionFlags:
+            - '#string'
+          deviceScore: 0
+          isIpChanged: true
+          ipSeverity: 0
+          isWhiteListed: true
+          isSessionCorrupted: true
+          isDataCorrupted: true
+          isReplay: true
+          userId: '#string'
+          score: 0
+          confidence: 0
+          policy: '#string'
+          recognitionRatio: 0
+          isDataIntegrityError: true
+          dataIntegrityDescriptionFlags:
+            - '#string'
+          userIntegrityScore: 0
+          isUserIntegrityScoreFlag: true
+          userIntegrityConfidence: 0
+          isUserIntegrityConfidenceFlag: true
+          isTabAnomaly: true
+          isNumberPadAnomaly: true
+          isPageDefinitionError: true
+          isPasteOrCopyAnomaly: true
+          pageDefinitionErrorDescription:
+            - '#string'
+          risk: 0
+          riskEvaluationDetail:
+            behavioralScore: 0
+            botDetectionScore: 0
+            remoteAccessScore: 0
+            sessionCorruptedScore: 0
+            dataCorruptedScore: 0
+            oneTimeJavaScriptScore: 0
+            pageDefinitionsScore: 0
+            ipChangedScore: 0
+            deviceChangedScore: 0
+            newSubProfileScore: 0
+            replayAttackScore: 0
+            tabUsageAnomalyScore: 0
+            numberUsageAnomalyScore: 0
+  policyStatus: 'SUCCESS'
+
+behaviour_sec_empty_Profile_Reference_Id_resp:
+  policyResponseBody:
+  policyStatus: 'FAILURE'
+  errorInformation:
+    id: '202020'
+    text: '#string'
+    developerText: '#string'
+
+behaviour_sec_empty_vendorSolution_resp:
+  policyResponseBody:
+  policyStatus: 'FAILURE'
+  errorInformation:
+    id: '202020'
+    text: '#string'
+    developerText: '#string'
+
+behaviour_sec_empty_vendorApiAction_resp:
+  policyResponseBody:
+  policyStatus: 'FAILURE'
+  errorInformation:
+    id: '202020'
+    text: '#string'
+    developerText: '#string'
+
+behaviour_sec_403_error_code_resp:
+  type: 'errorResponse'
+  id: '200008'
+  text: '#string'
+  developerText: 'An Api-Key is required to access our API Platform. Please visit the
+    API Portal to sign up: https://developer.kdc.capitalone.com/.'
+  errorDetails:
+    - type: '#string'
+      id: '200008'
+      developerText: '#string'
+  actions: [ ]
+
+behaviour_sec_405_error_code_resp:
+    id: '200099'
+    text: '#string'
+    actions: [ ]
+    developerText:
+    errorDetails:
+      - id: '200099'
+        text:
+        developerText: 'HTTP 405 Method Not Allowed'
+
+behaviour_sec_406_error_code_resp:
+    id: '200099'
+    text: '#string'
+    actions: [ ]
+    developerText:
+    errorDetails:
+      - id: '200099'
+        text:
+        developerText: 'HTTP 406 Not Acceptable'
+
+behaviour_sec_404_error_code_resp:
+  id: '200001'
+  text: '#string'
+  actions: [ ]
+  developerText: '#string'
+  errorDetails:
+    - id: '200001'
+      text:
+      developerText: '#string'
+
+behaviour_sec_missed_vendorSolution_error_resp:
+  policyResponseBody:
+  policyStatus: 'INVALID'
+  errorInformation:
+    id: '0'
+    text: '#string'
+    developerText: '[$.vendorSolution: is missing but it is required]'
+
+behaviour_sec_missed_profile_reference_id_resp:
+  policyResponseBody:
+  policyStatus: 'INVALID'
+  errorInformation:
+    id: '0'
+    text: '#string'
+    developerText: '[$.Profile-Reference-Id: is missing but it is required]'
+
+behaviour_sec_missed_vendorApiAction_resp:
+  policyResponseBody:
+  policyStatus: 'FAILURE'
+  errorInformation:
+    id: '202020'
+    text: '#string'
+    developerText: '#string'
+
+behaviour_sec_missed_client_correlation_id_resp:
+  policyResponseBody:
+  policyStatus: 'INVALID'
+  errorInformation:
+    id: '0'
+    text: '#string'
+    developerText: '[$.Client-Correlation-Id: is missing but it is required]'
+
+
+behaviour_sec_missed_customerBehaviorInsightId_resp:
+  policyResponseBody:
+  policyStatus: 'INVALID'
+  errorInformation:
+    id: '0'
+    text: '#string'
+    developerText: '[$.customerBehaviorInsightId: is missing but it is required]'

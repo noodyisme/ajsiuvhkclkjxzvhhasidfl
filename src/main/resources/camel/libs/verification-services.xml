@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://camel.apache.org/schema/spring">
+
+	<route id="direct:mno-payfone-v1">
+		<from uri="direct:mno-payfone-v1" />
+		<to uri="dx:verify-users:{{env.gatewayURL}}/identity/verify-users"/>
+	</route>
+
+	<route id="direct:identityBuilderDomain-post">
+		<from uri="direct:identityBuilderDomain-post" />
+		<setBody>
+			<groovy>
+			   ['policyParameters' : body]
+			</groovy>
+		</setBody>
+		<script>
+			<groovy>
+				headers.customHeaders = ['x-upstream-env' : headers.targetDomain]
+			</groovy>
+		</script>
+		<to uri="dx:{targetDomain}-{policyName}-{policyVersion}:{{env.gatewayURL}}/private/189898/identity/domain/services/execute/{policyName}/{policyVersion}?method=post" />
+	</route>
+
+	<route id="direct:identityBuilderDomain-get">
+		<from uri="direct:identityBuilderDomain-get" />
+		<setBody>
+			<groovy>
+				['policyParameters' : body]
+			</groovy>
+		</setBody>
+		<script>
+			<groovy>
+				headers.customHeaders = ['x-upstream-env' : headers.targetDomain]
+			</groovy>
+		</script>
+		<to uri="dx:{targetDomain}-{policyName}-{policyVersion}:{{env.gatewayURL}}/private/189898/identity/domain/services/execute/{policyName}/{policyVersion}?method=get" />
+		<setBody>
+			<groovy>
+				import com.fasterxml.jackson.core.JsonProcessingException;
+				import com.fasterxml.jackson.databind.ObjectMapper;
+
+				ObjectMapper objectMapper = new ObjectMapper();
+
+				String json = '';
+				try {
+				json = objectMapper.writeValueAsString(body.policyJsonSchema);
+				} catch (JsonProcessingException e) {
+				e.printStackTrace();
+				}
+				return json;
+			</groovy>
+		</setBody>
+	</route>
+
+</routes>

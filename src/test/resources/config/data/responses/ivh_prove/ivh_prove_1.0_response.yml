@@ -1,0 +1,335 @@
+################################################## ANCHORS ##################################################
+policyStatusSuccess: &policyStatusSuccess "SUCCESS"
+
+policyResponseBodyNull: &policyResponseBodyNull null
+
+policyStatusInvalid: &policyStatusInvalid "INVALID"
+
+schemaValidationFailureErrorInformation:
+  &schemaValidationFailureErrorInformation
+  id: "0"
+  text: "Schema Validation Failure"
+  developerText: ""
+
+################################################# RESPONSES #################################################
+ivh_prove_success:
+  policyStatus: *policyStatusSuccess
+  policyResponseBody:
+    users: "#array"
+
+ivh_prove_response_success_trusted:
+  policyStatus: *policyStatusSuccess
+  policyResponseBody:
+    users:
+      [
+        {
+          sequenceNumber: 1,
+          transactionId: "#string",
+          dateAsserted: "#string",
+          identity:
+            [
+              {
+                isAddressCorrect: "#boolean",
+                isFullNameCorrect: "#boolean",
+                score:
+                  {
+                    addressScore: "#number",
+                    consolidatedScore: "#number",
+                    emailScore: "#number",
+                    firstNameScore: "#number",
+                    lastNameScore: "#number",
+                  },
+                serviceOffering: "Payfone_VerifyV2",
+                summary: "#string",
+              },
+            ],
+          device:
+            [
+              {
+                accountTenure: "#ignore",
+                accountType: "#ignore",
+                callForwarding: "#ignore",
+                carrier: "#ignore",
+                deviceChangeTimestamp: "#ignore",
+                isPorted: "#ignore",
+                lineType: "#ignore",
+                networkStatusChangeTimestamp: "#ignore",
+                phoneNumberChangedTimestamp: "#ignore",
+                portTimestamp: "#ignore",
+                primaryAccountHolder: "#ignore",
+                serviceOffering: "#ignore",
+                serviceStatus: "#ignore",
+                serviceType: "#ignore",
+                simSwapTimestamp: "#ignore",
+                summary: "DeviceTrusted",
+                IVH_summary: "#string",
+              },
+            ],
+        },
+      ]
+
+## Not Trusted Expected
+ivh_prove_success_not_trusted:
+  policyStatus: *policyStatusSuccess
+  policyResponseBody:
+    users:
+      [
+        {
+          sequenceNumber: 1,
+          transactionId: "#string",
+          dateAsserted: "#string",
+          identity:
+            [
+              {
+                isAddressCorrect: "#boolean",
+                isFullNameCorrect: "#boolean",
+                score:
+                  {
+                    addressScore: "#number",
+                    consolidatedScore: "#number",
+                    emailScore: "#number",
+                    firstNameScore: "#number",
+                    lastNameScore: "#number",
+                  },
+                serviceOffering: "Payfone_VerifyV2",
+                summary: "#string",
+              },
+            ],
+          device:
+            [
+              {
+                accountTenure: "#ignore",
+                accountType: "#ignore",
+                callForwarding: "#ignore",
+                carrier: "#ignore",
+                deviceChangeTimestamp: "#ignore",
+                isPorted: "#ignore",
+                lineType: "#ignore",
+                networkStatusChangeTimestamp: "#ignore",
+                phoneNumberChangedTimestamp: "#ignore",
+                portTimestamp: "#ignore",
+                primaryAccountHolder: "#ignore",
+                serviceOffering: "#ignore",
+                serviceStatus: "#ignore",
+                serviceType: "#ignore",
+                simSwapTimestamp: "#ignore",
+                summary: "DeviceNotTrusted",
+                IVH_summary: "#string",
+              },
+            ],
+        },
+      ]
+
+## ServiceUnavailable Expected
+ivh_prove_success_service_unavailable:
+  policyStatus: *policyStatusSuccess
+  policyResponseBody:
+    users:
+      [
+        {
+          sequenceNumber: 1,
+          transactionId: "#string",
+          dateAsserted: "#string",
+          identity:
+            [
+              {
+                serviceOffering: "Payfone_VerifyV2",
+                summary: "ServiceUnavailable",
+              },
+            ],
+          device:
+            [
+              {
+                serviceOffering: "#ignore",
+                summary: "ServiceUnavailable",
+                IVH_summary: "ServiceUnavailable",
+              },
+            ],
+        },
+      ]
+
+## Errors
+
+ivh_prove_missing_first_name_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.firstName: is missing but it is required]"
+
+ivh_prove_missing_last_name_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.lastName: is missing but it is required]"
+
+ivh_prove_missing_MobilePhoneNumber_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.mobilePhoneNumber: is missing but it is required]"
+
+ivh_prove_missing_AddressLine1_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.addressLine1: is missing but it is required]"
+
+ivh_prove_missing_City_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.city: is missing but it is required]"
+
+ivh_prove_missing_StateCode_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.stateCode: is missing but it is required]"
+
+ivh_prove_missing_PostalCode_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.postalCode: is missing but it is required]"
+
+ivh_prove_missing_OptInMethod_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.mnoDetails.optInMethod: is missing but it is required]"
+
+ivh_prove_missing_OptInTimestamp_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.mnoDetails.optInTimestamp: is missing but it is required]"
+
+ivh_prove_missing_OptInDuration_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.mnoDetails.optInDuration: is missing but it is required]"
+
+ivh_prove_missing_personalDetails_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails: is missing but it is required]"
+
+ivh_prove_missing_mnoDetails_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.mnoDetails: is missing but it is required]"
+
+  ########################## Workflow response for invalid data in mandatory fields #####################
+
+ivh_prove_invalid_mobile_phone_number_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.mobilePhoneNumber: does not match the regex pattern ^1?\\d{10}$]"
+
+ivh_prove_invalid_country_code_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.countryCode: does not have a value in the enumeration [US, CA]]"
+
+ivh_prove_invalid_dateOfBirth_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.dateOfBirth: 1999-40-00 is an invalid date]"
+
+ivh_prove_invalid_postal_code_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.postalCode: does not match the regex pattern ^(?:[0-9]{5}(?:-[0-9]{4})?)$|^(?:(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9])$]"
+
+ivh_prove_invalid_state_code_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.stateCode: does not have a value in the enumeration [AL, AK, AR, AZ, CA, CO, CT, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VA, VT, WA, WI, WV, WY, AS, DC, GU, PR, VI, AB, BC, MB, NB, NL, NT, NS, NU, ON, PE, QC, SK, YT]]"
+
+ivh_prove_invalid_first_name_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.firstName: does not match the regex pattern ^[a-zA-Z][a-zA-Z\\s\\p{L}\\.',-]{0,99}$]"
+
+ivh_prove_invalid_last_name_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.lastName: does not match the regex pattern ^[a-zA-Z][a-zA-Z\\s\\p{L}\\.',-]{0,99}$]"
+
+ivh_prove_empty_first_name_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.firstName: does not match the regex pattern ^[a-zA-Z][a-zA-Z\\s\\p{L}\\.',-]{0,99}$]"
+
+ivh_prove_empty_last_name_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.lastName: does not match the regex pattern ^[a-zA-Z][a-zA-Z\\s\\p{L}\\.',-]{0,99}$]"
+
+ivh_prove_empty_addressLine1_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.addressLine1: must be at least 1 characters long]"
+
+ivh_prove_empty_city_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.personalDetails.city: must be at least 1 characters long]"
+
+ivh_prove_invalid_optIn_method_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.mnoDetails.optInMethod: does not have a value in the enumeration [TCO, MA, TCP, IVR, SMS, OTHER]]"
+
+ivh_prove_invalid_optIn_time_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.mnoDetails.optInTimestamp: 22!!!!T00:13:37.667Z is an invalid date-time]"
+
+ivh_prove_invalid_optIn_duration_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: "[$.mnoDetails.optInDuration: does not have a value in the enumeration [ONE, ONG]]"

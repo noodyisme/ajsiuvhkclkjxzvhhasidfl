@@ -1,0 +1,157 @@
+############################ validating ecommerce payload with mandatory fields ########################
+ecommerce_successfull_req:
+  transactionIdentifiers:
+    sharedID: "123456A"
+    vendorID: "GOOGLE"
+    profileReferenceID: "+21Jtv4HNuCcPqshEqtkk+OHlp1JeO9DaXsBYYxzq6zx+UYY4zggPGhwRUOmrgQS"
+    accountReferenceID: "test"
+    stage: "CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_ENROLLMENT"
+  eventName: "CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_ENROLLMENT"
+  riskSignals:
+    riskSignalData: "eyAiY29tbW9uUmlza1NpZ25hbHMiOiB7ICJlbnZpcm9ubWVudGFsRGV0YWlscyI6IHsgImlwQWRkcmVzcyI6ICIxNzIuNTguMjMxLjI1NSIsICJjaGFubmVsU3VyZmFjZSI6ICJDSFJPTUVfREVTS1RPUCIsICJjaGFubmVsVHlwZUZvckVucm9sbG1lbnQiOiAiUFVTSF9QUk9WSVNJT05JTkciIH0sICJwaHlzaWNhbERldGFpbHMiOiB7ICJkZXZpY2VJZCI6ICIwYmJhN2YxZTRhODNhYjRmZGQ3N2Y1ZWJkNmJkNDQ5NTkwNWYzNmRiOWM3YzZlNjM4ODMzNzIxZTE4MWJkODM3YWQxNzczNTVhNjkxZDVmZjMyOGFkMWQ1YTM0N2E0MTgyM2YyNDAxMjlkMGVlYjMyNTE3ZWYyOGMyNTIyMDk5MiIsICJkZXZpY2VQaG9uZU51bWJlciI6ICIxMjM0NSIsICJkZXZpY2VHZW9Mb2NhdGlvbiI6ICIxNU4zMFciLCAiZGV2aWNlUmlza1Njb3JlIjogIjUiLCAiY2hyb21lQnJvd3NlcklkIjogIkZEU0ZEU0ZEU0ZTREZEUzQzNDM0MzQzIiwgImRldmljZU9wZXJhdGluZ1N5c3RlbVZlcnNpb24iOiI1IiwgImRldmljZVR5cGUiOiAiUGhvbmUiLCAiZGV2aWNlTW9kZWwiOiAiR29vZ2xlIFBpeGVsIDQiLCAiaXNEZXZpY2VMb3N0TW9kZSI6ICJZRVMiIH0gfSwgImN1c3RvbWVyUmlza0RldGFpbHMiOiB7ICJoYXNoZWRFbWFpbEFkZHJlc3MiOiAiYTM0ZmU4OTYwMGJiODEzODcxYzA0OWVkNTBkMzIzODExY2IzZjZmNGRhZWVhODgzNzIwMTRjOTBlMzUwZTY4OCIsICJhY2NvdW50VG9EZXZpY2VCb25kaW5nQWdlIjogIjEwIiwgImFjY291bnRUb0RldmljZVBhaXJpbmdJZCI6ICIxMjMiLCAiYWNjb3VudEFjdGl2aXR5Ijp7ICJlbnJvbGxtZW50X3RpbWVzdGFtcCI6ICJZWVlZLU1NLUREIiwgImxlc3NfdGhhbl8xX2RheSI6IHRydWUsICJsZXNzX3RoYW5fN19kYXlzIjogZmFsc2UsICJsZXNzX3RoYW5fMzBfZGF5cyI6ZmFsc2UsICJsZXNzX3RoYW5fMV95ZWFyIjogZmFsc2UgfSwgImFjY291bnRBZ2UiOiAiNSIsICJhY2NvdW50Q2hhbmdlRGF0ZSI6ICJZWVlZLU1NLUREIiwgImFjY291bnRSaXNrU2NvcmUiOiAiNSIsICJjdXN0b21lck5hbWVNYXRjaCI6ICJZRVMiLCAiY3VzdG9tZXJQaG9uZU51bWJlciI6ICIxMjM0NTYiLCAibnVtYmVyT2ZHb29nbGVBY2NvdW50c1RpZWRUb0ZQQU4iOiAiNCIsICJwYW5Tb3VyY2VJbmRpY2F0b3IiOiAiV2ViIiwgInBheW1lbnRNZXRob2RBdHRlbXB0cyI6ICIzIiwgImlzQ2hlY2tvdXRPblBsYXRmb3JtQXV0aCI6ICJZRVMiLCAicGxhdGZvcm1BdXRoQXNzdXJhbmNlTGV2ZWwiOiIxIiwgInJlY29tbWVuZGF0aW9uRGVjaXNpb24iOiAiZ3JlZW4iLCAibnVtVHJhbnNhY3Rpb25zSW5MYXN0VHdlbGV2ZU1vbnRocyI6ICIyIiB9LCAibWVyY2hhbnRJbmZvIjogeyAibWVyY2hhbnRBcHBsaWNhdGlvblBhY2thZ2VOYW1lIjogInNhbXBsZU1lcmNoYW50QXBwbGljYXRpb25QYWNrYWdlIiwgIm1lcmNoYW50V2ViRG9tYWluIjogInNhbXBsZU1lcmNoYW50V2ViRG9tYWluIiB9IH0="
+    riskSignalSource: "GOOGLE"
+  commonRiskSignals:
+    environmentalDetails:
+      ipAddress: "127.1.1.1"
+      channelSurface: "CHROME_DESKTOP"
+      channelTypeForEnrollment: "PUSH_PROVISIONING"
+  physicalDetails:
+    deviceId: "MAC"
+    devicePhoneNumber: ""
+    deviceGeoLocation: ""
+    deviceRiskScore: 2
+    deviceAccountAge: "LESS_THAN_ONE_DAY"
+    chromeBrowserId: ""
+    deviceOperatingSystemVersion: ""
+    deviceType: ""
+    deviceModel: ""
+    isDeviceLostMode: ""
+  customerRiskDetails:
+    hashedEmailAddress: ""
+    accountToDeviceBondingAge: 9999
+    accountToDevicePairingId: ""
+    accountActivity:
+      enrollment_timestamp: "2021-07-14T11:07:36.639Z"
+      less_than_1_day: false
+      less_than_7_days: true
+      less_than_30_days: false
+      less_than_1_year: false
+    accountChangeDate: "2021-07-14T11:07:36.639Z"
+    accountRiskScore: 5
+    customerNameMatch: ""
+    customerPhoneNumber: ""
+    numberOfGoogleAccountsTiedToFPAN: 50
+    panSourceIndicator: ""
+    paymentMethodAttempts: 10
+    isCheckoutOnPlatformAuth: ""
+    platformAuthAssuranceLevel: ""
+    recommendationDecision: ""
+    numTransactionsInLastTweleveMonths: 12
+  merchantInfo:
+    merchantApplicationPackageName: ""
+    merchantWebDomain: ""
+
+############################ validating policy process payload with mandatory fields ########################
+policy_process_successfull_req:
+  challengeMethod: 'OTP'
+  authenticationMethod:
+    - 'string'
+  challengeStatus: 'PASSED'
+  contactPointChannel: 'string'
+  contactPointProvenance: 'string'
+  contactPointExternalVerificationSource: 'string'
+  contactPointStability: 'string'
+  authenticatorPayload:
+    authenticator: 'OTP'
+    payload:
+      - contactPointId: 'string'
+        maskedContactPoint: 'string'
+  contactPointVerification:
+    carrierConsent:
+      optInMethod: 'string'
+      optInId: 'string'
+      optInType: 'string'
+      optInTimestamp: 'string'
+      optInDuration: 'ONE'
+
+ecommerce_step2_successfull_req:
+  authenticatorPayload:
+    authenticator: 'OTP'
+    payload:
+      - contactPointId: '1'
+        maskedContactPoint: '(***)-***-**17'
+  contactPointVerification:
+    carrierConsent:
+      optInMethod: 'sms'
+      optInId: '58b69418-64f5-4c2f-8d73-9f0333d5e473'
+      optInType: 'whitelist'
+      optInTimestamp: '2021-09-07T10:26:25.141Z'
+      optInDuration: 'ONE'
+
+ecommerce_step3_successfull_req:
+  pinAuthenticationToken: 694406f0a42f140c91c36b592744c694b4198307
+  pin: GExv53m51VjfkcebEUKjDQ==
+
+ecommerce_step1_req:
+  transactionIdentifiers:
+    sharedID: "123456A"
+    vendorID: "GOOGLE"
+    profileReferenceID: "rd5GDeD6/Mn9JOBYuktgkLzXP3Lw5Yz1QlVnnTmJ39Ud1g7avvWkOz8U5sYDvtynsx/I3zCyZBuDGE8dKbQaoNY4m9v6NkwGsqjgYxSeJYA="
+    accountReferenceID: "test"
+    stage: "CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_ENROLLMENT"
+  eventName: "CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_ENROLLMENT"
+  riskSignals:
+    riskSignalData: "eyAiY29tbW9uUmlza1NpZ25hbHMiOiB7ICJlbnZpcm9ubWVudGFsRGV0YWlscyI6IHsgImlwQWRkcmVzcyI6ICIxNzIuNTguMjMxLjI1NSIsICJjaGFubmVsU3VyZmFjZSI6ICJDSFJPTUVfREVTS1RPUCIsICJjaGFubmVsVHlwZUZvckVucm9sbG1lbnQiOiAiUFVTSF9QUk9WSVNJT05JTkciIH0sICJwaHlzaWNhbERldGFpbHMiOiB7ICJkZXZpY2VJZCI6ICIwYmJhN2YxZTRhODNhYjRmZGQ3N2Y1ZWJkNmJkNDQ5NTkwNWYzNmRiOWM3YzZlNjM4ODMzNzIxZTE4MWJkODM3YWQxNzczNTVhNjkxZDVmZjMyOGFkMWQ1YTM0N2E0MTgyM2YyNDAxMjlkMGVlYjMyNTE3ZWYyOGMyNTIyMDk5MiIsICJkZXZpY2VQaG9uZU51bWJlciI6ICIxMjM0NSIsICJkZXZpY2VHZW9Mb2NhdGlvbiI6ICIxNU4zMFciLCAiZGV2aWNlUmlza1Njb3JlIjogIjUiLCAiY2hyb21lQnJvd3NlcklkIjogIkZEU0ZEU0ZEU0ZTREZEUzQzNDM0MzQzIiwgImRldmljZU9wZXJhdGluZ1N5c3RlbVZlcnNpb24iOiI1IiwgImRldmljZVR5cGUiOiAiUGhvbmUiLCAiZGV2aWNlTW9kZWwiOiAiR29vZ2xlIFBpeGVsIDQiLCAiaXNEZXZpY2VMb3N0TW9kZSI6ICJZRVMiIH0gfSwgImN1c3RvbWVyUmlza0RldGFpbHMiOiB7ICJoYXNoZWRFbWFpbEFkZHJlc3MiOiAiYTM0ZmU4OTYwMGJiODEzODcxYzA0OWVkNTBkMzIzODExY2IzZjZmNGRhZWVhODgzNzIwMTRjOTBlMzUwZTY4OCIsICJhY2NvdW50VG9EZXZpY2VCb25kaW5nQWdlIjogIjEwIiwgImFjY291bnRUb0RldmljZVBhaXJpbmdJZCI6ICIxMjMiLCAiYWNjb3VudEFjdGl2aXR5Ijp7ICJlbnJvbGxtZW50X3RpbWVzdGFtcCI6ICJZWVlZLU1NLUREIiwgImxlc3NfdGhhbl8xX2RheSI6IHRydWUsICJsZXNzX3RoYW5fN19kYXlzIjogZmFsc2UsICJsZXNzX3RoYW5fMzBfZGF5cyI6ZmFsc2UsICJsZXNzX3RoYW5fMV95ZWFyIjogZmFsc2UgfSwgImFjY291bnRBZ2UiOiAiNSIsICJhY2NvdW50Q2hhbmdlRGF0ZSI6ICJZWVlZLU1NLUREIiwgImFjY291bnRSaXNrU2NvcmUiOiAiNSIsICJjdXN0b21lck5hbWVNYXRjaCI6ICJZRVMiLCAiY3VzdG9tZXJQaG9uZU51bWJlciI6ICIxMjM0NTYiLCAibnVtYmVyT2ZHb29nbGVBY2NvdW50c1RpZWRUb0ZQQU4iOiAiNCIsICJwYW5Tb3VyY2VJbmRpY2F0b3IiOiAiV2ViIiwgInBheW1lbnRNZXRob2RBdHRlbXB0cyI6ICIzIiwgImlzQ2hlY2tvdXRPblBsYXRmb3JtQXV0aCI6ICJZRVMiLCAicGxhdGZvcm1BdXRoQXNzdXJhbmNlTGV2ZWwiOiIxIiwgInJlY29tbWVuZGF0aW9uRGVjaXNpb24iOiAiZ3JlZW4iLCAibnVtVHJhbnNhY3Rpb25zSW5MYXN0VHdlbGV2ZU1vbnRocyI6ICIyIiB9LCAibWVyY2hhbnRJbmZvIjogeyAibWVyY2hhbnRBcHBsaWNhdGlvblBhY2thZ2VOYW1lIjogInNhbXBsZU1lcmNoYW50QXBwbGljYXRpb25QYWNrYWdlIiwgIm1lcmNoYW50V2ViRG9tYWluIjogInNhbXBsZU1lcmNoYW50V2ViRG9tYWluIiB9IH0="
+    riskSignalSource: "GOOGLE"
+  commonRiskSignals:
+    environmentalDetails:
+      ipAddress: "127.1.1.1"
+      channelSurface: "CHROME_DESKTOP"
+      channelTypeForEnrollment: "PUSH_PROVISIONING"
+  physicalDetails:
+    deviceId: "MAC"
+    devicePhoneNumber: ""
+    deviceGeoLocation: ""
+    deviceRiskScore: 2
+    deviceAccountAge: "LESS_THAN_ONE_DAY"
+    chromeBrowserId: ""
+    deviceOperatingSystemVersion: ""
+    deviceType: ""
+    deviceModel: ""
+    isDeviceLostMode: ""
+  customerRiskDetails:
+    hashedEmailAddress: ""
+    accountToDeviceBondingAge: 9999
+    accountToDevicePairingId: ""
+    accountActivity:
+      enrollment_timestamp: "2021-07-14T11:07:36.639Z"
+      less_than_1_day: false
+      less_than_7_days: true
+      less_than_30_days: false
+      less_than_1_year: false
+    accountChangeDate: "2021-07-14T11:07:36.639Z"
+    accountRiskScore: 5
+    customerNameMatch: ""
+    customerPhoneNumber: ""
+    numberOfGoogleAccountsTiedToFPAN: 50
+    panSourceIndicator: ""
+    paymentMethodAttempts: 10
+    isCheckoutOnPlatformAuth: ""
+    platformAuthAssuranceLevel: ""
+    recommendationDecision: ""
+    numTransactionsInLastTweleveMonths: 12
+  merchantInfo:
+    merchantApplicationPackageName: ""
+    merchantWebDomain: ""
+
+ecommerce_risk_assesment_challenge_low:
+  transactionIdentifiers:
+    sharedID: 123456A
+    vendorID: GOOGLE
+    profileReferenceID: "rd5GDeD6/Mn9JOBYuktgkLzXP3Lw5Yz1QlVnnTmJ39Wgla4uX2Il1gu79NSRKX8jhGsrbvh7ScwhTnJt32CmLxEI/9kebNcqMi2vtHfmG1Q="
+    accountReferenceID: TEST
+    stage: CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_ENROLLMENT
+  eventName: CARD.SERVICING.WEB.EASE.CHROME_AUTOFILL_ENROLLMENT
+  riskSignals:
+    riskSignalData: eyAiY29tbW9uUmlza1NpZ25hbHMiOiB7ICJlbnZpcm9ubWVudGFsRGV0YWlscyI6IHsgImlwQWRkcmVzcyI6ICIxNzIuNTguMjMxLjI1NSIsICJjaGFubmVsU3VyZmFjZSI6ICJDSFJPTUVfREVTS1RPUCIsICJjaGFubmVsVHlwZUZvckVucm9sbG1lbnQiOiAiUFVTSF9QUk9WSVNJT05JTkciIH0sICJwaHlzaWNhbERldGFpbHMiOiB7ICJkZXZpY2VJZCI6ICIwYmJhN2YxZTRhODNhYjRmZGQ3N2Y1ZWJkNmJkNDQ5NTkwNWYzNmRiOWM3YzZlNjM4ODMzNzIxZTE4MWJkODM3YWQxNzczNTVhNjkxZDVmZjMyOGFkMWQ1YTM0N2E0MTgyM2YyNDAxMjlkMGVlYjMyNTE3ZWYyOGMyNTIyMDk5MiIsICJkZXZpY2VQaG9uZU51bWJlciI6ICIxMjM0NSIsICJkZXZpY2VHZW9Mb2NhdGlvbiI6ICIxNU4zMFciLCAiZGV2aWNlUmlza1Njb3JlIjogIjUiLCAiY2hyb21lQnJvd3NlcklkIjogIkZEU0ZEU0ZEU0ZTREZEUzQzNDM0MzQzIiwgImRldmljZU9wZXJhdGluZ1N5c3RlbVZlcnNpb24iOiI1IiwgImRldmljZVR5cGUiOiAiUGhvbmUiLCAiZGV2aWNlTW9kZWwiOiAiR29vZ2xlIFBpeGVsIDQiLCAiaXNEZXZpY2VMb3N0TW9kZSI6ICJZRVMiIH0gfSwgImN1c3RvbWVyUmlza0RldGFpbHMiOiB7ICJoYXNoZWRFbWFpbEFkZHJlc3MiOiAiYTM0ZmU4OTYwMGJiODEzODcxYzA0OWVkNTBkMzIzODExY2IzZjZmNGRhZWVhODgzNzIwMTRjOTBlMzUwZTY4OCIsICJhY2NvdW50VG9EZXZpY2VCb25kaW5nQWdlIjogIjEwIiwgImFjY291bnRUb0RldmljZVBhaXJpbmdJZCI6ICIxMjMiLCAiYWNjb3VudEFjdGl2aXR5Ijp7ICJlbnJvbGxtZW50X3RpbWVzdGFtcCI6ICJZWVlZLU1NLUREIiwgImxlc3NfdGhhbl8xX2RheSI6IHRydWUsICJsZXNzX3RoYW5fN19kYXlzIjogZmFsc2UsICJsZXNzX3RoYW5fMzBfZGF5cyI6ZmFsc2UsICJsZXNzX3RoYW5fMV95ZWFyIjogZmFsc2UgfSwgImFjY291bnRBZ2UiOiAiNSIsICJhY2NvdW50Q2hhbmdlRGF0ZSI6ICJZWVlZLU1NLUREIiwgImFjY291bnRSaXNrU2NvcmUiOiAiNSIsICJjdXN0b21lck5hbWVNYXRjaCI6ICJZRVMiLCAiY3VzdG9tZXJQaG9uZU51bWJlciI6ICIxMjM0NTYiLCAibnVtYmVyT2ZHb29nbGVBY2NvdW50c1RpZWRUb0ZQQU4iOiAiNCIsICJwYW5Tb3VyY2VJbmRpY2F0b3IiOiAiV2ViIiwgInBheW1lbnRNZXRob2RBdHRlbXB0cyI6ICIzIiwgImlzQ2hlY2tvdXRPblBsYXRmb3JtQXV0aCI6ICJZRVMiLCAicGxhdGZvcm1BdXRoQXNzdXJhbmNlTGV2ZWwiOiIxIiwgInJlY29tbWVuZGF0aW9uRGVjaXNpb24iOiAiZ3JlZW4iLCAibnVtVHJhbnNhY3Rpb25zSW5MYXN0VHdlbGV2ZU1vbnRocyI6ICIyIiB9LCAibWVyY2hhbnRJbmZvIjogeyAibWVyY2hhbnRBcHBsaWNhdGlvblBhY2thZ2VOYW1lIjogInNhbXBsZU1lcmNoYW50QXBwbGljYXRpb25QYWNrYWdlIiwgIm1lcmNoYW50V2ViRG9tYWluIjogInNhbXBsZU1lcmNoYW50V2ViRG9tYWluIiB9IH0=
+    riskSignalSource: GOOGLE

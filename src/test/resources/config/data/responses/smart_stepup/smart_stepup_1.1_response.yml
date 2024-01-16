@@ -1,0 +1,191 @@
+################################################## ANCHORS ##################################################
+policyResponseBodyChallenge: &policyResponseBodyChallenge
+  riskAssessmentStatus: 'CHALLENGE'
+  transactionInfo: 'hUbngSHD/9bVho26cXHKH1BGBVhoxnPm6gGzWYuFJ7rY/lYAsWTEhd6GaKqAfGDIRI5Q0LLco1WGzPniRpiHMHJ3+RwG02yQObPR/snnyknkmR58G3mEuIqz8dfQEphKjEJNEs5VVxgGFdQYb52O61OHakTHIXjZ3AswoVibWDDaBqiZkO8pjVo/P7f4Bh4WV+93Pwa7wAY0v0edfwFJPzzswIMxWau+6I8K3KPi3seNxALHcYGwoYpYmIZCEwUvKwW6ZOApVrbpRIe1I3s7Q2AEbm82BjUNSUlIJc8FE3NiTdHlHXeIquxqQmTbMmwBGffpvd+0F8Q11ozUGOLZTFDE7qSlFnKn6/E4pz7fEXZcJ32JUCAw351wRQe1lCDHXhCevNwJ8qDXhQFgmJXFpSnzrUwnjGqk+UVehpfp3lTgsxFlN0PtRj2u6+ic9W7+ZIWf1pb58S8llU2BZqvSmAuhhozJcQNr7KX+1HsI2bljPtI0Mvil0v6hFoTd8/CXbqR1IPCQILO4pRMxQlvqVs6Nbio40wSMxzm9QyLNdLQQON+zrAbCn5uRmxZndLiRX29U8zJrM+TebQTS+OKUCbv3ticn5moXWX4g2yD7YUleRlk5TfKWTxZunZblltMZTJ2ejAxc2zm0NDBNekDYkDK97yWaRm/pERlLR5C/lsGNucPAYwihxFSIO5WJQ1zeDVAf/gkb0ZBc2d6bovZGS8t3WXU9sxbj6+8z0pdiJWdV97+pFun/O7QYXeiO3YQgSkBvyedh1e92XkysRNRDFg=='
+
+policyResponseBodyNull: &policyResponseBodyNull null
+
+policyStatusInvalid: &policyStatusInvalid 'INVALID'
+
+policyStatusSuccess: &policyStatusSuccess 'SUCCESS'
+
+schemaValidationFailureErrorInformation: &schemaValidationFailureErrorInformation
+  id: '0'
+  text: 'Schema Validation Failure'
+  developerText: ''
+
+################################################# RESPONSES #################################################
+smart_stepup_missing_authToken_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.auth-token: is missing but it is required]'
+
+smart_stepup_missing_domain_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.domain: is missing but it is required]'
+
+smart_stepup_missing_eventName_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.eventName: is missing but it is required]'
+
+smart_stepup_missing_referenceId_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.referenceId: is missing but it is required]'
+
+smart_stepup_missing_referenceIdType_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.referenceIdType: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_fields_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web: is missing but it is required, $.riskAssessment.mobile: is missing but it is required, $.riskAssessment.partnerSignals: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_fields_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.deviceFingerPrint: is missing but it is required, $.riskAssessment.web.userCookie: is missing but it is required, $.riskAssessment.web.sessionId: is missing but it is required, $.riskAssessment.web.browserFingerprint: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_userCookie_resp1:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.userCookie: is missing but it is required, $.riskAssessment.web.browserFingerprint: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_userCookie_resp2:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.deviceFingerPrint: is missing but it is required, $.riskAssessment.web.userCookie: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_sessionId_resp1:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.sessionId: is missing but it is required, $.riskAssessment.web.browserFingerprint: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_sessionId_resp2:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.deviceFingerPrint: is missing but it is required, $.riskAssessment.web.sessionId: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_deviceFingerPrint_browserFingerprint_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.deviceFingerPrint: is missing but it is required, $.riskAssessment.web.browserFingerprint: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_mobile_fields_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.mobile.mobileSdkInfo: is missing but it is required, $.riskAssessment.mobile.deviceIdentifier: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_mobile_mobileSdkInfo_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.mobile.mobileSdkInfo: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_mobile_deviceIdentifier_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.mobile.deviceIdentifier: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_partnerSignals_fields_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.partnerSignals.riskSignalData: is missing but it is required, $.riskAssessment.partnerSignals.riskSignalSource: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_partnerSignals_riskSignalData_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.partnerSignals.riskSignalData: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_partnerSignals_riskSignalSource_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.partnerSignals.riskSignalSource: is missing but it is required]'
+
+smart_stepup_unsupported_domain_value_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.domain: does not have a value in the enumeration [COF-CONSUMER, COF-PARTNERSHIP, COF-COMMERCIAL]]'
+
+smart_stepup_unsupported_eventName_value_resp:
+  policyResponseBody: null
+  errorInformation:
+    id: '202020'
+    text: "Downstream API error"
+    developerText: "The risk domain policy \"risk_assessment_smart_stepup\" version \"2.0\" (post method) returned the following error \"{errorInfo={id=200002, text=Unexpected error, developerText=java.lang.IllegalArgumentException: [$.payload.eventName: does not have a valid event]}, policyStatus=FAILURE, results=null}\""
+  policyStatus: FAILURE
+
+smart_stepup_unsupported_partnerName_value_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.partnerName: does not have a value in the enumeration [Google Pay, Apple Pay, Paypal, Stripe]]'
+
+smart_stepup_unsupported_referenceIdType_value_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.referenceIdType: does not have a value in the enumeration [SSOID, Account reference ID, Profile reference ID]]'
+
+smart_stepup_unsupported_subDomain_value_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.subDomain: does not have a value in the enumeration [CARD, BANK, DIRECT, COBRANDED, PRIVATE-LABEL, PRIVATE-LABEL-COMMERCIAL]]'
+
+smart_stepup_challenge_success_resp:
+  policyResponseBody:
+    riskAssessmentStatus: CHALLENGE
+    transactionInfo: "hUbngSHD/9bVho26cXHKH1BGBVhoxnPm6gGzWYuFJ7rY/lYAsWTEhd6GaKqAfGDIRI5Q0LLco1WGzPniRpiHMHJ3+RwG02yQObPR/snnykmcQqAbUgMOB4v/aaHLdxwZ2jDj/LTftAp+JaqoTrnTNj23YJgFC3/zqackpnAPnuqaVgvuMGK68edY2Y4F/e0szDPXuL7s/9iM+cfpChVMd00tJYjCtABanVIpLgF0BCnEOoZeYr9BnLYFs+gNEht8mwNEAhoS0wxkwt7MiQOvdhRbK6ESmDDVp2MRBHywIt1atuV1RnMSG9DJMyzJ+OCHqbNew6iSH8EuPzLeiV/79W9GYSS/SS7gMZbri0lTRflj4Kf3zxDOa/+B6nV2ufjfNLnIiXZhjVMjsnumYJNgzp2JNjQzddk1z6D0wR0zuUWuIs9fzHNDuAsi6NVIS7QijJ/FEPp1u4e64N7t9n+wK73AbdJ7+EYKeThhH3h9DQ8/76PJUmrGgSYCwXJtQ3Gbn0rjp1iuQHyQ2a04QbeDQX2RyCJpLGdKBG6O4JV72YbmLyUTWcxZxuSiOYMqmanQkmcw3tINOj6lClDkHWhwFNr5tLQSG153mhxDKuBmbjLZeABQqd9tV60dokj+QfcZMpTJSHGV2lleCFbkPHlqU4kRTpVN270uWy345jjWckUBErCt5wrfbPNiOr4/9T4HF+Twk1Csty+98DN5Djmdq/U5Q9fEE6qFmodkfoWXOIrD7a2f4xh0JndcEPw2WmDdqXFRDle7IxeEl72EcImAKQ=="
+  policyStatus: SUCCESS

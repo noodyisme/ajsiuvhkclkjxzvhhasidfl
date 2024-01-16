@@ -1,0 +1,103 @@
+name: masterbuilder-2-idbcore
+asv: ASVIDENTITYPOLICYSERVICES
+ba: BAIDENTITYPOLICYSERVICES
+bap: IDENTITY BUILDER POLICY CORE
+component: IDENTITY BUILDER POLICY CORE
+owner: platformers@capitalone.com
+component_tests:
+  - dev-e1:
+      testSets:
+        - resourcePath: src/test/resources/features/policy_core_regression_policies
+          testSetName: dev-e1
+          testType: functional
+          testSetDisabled: false
+          testAgentType: restassured
+          stepDefinitionPath: .
+          gluePackage: com.intuit.karate
+          tags: ['tagNotUsedByProjectButReqBySevenPS']
+          runWith: mvn-test
+          pushButtonMigration: true
+          useCucumber: true
+          versionSupport:
+            javaVersion: 17
+          args:
+            test: Karate
+            karate.env: dev
+            karate.options: classpath:features/policy_core_regression_policies
+  - qa-b-e1:
+      testSets:
+        - resourcePath: src/test/resources/features/policy_core_regression_policies
+          testSetName: qa-b-e1
+          testType: functional
+          testSetDisabled: false
+          testAgentType: restassured
+          stepDefinitionPath: .
+          gluePackage: com.intuit.karate
+          tags: ['tagNotUsedByProjectButReqBySevenPS']
+          runWith: mvn-test
+          pushButtonMigration: true
+          useCucumber: true
+          versionSupport:
+            javaVersion: 17
+          args:
+            test: Karate
+            karate.env: qa-b-e1
+            karate.options: classpath:features/policy_core_regression_policies
+            cucumber.options: --tags ~@ignore
+  - qa-b-w2:
+      testSets:
+        - resourcePath: src/test/resources/features/policy_core_regression_policies
+          testSetName: qa-b-w2
+          testType: functional
+          testSetDisabled: false
+          testAgentType: restassured
+          stepDefinitionPath: .
+          gluePackage: com.intuit.karate
+          tags: ['tagNotUsedByProjectButReqBySevenPS']
+          runWith: mvn-test
+          pushButtonMigration: true
+          useCucumber: true
+          versionSupport:
+            javaVersion: 17
+          args:
+            test: Karate
+            karate.env: qa-b-w2
+            karate.options: classpath:features/policy_core_regression_policies
+  - qa-g-e1:
+      testSets:
+        - resourcePath: src/test/resources/features/policy_core_regression_policies
+          testSetName: qa-g-e1
+          testType: functional
+          testSetDisabled: false
+          testAgentType: restassured
+          stepDefinitionPath: .
+          gluePackage: com.intuit.karate
+          tags: ['tagNotUsedByProjectButReqBySevenPS']
+          runWith: mvn-test
+          pushButtonMigration: true
+          useCucumber: true
+          versionSupport:
+            javaVersion: 17
+          args:
+            test: Karate
+            karate.env: qa-g-e1
+            karate.options: classpath:features/policy_core_regression_policies
+  - qa-g-w2:
+      testSets:
+        - resourcePath: src/test/resources/features/policy_core_regression_policies
+          testSetName: qa-g-w2
+          testType: functional
+          testSetDisabled: false
+          testAgentType: restassured
+          stepDefinitionPath: .
+          gluePackage: com.intuit.karate
+          tags: ['tagNotUsedByProjectButReqBySevenPS']
+          runWith: mvn-test
+          pushButtonMigration: true
+          useCucumber: true
+          versionSupport:
+            javaVersion: 17
+          args:
+            test: Karate
+            karate.env: qa-g-w2
+            karate.options: classpath:features/policy_core_regression_policies

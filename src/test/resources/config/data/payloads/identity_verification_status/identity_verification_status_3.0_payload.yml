@@ -1,0 +1,140 @@
+################################################## ANCHORS ##################################################
+businessUnitCardFraud: &businessUnitCardFraud 'CARDFRAUD'
+businessUnitWMT: &businessUnitWMT 'WMT'
+businessUnitDefaultBu: &businessUnitDefaultBu 'DEFAULTBU'
+businessUnit360: &businessUnit360 '360'
+authenticationTypeGovernmentId: &authenticationTypeGovernmentId 'GovernmentId'
+authenticationTypeTapToVerify: &authenticationTypeTapToVerify 'TapToVerify'
+applicationId: &applicationId '10000026073835'
+referenceId: &referenceId '1'
+verificationStatus: &verificationStatus 'abc123'
+documentStatus: &documentStatus 'abc123'
+
+################################################# PAYLOADS ##################################################
+identity_verification_status_missing_businessUnit_req:
+  authenticationType: *authenticationTypeGovernmentId
+  applicationId: *applicationId
+  referenceId: *referenceId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_missing_authenticationType_req:
+  businessUnit: *businessUnitCardFraud
+  applicationId: *applicationId
+  referenceId: *referenceId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_missing_applicationId_req:
+  businessUnit: *businessUnitCardFraud
+  authenticationType: *authenticationTypeGovernmentId
+  referenceId: *referenceId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_missing_referenceId_req:
+  businessUnit: *businessUnitCardFraud
+  authenticationType: *authenticationTypeGovernmentId
+  applicationId: *applicationId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_missing_verificationStatus_and_documentStatus_req:
+  businessUnit: *businessUnitCardFraud
+  authenticationType: *authenticationTypeGovernmentId
+  applicationId: *applicationId
+  referenceId: *referenceId
+
+identity_verification_status_cardFraud_governmentId_verificationStatus_req:
+  businessUnit: *businessUnitCardFraud
+  authenticationType: *authenticationTypeGovernmentId
+  applicationId: *applicationId
+  referenceId: *referenceId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_cardFraud_governmentId_documentStatus_req:
+  businessUnit: *businessUnitCardFraud
+  authenticationType: *authenticationTypeGovernmentId
+  applicationId: *applicationId
+  referenceId: *referenceId
+  documentStatus: *documentStatus
+
+identity_verification_status_cardFraud_tapToVerify_verificationStatus_req:
+  businessUnit: *businessUnitCardFraud
+  authenticationType: *authenticationTypeTapToVerify
+  applicationId: *applicationId
+  referenceId: *referenceId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_cardFraud_tapToVerify_documentStatus_req:
+  businessUnit: *businessUnitCardFraud
+  authenticationType: *authenticationTypeTapToVerify
+  applicationId: *applicationId
+  referenceId: *referenceId
+  documentStatus: *documentStatus
+
+identity_verification_status_wmt_governmentId_verificationStatus_req:
+  businessUnit: *businessUnitWMT
+  authenticationType: *authenticationTypeGovernmentId
+  applicationId: *applicationId
+  referenceId: *referenceId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_wmt_governmentId_documentStatus_req:
+  businessUnit: *businessUnitWMT
+  authenticationType: *authenticationTypeGovernmentId
+  applicationId: *applicationId
+  referenceId: *referenceId
+  documentStatus: *documentStatus
+
+identity_verification_status_wmt_tapToVerify_verificationStatus_req:
+  businessUnit: *businessUnitWMT
+  authenticationType: *authenticationTypeTapToVerify
+  applicationId: *applicationId
+  referenceId: *referenceId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_wmt_tapToVerify_documentStatus_req:
+  businessUnit: *businessUnitWMT
+  authenticationType: *authenticationTypeTapToVerify
+  applicationId: *applicationId
+  referenceId: *referenceId
+  documentStatus: *documentStatus
+
+identity_verification_status_defaultBu_governmentId_verificationStatus_req:
+  businessUnit: *businessUnitDefaultBu
+  authenticationType: *authenticationTypeGovernmentId
+  applicationId: *applicationId
+  referenceId: *referenceId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_defaultBu_governmentId_documentStatus_req:
+  businessUnit: *businessUnitDefaultBu
+  authenticationType: *authenticationTypeGovernmentId
+  applicationId: *applicationId
+  referenceId: *referenceId
+  documentStatus: *documentStatus
+
+identity_verification_status_defaultBu_tapToVerify_verificationStatus_req:
+  businessUnit: *businessUnitDefaultBu
+  authenticationType: *authenticationTypeTapToVerify
+  applicationId: *applicationId
+  referenceId: *referenceId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_defaultBu_tapToVerify_documentStatus_req:
+  businessUnit: *businessUnitDefaultBu
+  authenticationType: *authenticationTypeTapToVerify
+  applicationId: *applicationId
+  referenceId: *referenceId
+  documentStatus: *documentStatus
+
+identity_verification_status_360_tapToVerify_verificationStatus_req:
+  businessUnit: *businessUnit360
+  authenticationType: *authenticationTypeTapToVerify
+  applicationId: *applicationId
+  referenceId: *referenceId
+  verificationStatus: *verificationStatus
+
+identity_verification_status_360_tapToVerify_documentStatus_req:
+  businessUnit: *businessUnit360
+  authenticationType: *authenticationTypeTapToVerify
+  applicationId: *applicationId
+  referenceId: *referenceId
+  documentStatus: *documentStatus

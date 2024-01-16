@@ -1,0 +1,122 @@
+################################################## ANCHORS ##################################################
+schemaValidationFailureError: &schemaValidationFailureError
+  policyResponseBody: null
+  policyStatus: 'INVALID'
+  errorInformation: &schemaValidationFailureErrorInformation
+    id: '0'
+    text: 'Schema Validation Failure'
+    developerText: ''
+
+################################################## RESPONSES ##################################################
+t2v_deeplink_missing_applicationId_resp:
+  <<: *schemaValidationFailureError
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.applicationId: is missing but it is required]'
+
+t2v_deeplink_missing_businessUnit_resp:
+  <<: *schemaValidationFailureError
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.businessUnit: is missing but it is required]'
+
+t2v_deeplink_missing_model_resp:
+  <<: *schemaValidationFailureError
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.model: is missing but it is required]'
+
+t2v_deeplink_missing_copyText_resp:
+  <<: *schemaValidationFailureError
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.copyText: is missing but it is required]'
+
+t2v_deeplink_missing_linkExpiryTimestamp_resp:
+  <<: *schemaValidationFailureError
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.linkExpiryTimestamp: is missing but it is required]'
+
+t2v_deeplink_missing_keepAliveTimestamp_resp:
+  <<: *schemaValidationFailureError
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.keepAliveTimestamp: is missing but it is required]'
+
+t2v_deeplink_missing_notificationText_resp:
+  <<: *schemaValidationFailureError
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.notificationText: is missing but it is required]'
+
+t2v_deeplink_missing_notificationChannel_resp:
+  <<: *schemaValidationFailureError
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.notificationChannel: is missing but it is required]'
+
+t2v_deeplink_missing_phoneNumberItems_resp:
+  <<: *schemaValidationFailureError
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.phoneNumberItems: is missing but it is required]'
+
+t2v_deeplink_missing_redirectionDetails_resp:
+  <<: *schemaValidationFailureError
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.redirectionDetails: is missing but it is required]'
+
+default_step1_success_resp:
+  policyStatus: 'SUCCESS'
+  policyResponseBody:
+    verificationUrl: '#string'
+    verificationId: '#string'
+  metadata:
+    policyProcessId: '#string'
+    policyName: '#string'
+    policyVersion: '#string'
+    stepExpirationTimestamp: '#string'
+    availableNextSteps:
+      - 'step2'
+    stepsCompleted:
+      - 'start'
+
+cookie_and_success_url_resp:
+  policyStatus: 'SUCCESS'
+  policyResponseBody:
+    redirectUrl: 'successURLValue'
+    cookie:
+      name: 'mfa'
+      value: 'cookieValue'
+      maxAge: '120'
+      domain: '.capitalone.com'
+      path: '/'
+      secure: 'true'
+      httpOnly: 'true'
+
+cookie_and_failure_url_resp:
+  policyStatus: 'SUCCESS'
+  policyResponseBody:
+    redirectUrl: 'failureURLValue'
+    cookie:
+      name: 'mfa'
+      value: 'cookieValue'
+      maxAge: '120'
+      domain: '.capitalone.com'
+      path: '/'
+      secure: 'true'
+      httpOnly: 'true'
+
+no_cookie_and_success_url_resp:
+  policyStatus: 'SUCCESS'
+  policyResponseBody:
+    redirectUrl: 'successURLValue'
+
+no_cookie_and_failure_url_resp:
+  policyStatus: 'SUCCESS'
+  policyResponseBody:
+    redirectUrl: 'failureURLValue'
+
+dcrp_ol_set_cookie_response_header_value: 'mfa=cookieValue; Version=0;Comment=;Domain=.capitalone.com;Path=/;Max-Age=120;Secure;HttpOnly'

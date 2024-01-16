@@ -1,0 +1,84 @@
+mb_2_0_regression_redis_step1_resp:
+  policyResponseBody:
+    firstName: 'Rich'
+  policyStatus: 'SUCCESS'
+  metadata:
+    policyProcessId: '#string'
+    policyName: 'mb_2_0_regression_redis'
+    policyVersion: '1.0'
+    stepExpirationTimestamp: '#regex \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,6}){0,1}'
+    availableNextSteps: [
+      'step2'
+      ]
+    stepsCompleted: [
+      'start'
+      ]
+
+mb_2_0_regression_redis_step2_resp:
+  policyResponseBody:
+    currentStep: 'step 2'
+    cacheContents:
+      firstName: 'Rich'
+      lastName: 'Fairbank'
+  policyStatus: 'SUCCESS'
+  metadata:
+    policyProcessId: '#string'
+    policyName: 'mb_2_0_regression_redis'
+    policyVersion: '1.0'
+    stepExpirationTimestamp: '#regex \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,6}){0,1}'
+    availableNextSteps: [
+          'step3'
+      ]
+    stepsCompleted: [
+          'start',
+          'step2'
+      ]
+
+mb_2_0_regression_redis_step2_invalid_id_resp:
+  id: '200001'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: []
+  developerText: 'Requested resource not found'
+  errorDetails:
+    - id: '200001'
+      text: null
+      developerText: 'Process resource id abc123 missing or expired'
+
+mb_2_0_regression_redis_step2_already_completed_resp:
+  id: '200001'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText: 'Requested resource not found'
+  errorDetails:
+    - id: '200001'
+      text: null
+      developerText: 'Step step2 is not available in [step3]'
+
+mb_2_0_regression_redis_step3_resp:
+  policyResponseBody:
+    currentStep: 'step 3'
+    cacheContents:
+      firstName: 'Rich'
+      lastName: 'Fairbank'
+      The: 'End'
+  policyStatus: 'SUCCESS'
+
+mb_2_0_regression_redis_step3_unavailable_resp:
+  id: '200001'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText: 'Requested resource not found'
+  errorDetails:
+      - id: '200001'
+        text: null
+        developerText: 'Step step3 is not available in [step2]'
+
+mb_2_0_regression_redis_step3_policy_already_finished_resp:
+  id: '200001'
+  text: 'Our system experienced an error. Please try again later.'
+  actions: [ ]
+  developerText: 'Requested resource not found'
+  errorDetails:
+    - id: '200001'
+      text: null
+      developerText: '#regex Process resource id \S{36} missing or expired'

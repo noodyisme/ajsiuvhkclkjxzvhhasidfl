@@ -1,0 +1,124 @@
+################################################## ANCHORS ##################################################
+policyStatusInvalid: &policyStatusInvalid 'INVALID'
+
+policyStatusFailure: &policyStatusFailure 'FAILURE'
+
+concernAlreadyClosedErrorInformation: &concernAlreadyClosedErrorInformation
+  id: '202020'
+  text: 'Downstream API error'
+  developerText: 'The verification domain policy "verification_status_update" version "1.0" (post method) returned the following error "{errorInfo={id=202020, text=Downstream API error, developerText=Downstream API "resolveFraudConcerns" returned 409: body="{"type":"errorResponse","id":"200002","text":"An error has occurred ","errorDetails":[{"type":"errorDetail","id":"200002","developerText":"This concern has already been closed"}],"actions":[]}"}, policyStatus=FAILURE, results=null}"'
+
+noApplicationsFoundErrorInformation: &noApplicationsFoundErrorInformation
+  id: '202020'
+  text: 'Downstream API error'
+  developerText: 'The verification domain policy "verification_status_update" version "1.0" (post method) returned the following error "{errorInfo={id=202020, text=Downstream API error, developerText=Downstream API "validateAuthentication" returned 404: body="{"type":"errorResponse","id":"210005","text":"No applications found for the provided application id.","developerText":"No applications found for the provided application id.","actions":["tel:1-866-750-0873"]}"}, policyStatus=FAILURE, results=null}"'
+
+schemaValidationFailureErrorInformation: &schemaValidationFailureErrorInformation
+  id: '0'
+  text: 'Schema Validation Failure'
+
+################################################# RESPONSES #################################################
+identity_verification_status_missing_businessUnit_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.businessUnit: is missing but it is required]'
+
+identity_verification_status_missing_authenticationType_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.authenticationType: is missing but it is required]'
+
+identity_verification_status_missing_applicationId_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.applicationId: is missing but it is required]'
+
+identity_verification_status_missing_referenceId_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.referenceId: is missing but it is required]'
+
+identity_verification_status_missing_verificationStatus_and_documentStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.verificationStatus: is missing but it is required, $.documentStatus: is missing but it is required]'
+
+identity_verification_status_cardFraud_governmentId_verificationStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_cardFraud_governmentId_documentStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_cardFraud_tapToVerify_verificationStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_cardFraud_tapToVerify_documentStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_wmt_governmentId_verificationStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_wmt_governmentId_documentStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_wmt_tapToVerify_verificationStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_wmt_tapToVerify_documentStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_defaultBu_governmentId_verificationStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_defaultBu_governmentId_documentStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_defaultBu_tapToVerify_verificationStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_defaultBu_tapToVerify_documentStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *concernAlreadyClosedErrorInformation
+
+identity_verification_status_360_tapToVerify_verificationStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *noApplicationsFoundErrorInformation
+
+identity_verification_status_360_tapToVerify_documentStatus_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusFailure
+  errorInformation: *noApplicationsFoundErrorInformation

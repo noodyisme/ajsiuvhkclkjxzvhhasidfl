@@ -1,0 +1,12 @@
+google_autofill_response:
+  policyResponseBody:
+    riskAssessmentStatus: 'ALLOW'
+  policyStatus: 'SUCCESS'
+
+google_autofill_missing_profilereferenceid_resp:
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: '[$.transactionIdentifiers.profileReferenceID: is missing but it is required]'
+  policyResponseBody: null
+  policyStatus: 'INVALID'

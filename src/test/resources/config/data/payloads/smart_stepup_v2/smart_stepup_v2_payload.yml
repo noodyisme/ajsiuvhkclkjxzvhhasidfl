@@ -1,0 +1,140 @@
+############################ validating smart stepup v 2.0 with mandatory fields ########################
+smart_stepup_v2_request:
+  partnerName: "Apple Pay"
+  referenceId: "string"
+  referenceIdType: "Account reference ID"
+  auth-token: "string"
+  eventName: "Card/Ease/Web/VIRTUAL_CARD"
+  riskAssessment:
+    mobile:
+      phoneNumber: "string"
+      mobileSdkInfo: "string"
+      deviceSdkInfo: "string"
+      simId: "string"
+      deviceIdentifier: "string"
+    web:
+      deviceFingerPrint: "string"
+      browserFingerprint: "string"
+      userCookie: "string"
+      sessionId: "string"
+    partnerSignals:
+      riskSignalData: "string"
+      riskSignalSource: "string"
+    authTransactionId: "string"
+
+############################ validating smart stepup v 2.0 with challenge response from risk domain ########################
+
+smart_stepup_v2_request_challenge:
+  partnerName: "Apple Pay"
+  referenceId: "CHALLENGE"
+  referenceIdType: "Account reference ID"
+  auth-token: "string"
+  eventName: "Card/Ease/Web/VIRTUAL_CARD"
+  riskAssessment:
+    mobile:
+      phoneNumber: "string"
+      mobileSdkInfo: "string"
+      deviceSdkInfo: "string"
+      simId: "string"
+      deviceIdentifier: "string"
+    web:
+      deviceFingerPrint: "string"
+      browserFingerprint: "string"
+      userCookie: "string"
+      sessionId: "string"
+    partnerSignals:
+      riskSignalData: "string"
+      riskSignalSource: "string"
+    authTransactionId: "string"
+
+############################ validating smart stepup v 2.0 with failue by removing mandatory fields ########################
+smart_stepup_v2_request_missing_fields:
+  partnerName: "Apple Pay"
+  referenceIdType: "Account reference ID"
+  auth-token: "string"
+  eventName: "Card/Ease/Web/VIRTUAL_CARD"
+
+############################ smart stepup v 2.0 - Step 2 - Success request - with mandatory fields ########################
+smart_stepup_v2_step2_request:
+  head:
+    eventName: string
+    subject: string
+    optInChallengeMethod: OTP
+    preStep: string
+    transactionInfo: string
+  payload:
+    initiateChallengeRequest:
+      authenticator: OTP
+      otpInitiateChallengeRequest:
+        contactPointId: '1'
+        contactPointMasked: (***) *** - 1990
+        isProfileVerified: string
+        context:
+          contextData: string
+        contactPointVerification:
+          verificationMethod: PHONENUMBER/ONETIMEID
+          contactPoint: xxx
+          carrierConsent:
+            optInMethod: SMS
+            optInTimestamp: '2021-09-07T10:26:25.141Z'
+            optInId: 58b69418-64f5-4c2f-8d73-9f0333d5e473
+            optInType: whitelist
+            optInDuration: ONE
+
+
+############################ smart stepup v 2.0 - Step 2 - failure request - without mandatory fields ########################
+smart_stepup_v2_step2_request_missing_fields:
+  head:
+    eventName: string
+    subject: string
+    optInChallengeMethod: OTP
+    preStep: string
+    transactionInfo: string
+  payload:
+    initiateChallengeRequest:
+      authenticator: OTP
+      otpInitiateChallengeRequest:
+        contactPointId: '1'
+        contactPointMasked: (***) *** - 1990
+        isProfileVerified: string
+        context:
+          contextData: string
+        contactPointVerification:
+          verificationMethod: PHONENUMBER/ONETIMEID
+          contactPoint: xxx
+          carrierConsent:
+            optInMethod: SMS
+            optInTimestamp: '2021-09-07T10:26:25.141Z'
+            optInId: 58b69418-64f5-4c2f-8d73-9f0333d5e473
+            optInType: whitelist
+            optInDuration: ONE
+
+
+############################ smart stepup v 2.0 - Step 3 - Success request - with mandatory fields ########################
+smart_stepup_v2_step3_request:
+  head:
+    eventName: string
+    subject: string
+    optInChallengeMethod: OTP
+    preStep: string
+    transactionInfo: string
+  payload:
+    validateMethodRequest:
+      authenticator: OTP
+      otpValidateRequest:
+        pinAuthenticationToken: string
+        pin: string
+
+############################ smart stepup v 2.0 - Step 3 - Failure request - without mandatory fields ########################
+smart_stepup_v2_step3_request_missing_fields:
+  head:
+    subject: string
+    optInChallengeMethod: OTP
+    preStep: string
+    transactionInfo: string
+  payload:
+    validateMethodRequest:
+      authenticator: OTP
+      otpValidateRequest:
+        pinAuthenticationToken: string
+        pin: string

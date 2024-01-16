@@ -1,0 +1,99 @@
+############################ The requested policy does not exist ########################
+ nonexistent_policy_req:
+   policyParameters:
+
+############################ Sample Valid Request ########################
+ mb_valid_sample_req:
+   processInitiator:
+     clientId: INT_RETAIL_BANK
+     processName: GOVID_REQUEST_TO_VERIFY_AGENT_OAO
+     version: '1'
+   workflowRequest:
+     additionalAttributes:
+       - attributeName: preferredLanguage
+         attributeValue: en-US
+       - attributeName: caseId
+         attributeValue: '1324'
+       - attributeName: applicationId
+         attributeValue: '1234'
+       - attributeName: fullName
+         attributeValue: 'John Smith'
+        
+
+############################ Process Initiator Invalid & Missing Values ########################
+
+ mb_invalid_clientId_req:
+   processInitiator:
+     clientId: '123'
+     processName: GOVID_TRIGGER
+     version: '1'
+   workflowRequest:
+     additionalAttributes:
+       - attributeName: redirectURL
+         attributeValue: http://www.capitalone.com
+
+ mb_invalid_processName_req:
+   processInitiator:
+     clientId: CCPA
+     processName: '123'
+     version: '1'
+   workflowRequest:
+     additionalAttributes:
+       - attributeName: redirectURL
+         attributeValue: http://www.capitalone.com
+
+ mb_invalid_version_req:
+   processInitiator:
+     clientId: CCPA
+     processName: GOVID_TRIGGER
+     version: '123'
+   workflowRequest:
+     additionalAttributes:
+       - attributeName: redirectURL
+         attributeValue: http://www.capitalone.com
+         
+ mb_missing_clientId_req:
+   processInitiator:
+     clientId: ''
+     processName: GOVID_TRIGGER
+     version: '1'
+   workflowRequest:
+     additionalAttributes:
+       - attributeName: redirectURL
+         attributeValue: http://www.capitalone.com
+
+ mb_missing_processName_req:
+   processInitiator:
+     clientId: CCPA
+     processName: ''
+     version: '1'
+   workflowRequest:
+      additionalAttributes:
+       - attributeName: redirectURL
+         attributeValue: http://www.capitalone.com
+
+ mb_missing_version_req:
+   processInitiator:
+     clientId: CCPA
+     processName: GOVID_TRIGGER
+     version: ''
+   workflowRequest:
+     additionalAttributes:
+       - attributeName: redirectURL
+         attributeValue: http://www.capitalone.com
+
+############################ Process Digest Request Missing or Invalid  ########################
+ mb_expired_pd_req:
+   processDigest: "SOlF%2BMJC60c8yj0tNQHbSuSUAYAZyRcejV1ZhbsbrWcWJbWJrKDDCSyD5Wns2MZZ44U0V8k%2Fg%2BeoRfM0c7RRTZJ56%2Fk%2FLE7a5S2OTsmlQYL8LWO2HpPALzZfR1h6nRnZFogKKFsLp3H8udTdcsXdX1N39B82RKA6Epi2mBnvymbgJNj8I3nQMxvu7CFsPqqqrNs4rK2T0o4G4odeTXWB55CYwAOpYWUSXXtAD3YTndAysXra%2F6S88TyMuJiINcnGZcnGqR2okLluxwd7IH3Frw%3D%3D"
+
+ mb_missing_pd_req:
+   processDigest: ''
+
+      
+############################ Workflow Request Invalid Types (syntax checking) ########################
+
+
+
+
+
+

@@ -1,0 +1,162 @@
+{
+  "$schema": "http://json-schema.org/draft/2019-09/schema#",
+  "type": "object",
+  "properties": {
+    "govtIdRequest": {
+      "type": "object",
+      "properties": {
+        "barcode": {
+          "type": "string"
+        },
+        "deviceId": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "businessUnit": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "copyText": {
+          "type": "string"
+        },
+        "configId": {
+          "type": "string"
+        },
+        "eventname": {
+          "type": "string"
+        },
+        "partnername": {
+          "type": "string"
+        },
+        "isEnterpriseImagingEnabled": {
+          "type": "string"
+        },
+        "isStreamingDataPlatformEnabled": {
+          "type": "string"
+        },
+        "storePii": {
+          "type": "string"
+        },
+        "storeImage": {
+          "type": "string"
+        },
+        "linkExpiryTimestamp": {
+          "type": "string"
+        },
+        "keepAliveTimestamp": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "barcode",
+        "deviceId",
+        "businessUnit",
+        "model",
+        "copyText",
+        "configId"
+      ]
+    },
+    "customerReferenceIds": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "brandCode": {
+      "type": "string",
+      "enum": [
+        "BASSPRO",
+        "BERGDORFGOODMANPLCC",
+        "CABELAS",
+        "GMBP",
+        "GMEF",
+        "GMSB",
+        "IBTCR",
+        "IBTPA",
+        "IBTRA",
+        "JOURNEY",
+        "MENARDSPLCC",
+        "NEIMANMARCUSPLCC",
+        "PLATINUM",
+        "PLATINUM_PREFERRED",
+        "PLAYSTATION",
+        "QUICKSILVER",
+        "QUICKSILVERONE",
+        "SAKSCB",
+        "SAKSOFFFIFTHPLCC",
+        "SAKSPLCC",
+        "SAKSPLCCDA",
+        "SAVOR",
+        "SAVORONE",
+        "SECUREDCARD",
+        "SONY",
+        "SPARK750ESB",
+        "SPARKCASH",
+        "SPARKCASHRM",
+        "SPARKCASHSELECT",
+        "SPARKCASHTS",
+        "SPARKCLASSIC",
+        "SPARKMILES",
+        "SPARKMILESSELECT",
+        "SPARKPRO",
+        "UPCR",
+        "UPPA",
+        "UPRA",
+        "VENTURE",
+        "VENTUREONE",
+        "WALMARTCB",
+        "WALMARTPLCCDA",
+        "WALMARTPLUS",
+        "KEYREWARDSWSICB",
+        "KEYREWARDSWSIPLCC",
+        "POTTERYBARNCB",
+        "POTTERYBARNPLCC",
+        "WESTELMCB",
+        "WESTELMPLCC",
+        "WILLIAMSSONOMACB",
+        "WILLIAMSSONOMAPLCC",
+        "SPORTSMANS"
+      ]
+    },
+    "originator": {
+      "type": "string",
+      "enum": [
+        "APPLYANDBUY",
+        "ASSOCIATE",
+        "INLANEBYOD",
+        "INLANESCO",
+        "KIOSK",
+        "OUTOFLANEBYOD",
+        "PHONE",
+        "POS",
+        "TABLET",
+        "TEXTTOAPPLY",
+        "UNS",
+        "WEB",
+        "RECOURSE",
+        "POSTBOOK",
+        "REALTIME",
+        "PREAPPROVALAPPLYANDBUY",
+        "PREAPPROVALUNS",
+        "PREAPPROVALASSOCIATE",
+        "PREAPPROVALINLANESCO",
+        "PREAPPROVALOUTOFLANEBYOD",
+        "PREAPPROVALPOS",
+        "PREAPPROVALAFF"
+      ]
+    }
+  },
+  "required": [
+    "govtIdRequest",
+    "customerReferenceIds",
+    "originator",
+    "brandCode"
+  ]
+}

@@ -1,0 +1,3 @@
+mb_2_0_regression_dmn_rule_successful_resp:
+  policyResponseBody: '#boolean'
+  policyStatus: 'SUCCESS'

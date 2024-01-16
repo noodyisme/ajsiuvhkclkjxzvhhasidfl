@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="policy:account_lookup_1.2">
+        <from uri="policy:account_lookup_1.2" />
+        <setProperty name="customerReferenceIds">
+            <groovy>body.customerReferenceIds</groovy>
+        </setProperty>
+        <setProperty name="address">
+            <groovy>body.address</groovy>
+        </setProperty>
+        <setHeader name="arg1">
+            <constant>
+                request map body 'govtIdRequest.*'
+            </constant>
+        </setHeader>
+        <script>
+            <groovy>
+                exchange.properties['customerReferenceIds'] = body.customerReferenceIds
+            </groovy>
+        </script>
+        <to uri="direct:headerUtil"/>
+        <setBody>
+            <simple>${headers.request}</simple>
+        </setBody>
+        <to uri="domain:/verification/barcode_retrieve/1.1"/>
+        <script>
+            <groovy>
+                exchange.properties['address'] =
+                [
+                'addressLine1'  : body['documentData']['address']['addressLine1'] !=null ? body['documentData']['address']['addressLine1']: '',
+                'addressLine2' : body['documentData']['address']['addressLine2'] !=null ? body['documentData']['address']['addressLine2'] : '',
+                'city'   : body['documentData']['address']['city'] !=null ? body['documentData']['address']['city'] : '',
+                'postalCode': body['documentData']['address']['postalCode'] !=null ? body['documentData']['address']['postalCode'] : '',
+                'countryCode'    : body['documentData']['countryCode'] !=null ? body['documentData']['countryCode'] : '',
+                'stateCode'    : body['documentData']['address']['state'] !=null ? body['documentData']['address']['state'] : ''
+                ]
+            </groovy>
+        </script>
+        <!--        <log message="printing referenceId :${body['referenceId']}"></log>-->
+        <setProperty name="documentReferenceId">
+            <groovy> if( body!=null &amp;&amp; body['documentData'] !=null) body['referenceId']</groovy>
+        </setProperty>
+        <setProperty name="issueDate">
+            <groovy> if( body!=null &amp;&amp; body['documentData'] !=null) body['documentData']['biographic']['issueDate']</groovy>
+        </setProperty>
+        <setProperty name="issueStateCode">
+            <groovy> if( body!=null &amp;&amp; body['documentData'] !=null) body['documentData']['biographic']['issueStateCode']</groovy>
+        </setProperty>
+        <setProperty name="expirationDate">
+            <groovy> if( body!=null &amp;&amp; body['documentData'] !=null) body['documentData']['biographic']['expirationDate']</groovy>
+        </setProperty>
+        <setProperty name="replacementDate">
+            <groovy> if( body!=null &amp;&amp; body['documentData'] !=null) body['documentData']['biographic']['replacementDate']</groovy>
+        </setProperty>
+
+        <!-- Call the DMN -->
+        <choice>
+            <when>
+                <groovy> body == null</groovy>
+                <transform>
+                    <groovy>
+                        body
+                    </groovy>
+                </transform>
+                <stop></stop>
+            </when>
+
+        </choice>
+        <transform>
+            <groovy>
+                if( body!=null &amp;&amp; body['documentData'] !=null)
+                [
+                "brTransactionName": "account_lookup_1.2_GovIdBarcode.dmn",
+                "businessRulesInput": [
+                "clientConfigId": null,
+                "documentStatus": body['documentStatus'],
+                "issueStateCode": body['documentData']['biographic']['issueStateCode']
+                ],
+                "brDecisionOutputname": "LookupRouting"
+                ]
+            </groovy>
+        </transform>
+
+        <to uri="direct:DmnRulesComponent_DmnGovIdBarcode" />
+
+        <transform>
+            <groovy>headers.policyRuleResult.getResult()</groovy>
+        </transform>
+
+        <setProperty name="dmn">
+            <groovy>"Default"</groovy>
+        </setProperty>
+
+        <choice>
+            <when>
+                <groovy>headers.policyRuleResult.getResult()['route'] == "complete"</groovy>
+                <transform>
+                    <groovy>
+                        [
+                        "documentValidityStatus": headers.policyRuleResult.getResult()['documentValidityStatus'],
+                        "documentFailureReason": headers.policyRuleResult.getResult()['documentFailureReason']
+                        ]
+                    </groovy>
+                </transform>
+                <stop></stop>
+            </when>
+
+            <when>
+                <groovy>headers.policyRuleResult.getResult()['route'] == "MN"</groovy>
+                <setProperty name="dmn">
+                    <groovy>"MN"</groovy>
+                </setProperty>
+            </when>
+
+            <otherwise>
+                <setProperty name="dmn">
+                    <groovy>"Default"</groovy>
+                </setProperty>
+            </otherwise>
+        </choice>
+
+        <setProperty name="documentValidityStatus">
+            <groovy>headers.policyRuleResult.getResult()['documentValidityStatus']</groovy>
+        </setProperty>
+        <setProperty name="documentFailureReason">
+            <groovy>headers.policyRuleResult.getResult()['documentFailureReason']</groovy>
+        </setProperty>
+
+        <setProperty name="issueDateValid">
+            <groovy>
+                try {
+                if(exchange.properties['issueDate'] == null) {
+                return "NULL"
+                }
+                java.time.LocalDate.parse(exchange.properties['issueDate'], java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+                return "Valid"
+                } catch(java.time.format.DateTimeParseException e) {
+                return "INVALID"
+                }
+            </groovy>
+        </setProperty>
+        <setProperty name="expirationDateValid">
+            <groovy>
+                try {
+                if(exchange.properties['expirationDate'] == null) {
+                return "NULL"
+                }
+                java.time.LocalDate.parse(exchange.properties['expirationDate'], java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+                return "Valid"
+                } catch(java.time.format.DateTimeParseException e) {
+                return "INVALID"
+                }
+            </groovy>
+        </setProperty>
+        <setProperty name="replacementDateValid">
+            <groovy>
+                try {
+                if(exchange.properties['replacementDate'] == null) {
+                return "NULL"
+                }
+                java.time.LocalDate.parse(exchange.properties['replacementDate'], java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+                return "Valid"
+                } catch(java.time.format.DateTimeParseException e) {
+                return "INVALID"
+                }
+            </groovy>
+        </setProperty>
+
+
+        <!-- Call the DMN -->
+        <transform>
+            <groovy>
+                [
+                "brTransactionName": "account_lookup_1.2_AccountLookup" + exchange.properties['dmn'] + ".dmn",
+                "businessRulesInput": [
+                "documentExpirationDate": exchange.properties['expirationDate'],
+                "documentExpirationDateValid": exchange.properties['expirationDateValid'],
+                "issueDate": exchange.properties['issueDate'],
+                "issueDateValid": exchange.properties['issueDateValid'],
+                "replacementDate": exchange.properties['replacementDate'],
+                "replacementDateValid": exchange.properties['replacementDateValid']
+                ],
+                "brDecisionOutputname": "decisionResult"
+                ]
+            </groovy>
+        </transform>
+        <to uri="direct:DmnRulesComponent_AccountLookup" />
+        <transform>
+            <groovy>headers.policyRuleResult.getResult()</groovy>
+        </transform>
+
+        <setProperty name="documentValidityStatus">
+            <groovy>headers.policyRuleResult.getResult()['documentValidityStatus']</groovy>
+        </setProperty>
+        <setProperty name="documentFailureReason">
+            <groovy>headers.policyRuleResult.getResult()['documentFailureReason']</groovy>
+        </setProperty>
+
+        <split aggregationStrategy="listStrategy" parallelProcessing="true" stopOnException="false">
+            <simple>${exchangeProperty.customerReferenceIds}</simple>
+            <setHeader name="customerRefId">
+                <simple>${body}</simple>
+            </setHeader>
+            <setBody>
+                <groovy>
+                    [
+                    "customerReferenceId" : body ,
+                    "governmentDocumentId" : exchange.properties['documentReferenceId']
+                    ]
+                </groovy>
+            </setBody>
+
+            <!--         adding do doTry  to capture matching domain policy downstream API error-->
+            <doTry>
+                <to uri="domain:/verification/matching/1.2"/>
+                <doCatch>
+                    <exception>java.lang.Exception</exception>
+                    <choice>
+                        <when>
+                            <simple> ${headers.httpStatus} == 200 </simple>
+                            <transform>
+                                <groovy>
+                                    [
+                                    "customerReferenceId": headers.customerRefId,
+                                    "customerMatchStatus": "NonDefinitive",
+                                    "matchFailureReason": body.errorInfo
+                                    ]
+                                </groovy>
+                            </transform>
+                            <!--   commenting becoz of AUTH-140544 bug                    <stop/>-->
+                        </when>
+                    </choice>
+                </doCatch>
+            </doTry>
+            <choice>
+                <when>
+                    <groovy> !body.containsKey("errorMessage") &amp;&amp; body["matchFailureReason"] == null</groovy>
+                    <transform>
+                        <groovy>
+                            [
+                            "customerReferenceId": body.customerReferenceId,
+                            "firstNameScore": body.firstNameScore,
+                            "lastNameScore": body.lastNameScore,
+                            "dateOfBirthScore": body.dateOfBirthScore,
+                            "issueStateCode": exchange.properties['issueStateCode'],
+                            ]
+                        </groovy>
+                    </transform>
+                    <to uri="direct:account_lookup_1.2_MatchingStatusCheck" />
+                </when>
+            </choice>
+        </split>
+        <transform>
+            <groovy>[
+                "matchingResult": body.collect {["customerReferenceId": it.customerReferenceId, "customerMatchStatus": it.customerMatchStatus, "matchFailureReason": it.matchFailureReason]},
+                "documentValidityStatus": exchange.properties['documentValidityStatus'],
+                "documentFailureReason": exchange.properties['documentFailureReason']
+                ]</groovy>
+        </transform>
+    </route>
+
+    <route id="direct:account_lookup_1.2_MatchingStatusCheck">
+        <from uri="direct:account_lookup_1.2_MatchingStatusCheck" />
+
+        <setProperty name="customerReferenceId">
+            <groovy>body.customerReferenceId</groovy>
+        </setProperty>
+
+        <transform>
+            <groovy>
+                [
+                "brTransactionName": "account_lookup_1.2_MatchingStatusCheck.dmn",
+                "businessRulesInput": body.clone(),
+                "brDecisionOutputname": "MatchingResult"
+                ]
+            </groovy>
+        </transform>
+
+        <to uri="direct:DmnRulesComponent_MatchingStatusCheck" />
+
+        <transform>
+            <groovy>
+                [
+                "customerReferenceId": exchange.properties['customerReferenceId'],
+                "customerMatchStatus": headers.policyRuleResult.getResult()['customerMatchStatus'],
+                "matchFailureReason": headers.policyRuleResult.getResult()['matchFailureReason']
+                ]
+            </groovy>
+        </transform>
+    </route>
+    <route id="direct:account_lookup_1.2-schema">
+        <from uri="direct:account_lookup_1.2-schema" />
+        <setBody>
+            <constant>
+                {
+                "$schema": "http://json-schema.org/draft/2019-09/schema#",
+                "type": "object",
+                "properties": {
+                "govtIdRequest": {
+                "type": "object",
+                "properties": {
+                "barcode": { "type": "string" },
+                "deviceId": { "type": "string" },
+                "location": { "type": "string" },
+                "businessUnit": { "type": "string" },
+                "model": { "type": "string" },
+                "copyText": { "type": "string" },
+                "configId": { "type": "string" },
+                "eventname": { "type": "string" },
+                "partnername": { "type": "string" },
+                "isEnterpriseImagingEnabled": { "type": "string" },
+                "isStreamingDataPlatformEnabled": { "type": "string" },
+                "storePii": { "type": "string" },
+                "storeImage": { "type": "string" },
+                "linkExpiryTimestamp": { "type": "string" },
+                "keepAliveTimestamp": { "type": "string" }
+                },
+                "required": [
+                "barcode",
+                "deviceId",
+                "businessUnit",
+                "model",
+                "copyText",
+                "configId"
+                ]
+                },
+                "customerReferenceIds": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 10,
+                "items": {
+                "type": "string","minLength": 1
+                }
+                },
+                "brandCode": { "type": "string" ,"enum": [ {{schema.brandCodes}}]},
+                "originator": { "type": "string" ,"enum": [ {{schema.originators}}]}
+                },
+                "required": [
+                "govtIdRequest",
+                "customerReferenceIds",
+                "originator",
+                "brandCode"
+                ]
+                }
+                }
+            </constant>
+        </setBody>
+    </route>
+
+</routes>

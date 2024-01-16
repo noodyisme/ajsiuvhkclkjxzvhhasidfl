@@ -1,0 +1,127 @@
+########  Anchors #############################################################
+originator: &originator 'POS'
+brandCode: &brandCode 'WILLIAMSSONOMAPLCC'
+
+barcode: &barcode 'barcodeValue'
+customerId: &customerId 'customerIdValue'
+
+deviceId: &deviceId '123'
+location: &location 'NJ'
+location_bad: &location_bad 'ZZ'
+businessUnit: &businessUnit 'CARDFRAUD'
+model: &model 'WSACTLKP'
+copyText: &copyText 'DEFAULT'
+configId: &configId '30a9bf72-facf-11eb-9a03-0242ac130003'
+
+govtIdRequestGood: &govtIdRequestGood
+  barcode: *barcode
+  deviceId: *deviceId
+  location: *location
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  configId: *configId
+
+customerReferenceIdsOne: &customerReferenceIdsOne
+  - *customerId
+
+customerReferenceIdsMany: &customerReferenceIdsMany
+  - *customerId
+  - *customerId
+  - *customerId
+
+######## Required Fields Missing Tests ########################################
+
+account_lookup_missing_govtIdRequest_field_req:
+  customerReferenceIds: *customerReferenceIdsOne
+  originator: *originator
+  brandCode: *brandCode
+
+account_lookup_missing_customerReferenceIds_field_req:
+  govtIdRequest: *govtIdRequestGood
+  originator: *originator
+  brandCode: *brandCode
+
+account_lookup_missing_brandCode_field_req:
+  govtIdRequest: *govtIdRequestGood
+  customerReferenceIds: *customerReferenceIdsOne
+  originator: *originator
+
+account_lookup_missing_originator_field_req:
+  govtIdRequest: *govtIdRequestGood
+  customerReferenceIds: *customerReferenceIdsOne
+  brandCode: *brandCode
+
+######## Required govtIdRequest Fields Missing Tests ##########################
+
+account_lookup_missing_govtIdRequest_barcode_field_req:
+  govtIdRequest:
+    deviceId: *deviceId
+    location: *location
+    businessUnit: *businessUnit
+    model: *model
+    copyText: *copyText
+    configId: *configId
+  customerReferenceIds: *customerReferenceIdsOne
+  originator: *originator
+  brandCode: *brandCode
+
+account_lookup_missing_govtIdRequest_deviceId_field_req:
+  govtIdRequest:
+    barcode: *barcode
+    location: *location
+    businessUnit: *businessUnit
+    model: *model
+    copyText: *copyText
+    configId: *configId
+  customerReferenceIds: *customerReferenceIdsOne
+  originator: *originator
+  brandCode: *brandCode
+
+account_lookup_missing_govtIdRequest_businessUnit_field_req:
+  govtIdRequest:
+    barcode: *barcode
+    deviceId: *deviceId
+    location: *location
+    model: *model
+    copyText: *copyText
+    configId: *configId
+  customerReferenceIds: *customerReferenceIdsOne
+  originator: *originator
+  brandCode: *brandCode
+
+account_lookup_missing_govtIdRequest_model_field_req:
+  govtIdRequest:
+    barcode: *barcode
+    deviceId: *deviceId
+    location: *location
+    businessUnit: *businessUnit
+    copyText: *copyText
+    configId: *configId
+  customerReferenceIds: *customerReferenceIdsOne
+  originator: *originator
+  brandCode: *brandCode
+
+account_lookup_missing_govtIdRequest_copyText_field_req:
+  govtIdRequest:
+    barcode: *barcode
+    deviceId: *deviceId
+    location: *location
+    businessUnit: *businessUnit
+    model: *model
+    configId: *configId
+  customerReferenceIds: *customerReferenceIdsOne
+  originator: *originator
+  brandCode: *brandCode
+
+account_lookup_missing_govtIdRequest_configId_field_req:
+  govtIdRequest:
+    barcode: *barcode
+    deviceId: *deviceId
+    location: *location
+    businessUnit: *businessUnit
+    model: *model
+    copyText: *copyText
+  customerReferenceIds: *customerReferenceIdsOne
+  originator: *originator
+  brandCode: *brandCode

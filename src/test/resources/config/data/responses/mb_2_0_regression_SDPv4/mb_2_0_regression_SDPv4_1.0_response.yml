@@ -1,0 +1,7 @@
+mb_2_0_regression_SDPv4_successful_1_resp:
+  policyResponseBody: 'Hello Rich Fairbank - a CuRE event was sent!'
+  policyStatus: 'SUCCESS'
+
+mb_2_0_regression_SDPv4_successful_2_resp:
+  policyResponseBody: 'Hello James Bond - a CuRE event was sent!'
+  policyStatus: 'SUCCESS'

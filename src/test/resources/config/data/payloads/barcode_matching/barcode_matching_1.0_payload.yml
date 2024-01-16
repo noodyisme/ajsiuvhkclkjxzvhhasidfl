@@ -1,0 +1,192 @@
+########  Anchors #############################################################
+## GA, DOB 1955-05-15, expirationDate 2050-05-25, name "Unique Id Blank"
+barcode_GA_good: &barcode_GA_good 'QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDMwMC1NMDdETDFaQUJMQU5LCjFaVlVOSVFVRQoxWlhJRAoxWkIxNDkgVFVNQkxFIFJVTgoxWlVBcHQgNDUKMVpDU1RPQ0tCUklER0UKMVpER0EKMVpFMzAyODEKMVpGNjM1MDE0OTU3CjFaR0MKMVpIQQoxWklYCjFaSzM3OAoxWkxGZW1hbGUKMVpONjAKMVpPMTUwCjFaUE1hcm9vbgoxWlFCbGFjawoxWlJHQQoxWlNHRU9SR0lBCjFaV05vCjFaMURvY0NhdGVnb3J5fkRMCjFaMn5Jc1JlYWxJRH5ObwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjEwLzA0LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDUKMlpCMjUKMlpDMjA1MAoyWkQwNQoyWkUxNQoyWkYxOTU1CjJaRzEwCjJaSDA0CjJaSTIwMTYK'
+
+## Invalid barcode
+barcodeUnknown: &barcodeUnknown 'QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDMwMC1NMDdETDFaQUJMQU5LCjFaVlVOSVFVRQoxWlhJRAoxWkIxNDkgVFVNQkxFIFJVTgoxWlVBcHQgNDUKMVpDU1RPQ0tCUklER0UKMVpER0EKMVpFMzAyODEKMVpGNjM1MDE0OTU3CjFaR0MKMVpIQQoxWklYCjFaSzM3OAoxWkxGZW1hbGUKMVpONjAKMVpPMTUwCjFaUE1h5vCjFaMURvY0NhdGVnb3J5fkRMCjFaMn5Jc1JlYWxJRH5ObwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjEwLzA0LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDUKMlpCMjUKMlpDMjA1MAoyWkQwNQoyWkUxNQoyWkYxOTU1CjJaRzEwCjJaSDA0CjJaSTIwMTYK'
+
+## AR, DOB 1934-05-17, expirationDate 2021-01-01, "Expired Arkansas"
+barcode_expired: &barcode_expired 'QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAyODJDMS1CMjNETDFaQUVYUElSRUQKMVpWQVJLQU5TQVMKMVpCMjkxNCBDSEFSVEVSIE9BSyBEUgoxWkNMSVRUTEUgUk9DSwoxWkRBUgoxWkU3MjIyNwoxWkZSNTE0OTgwOTcyODUKMVpHRlAKMVpIVgoxWklOT05FCjFaSzMxNwoxWkxNYWxlCjFaTjY5CjFaTzE0NSBsYgoxWlBCbGFjawoxWlJBUgoxWlNBUktBTlNBUwoxWldObwoxWjFJc1JlYWxJRH5ZZXMKMVoyfkRvY1R5cGV+RFJJVkVSJ1MgTElDRU5TRQoyWkEwMQoyWkIwMQoyWkMyMDIxCjJaRDA1CjJaRTE3CjJaRjE5MzQKMlpHMDIKMlpIMDIKMlpJMjAyMAo='
+
+## FL, DOB 1950-08-11, fullName "Florida Passed"
+barcode_FL_good: &barcode_FL_good 'QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAyNzRDMS1CMTdETDFaQUZMT1JJREEKMVpWUEFTU0VECjFaQjEwMjEzIENPVFRSRUxMIFdBWQoxWkNPUkxBTkRPCjFaREZMCjFaRTMyODM2CjFaRlI1MTQ5ODA5NzI3OQoxWkdGUAoxWkhWCjFaSU5PTkUKMVpLMzA5CjFaTE1hbGUKMVpONjkKMVpPMTQ1IGxiCjFaUEJsYWNrCjFaUkZMCjFaU0ZMT1JJREEKMVpXTm8KMVoxSXNSZWFsSUR+WWVzCjFaMn5Eb2NUeXBlfkRSSVZFUidTIExJQ0VOU0UKMlpBMDEKMlpCMDEKMlpDMjAyNAoyWkQwOAoyWkUxMQoyWkYxOTUwCjJaRzAyCjJaSDAyCjJaSTIwMjAK'
+
+## IL, DOB 1990-09-11, expirationDate 2024-12-02, "Liam Smith"
+barcode_IL_good: &barcode_IL_good 'QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAyODdDMS1BMDRETDFaQVNNSVRICjFaVkxJQU0KMVpCNDkwOCBXIEFSR1lMRSBTVAoxWkNDSElDQUdPCjFaRElMCjFaRTYwNjMwCjFaRlM1MTQtOTgwOS02MjMyCjFaR0QKMVpITk9ORQoxWklOT05FCjFaSzMyMgoxWkxNYWxlCjFaTjc4CjFaTzE4MCBsYnMKMVpQQmx1ZQoxWlJJTAoxWlNJTExJTk9JUwoxWldZZXMKMVoxSXNSZWFsSUR+WWVzCjFaMn5Jc0R1cH5ObwoxWjN+RG9jVHlwZX5EUklWRVInUyBMSUNFTlNFCjJaQTEyCjJaQjAyCjJaQzIwMjQKMlpEMDkKMlpFMTEKMlpGMTk5MAoyWkcxMQoyWkgwMgoyWkkyMDIwCg=='
+
+## MN, no expiry date
+barcodeP_MN_noexpiry: &barcode_MN_noexpiry 'QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAyNjFDMS1CMjZETDFaQU5PIEVYUElSQVRJT04KMVpWTU4KMVpCOTM5IElTTEFORCBMQUtFIEFWRQoxWkNTSE9SRVZJRVcKMVpETU4KMVpFNTUxMjYKMVpGUjUxNDk4MDk3Mjg5CjFaR0ZQCjFaSFYKMVpJTk9ORQoxWksyOTYKMVpMTWFsZQoxWk42OQoxWk8xNDUgbGIKMVpQQmxhY2sKMVpSTU4KMVpTTUlOTkVTT1RBCjFaV05vCjFaMUlzUmVhbElEflllcwoxWjJ+RG9jVHlwZX5EUklWRVInUyBMSUNFTlNFCjJaRDA2CjJaRTI4CjJaRjE5NzEKMlpHMDIKMlpIMDIKMlpJMjAwNQo='
+
+## PR, DOB 1984-11-05, fullName "Juan Ramos Perez"
+barcode_PR_dob: &barcode_PR_dob 'QAoeDUlEQ0hLOTg5ODk1MDEwMURMMDAyOTAxOTFETDFaQVJBTU9TIFBFUkVaLEpVQU4sLAoxWkJCTyBQSUxFVEFTIENBUlIgMjMwIEtNIDI2LjMsIEFHVUFECjFaVQoxWkNBR1VBRElMTEEKREFKUFIKMVpFMDA2MDMKMVpGNTA0OTEyNAoxWkc3CjFaSAoxWkkKMVpKMjAyMjExMDUKMVpLMTk4NDExMDUKMVpMCjFaTTIwMTYwOTMwNQoxWk41MDcKMVpPMTY1CjFaUEJSTwpaUQoxWlcKMVpWDQ=='
+
+## No addresses, DOB 1955-05-15, fullName "Unique,id Blank", matches barcode_GA_good
+id_GA_good: &id_GA_good 'v7sEVXl7IIJ7QcfbgAhhkg=='
+
+## FL, DOB 1950-08-11, fullName "Florida Passed"
+id_FL_good: &id_FL_good 'cKJ7CRGUp9PU7z2PcZC4+g=='
+
+## matches barcode_MN_noexpiry
+id_MN_noexpiry: &id_MN_noexpiry 'OiU9Xz44DdMXmPiW29h4Zg=='
+
+## Business Customer Type
+id_business: &id_business 'HQJoxyvTBjiDSNrl939z1g=='
+
+## name mistmatch to barcode_PR_dob (fullName "Juan R Perez")
+id_PR_dob: &id_PR_dob 'BFLxedvC9GWNZFPzRuJQzQ=='
+
+deviceId: &deviceId '123'
+location: &location 'NJ'
+location_bad: &location_bad 'ZZ'
+locationPR: &locationPR 'PR'
+businessUnit: &businessUnit '360'
+model: &model 'WSACTLKP'
+copyText: &copyText 'DEFAULT'
+profileReferenceId: &profileReferenceId 'test'
+originator: &originator 'POS'
+brandCode: &brandCode 'WILLIAMSSONOMAPLCC'
+
+defaultRequestGood: &defaultRequestGood
+  barcode: *barcode_GA_good
+  deviceId: *deviceId
+  location: *location
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  customerReferenceId: *id_GA_good
+  profileReferenceId: *profileReferenceId
+  originator: *originator
+  brandCode: *brandCode
+
+######## Required Fields Missing Tests ########################################
+barcode_matching_missing_barcode_field_req:
+  deviceId: *deviceId
+  location: *location
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  customerReferenceId: *id_GA_good
+  profileReferenceId: *profileReferenceId
+  originator: *originator
+  brandCode: *brandCode
+
+barcode_matching_missing_deviceId_field_req:
+  barcode: *barcode_GA_good
+  location: *location
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  customerReferenceId: *id_GA_good
+  profileReferenceId: *profileReferenceId
+  originator: *originator
+  brandCode: *brandCode
+
+barcode_matching_missing_businessUnit_field_req:
+  barcode: *barcode_GA_good
+  deviceId: *deviceId
+  location: *location
+  model: *model
+  copyText: *copyText
+  customerReferenceId: *id_GA_good
+  profileReferenceId: *profileReferenceId
+  originator: *originator
+  brandCode: *brandCode
+
+barcode_matching_missing_model_field_req:
+  barcode: *barcode_GA_good
+  deviceId: *deviceId
+  location: *location
+  businessUnit: *businessUnit
+  copyText: *copyText
+  customerReferenceId: *id_GA_good
+  profileReferenceId: *profileReferenceId
+  originator: *originator
+  brandCode: *brandCode
+
+barcode_matching_missing_copyText_field_req:
+  barcode: *barcode_GA_good
+  deviceId: *deviceId
+  location: *location
+  businessUnit: *businessUnit
+  model: *model
+  customerReferenceId: *id_GA_good
+  profileReferenceId: *profileReferenceId
+  originator: *originator
+  brandCode: *brandCode
+
+barcode_matching_missing_customerReferenceId_field_req:
+  barcode: *barcode_GA_good
+  deviceId: *deviceId
+  location: *location
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  profileReferenceId: *profileReferenceId
+  originator: *originator
+  brandCode: *brandCode
+
+barcode_matching_missing_profileReferenceId_field_req:
+  barcode: *barcode_GA_good
+  deviceId: *deviceId
+  location: *location
+  businessUnit: *businessUnit
+  model: *model
+  copyText: *copyText
+  customerReferenceId: *id_GA_good
+  originator: *originator
+  brandCode: *brandCode
+
+######## Invalid Values in Required Fields Tests ##############################
+barcode_matching_customerReferenceId_empty_req:
+  <<: *defaultRequestGood
+  customerReferenceId: ''
+
+barcode_matching_barcode_invalid_req:
+  <<: *defaultRequestGood
+  barcode: *barcodeUnknown
+  customerReferenceId: *id_FL_good
+
+barcode_matching_invalid_customerRefId_req:
+  <<: *defaultRequestGood
+  customerReferenceId: 'abc'
+
+barcode_matching_emptyModel_req:
+  <<: *defaultRequestGood
+  model: ''
+
+barcode_matching_business_customerReferenceId_req:
+  <<: *defaultRequestGood
+  barcode: *barcode_FL_good
+  customerReferenceId: *id_business
+
+barcode_matching_invalid_location_req:
+  <<: *defaultRequestGood
+  barcode: *barcode_FL_good
+  customerReferenceId: *id_FL_good
+  location: *location_bad
+
+######## Passing (Happy Path) Tests ############################################
+barcode_matching_successful_matching_req:
+  <<: *defaultRequestGood
+
+######## Failing Policy Functionality Tests ###########################################
+barcode_matching_mn_no_expiry_dob_match_req:
+  <<: *defaultRequestGood
+  barcode: *barcode_MN_noexpiry
+  customerReferenceId: *id_MN_noexpiry
+
+barcode_matching_dob_mismatch_req:
+  <<: *defaultRequestGood
+  barcode: *barcode_IL_good
+  customerReferenceId: *id_FL_good
+
+barcode_matching_expiration_date_expired_over90days_req:
+  <<: *defaultRequestGood
+  barcode: *barcode_expired
+  customerReferenceId: *id_FL_good
+
+barcode_matching_pr_dob_match_name_mismatch_req:
+  <<: *defaultRequestGood
+  barcode: *barcode_PR_dob
+  customerReferenceId: *id_PR_dob
+  location: *locationPR

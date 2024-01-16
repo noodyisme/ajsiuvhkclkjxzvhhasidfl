@@ -1,0 +1,291 @@
+################################################## ANCHORS ##################################################
+testString: &testString 'test'
+
+eventName: &eventName 'CARD.SERVICING.WEB.EASE.VIRTUAL_CARD'
+
+domain: &domain 'COF-CONSUMER'
+
+referenceId: &referenceId '8Cd1DIpvKLbf89uHASsnLg=='
+
+referenceIdType: &referenceIdType 'SSOID'
+
+riskAssessment: &riskAssessmentMobileMobileSdkInfo
+  mobile:
+    mobileSdkInfo: *testString
+    deviceIdentifier: *testString
+
+# using double quotes and backslashes to break this long string over multiple lines, as per this Stack Overflow answer: https://stackoverflow.com/a/43354815
+riskSignalData: &riskSignalData "eyAiY29tbW9uUmlza1NpZ25hbHMiOiB7ICJlbnZpcm9ubWVudGFsRGV0YWlscyI6IHsgImlwQWRkcmVzcyI6ICIxNzIuNTguMjMxLjI1NSIsICJjaGF\
+ubmVsU3VyZmFjZSI6ICJDSFJPTUVfREVTS1RPUCIsICJjaGFubmVsVHlwZUZvckVucm9sbG1lbnQiOiAiUFVTSF9QUk9WSVNJT05JTkciIH0sICJwaHlzaWNhbERldGFpbHMiOiB7ICJkZXZpY2V\
+JZCI6ICIwYmJhN2YxZTRhODNhYjRmZGQ3N2Y1ZWJkNmJkNDQ5NTkwNWYzNmRiOWM3YzZlNjM4ODMzNzIxZTE4MWJkODM3YWQxNzczNTVhNjkxZDVmZjMyOGFkMWQ1YTM0N2E0MTgyM2YyNDAxMjl\
+kMGVlYjMyNTE3ZWYyOGMyNTIyMDk5MiIsICJkZXZpY2VQaG9uZU51bWJlciI6ICIxMjM0NSIsICJkZXZpY2VHZW9Mb2NhdGlvbiI6ICIxNU4zMFciLCAiZGV2aWNlUmlza1Njb3JlIjogIjUiLCA\
+iY2hyb21lQnJvd3NlcklkIjogIkZEU0ZEU0ZEU0ZTREZEUzQzNDM0MzQzIiwgImRldmljZU9wZXJhdGluZ1N5c3RlbVZlcnNpb24iOiI1IiwgImRldmljZVR5cGUiOiAiUGhvbmUiLCAiZGV2aWN\
+lTW9kZWwiOiAiR29vZ2xlIFBpeGVsIDQiLCAiaXNEZXZpY2VMb3N0TW9kZSI6ICJZRVMiIH0gfSwgImN1c3RvbWVyUmlza0RldGFpbHMiOiB7ICJoYXNoZWRFbWFpbEFkZHJlc3MiOiAiYTM0ZmU\
+4OTYwMGJiODEzODcxYzA0OWVkNTBkMzIzODExY2IzZjZmNGRhZWVhODgzNzIwMTRjOTBlMzUwZTY4OCIsICJhY2NvdW50VG9EZXZpY2VCb25kaW5nQWdlIjogIjEwIiwgImFjY291bnRUb0Rldml\
+jZVBhaXJpbmdJZCI6ICIxMjMiLCAiYWNjb3VudEFjdGl2aXR5Ijp7ICJlbnJvbGxtZW50X3RpbWVzdGFtcCI6ICJZWVlZLU1NLUREIiwgImxlc3NfdGhhbl8xX2RheSI6IHRydWUsICJsZXNzX3R\
+oYW5fN19kYXlzIjogZmFsc2UsICJsZXNzX3RoYW5fMzBfZGF5cyI6ZmFsc2UsICJsZXNzX3RoYW5fMV95ZWFyIjogZmFsc2UgfSwgImFjY291bnRBZ2UiOiAiNSIsICJhY2NvdW50Q2hhbmdlRGF\
+0ZSI6ICJZWVlZLU1NLUREIiwgImFjY291bnRSaXNrU2NvcmUiOiAiNSIsICJjdXN0b21lck5hbWVNYXRjaCI6ICJZRVMiLCAiY3VzdG9tZXJQaG9uZU51bWJlciI6ICIxMjM0NTYiLCAibnVtYmV\
+yT2ZHb29nbGVBY2NvdW50c1RpZWRUb0ZQQU4iOiAiNCIsICJwYW5Tb3VyY2VJbmRpY2F0b3IiOiAiV2ViIiwgInBheW1lbnRNZXRob2RBdHRlbXB0cyI6ICIzIiwgImlzQ2hlY2tvdXRPblBsYXR\
+mb3JtQXV0aCI6ICJZRVMiLCAicGxhdGZvcm1BdXRoQXNzdXJhbmNlTGV2ZWwiOiIxIiwgInJlY29tbWVuZGF0aW9uRGVjaXNpb24iOiAicmVkIiwgIm51bVRyYW5zYWN0aW9uc0luTGFzdFR3ZWx\
+ldmVNb250aHMiOiAiMiIgfSwgIm1lcmNoYW50SW5mbyI6IHsgIm1lcmNoYW50QXBwbGljYXRpb25QYWNrYWdlTmFtZSI6ICJzYW1wbGVNZXJjaGFudEFwcGxpY2F0aW9uUGFja2FnZSIsICJtZXJ\
+jaGFudFdlYkRvbWFpbiI6ICJzYW1wbGVNZXJjaGFudFdlYkRvbWFpbiIgfSB9"
+    
+riskSignalSource: &riskSignalSource 'GOOGLE'
+
+################################################# PAYLOADS ##################################################
+smart_stepup_missing_authToken_req:
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_missing_domain_req:
+  auth-token: *testString
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_missing_eventName_req:
+  auth-token: *testString
+  domain: *domain
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_missing_referenceId_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_missing_referenceIdType_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_missing_riskAssessment_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+
+smart_stepup_missing_riskAssessment_fields_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: {}
+
+smart_stepup_missing_riskAssessment_web_fields_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web: {}
+      
+smart_stepup_missing_riskAssessment_web_userCookie_req1:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      deviceFingerPrint: *testString
+      sessionId: *testString
+
+smart_stepup_missing_riskAssessment_web_userCookie_req2:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      browserFingerprint: *testString
+      sessionId: *testString
+
+smart_stepup_missing_riskAssessment_web_sessionId_req1:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      deviceFingerPrint: *testString
+      userCookie: *testString
+
+smart_stepup_missing_riskAssessment_web_sessionId_req2:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      browserFingerprint: *testString
+      userCookie: *testString
+
+smart_stepup_missing_riskAssessment_web_deviceFingerPrint_browserFingerprint_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      userCookie: *testString
+      sessionId: *testString
+
+smart_stepup_missing_riskAssessment_mobile_fields_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    mobile: {}
+
+smart_stepup_missing_riskAssessment_mobile_mobileSdkInfo_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    mobile:
+      deviceIdentifier: *testString
+
+smart_stepup_missing_riskAssessment_mobile_deviceIdentifier_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    mobile:
+      mobileSdkInfo: *testString
+
+smart_stepup_missing_riskAssessment_partnerSignals_fields_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    partnerSignals: {}
+
+smart_stepup_missing_riskAssessment_partnerSignals_riskSignalData_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    partnerSignals:
+      riskSignalSource: *riskSignalSource
+
+smart_stepup_missing_riskAssessment_partnerSignals_riskSignalSource_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    partnerSignals:
+      riskSignalData: *riskSignalData
+
+smart_stepup_unsupported_domain_value_req:
+  auth-token: *testString
+  domain: *testString
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_unsupported_eventName_value_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *testString
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_unsupported_partnerName_value_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  partnerName: *testString
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_unsupported_referenceIdType_value_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *testString
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_unsupported_subDomain_value_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+  subDomain: *testString
+
+smart_stepup_riskAssessment_web_success_req1:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      deviceFingerPrint: *testString
+      userCookie: *testString
+      sessionId: *testString
+
+smart_stepup_riskAssessment_web_success_req2:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      browserFingerprint: *testString
+      userCookie: *testString
+      sessionId: *testString
+
+smart_stepup_riskAssessment_mobile_success_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_riskAssessment_partnerSignals_success_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    partnerSignals:
+      riskSignalData: *riskSignalData
+      riskSignalSource: *riskSignalSource

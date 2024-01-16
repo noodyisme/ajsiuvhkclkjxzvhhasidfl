@@ -1,0 +1,18 @@
+{
+  "vendorExtendedResult": "B",
+  "keepAliveTimestamp": "2050-02-23 19:32:59",
+  "linkExpiryTimestamp": "2050-02-23 19:27:59",
+  "documentExpirationStatus": "Unknown",
+  "referenceIdLocked": false,
+  "documentStatus": "Unknown",
+  "numberOfAttempts": "1",
+  "customerDetails": {},
+  "documentData": {
+    "address": {},
+    "biographic": {
+      "inputDocumentDetails": {}
+    }
+  },
+  "vendorExtendedStatus": "DocumentBadDevice",
+  "referenceId": "e5c5a468f0b34048be5abb23bc4da5a1"
+}

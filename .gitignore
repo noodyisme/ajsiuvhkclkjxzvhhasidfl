@@ -1,0 +1,18 @@
+.DS_Store
+.idea/
+*.iml
+logs/
+target/
+.run/
+cucumber.json
+
+# Ignores for Eclipse
+*.project
+*.settings/
+*.classpath
+
+# Misc.
+src/main/resources/application-devint-test-local.properties
+src/main/resources/log4j2-local.xml
+local
+runLocal.sh

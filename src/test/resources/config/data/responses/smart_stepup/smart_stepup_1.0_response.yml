@@ -1,0 +1,195 @@
+################################################## ANCHORS ##################################################
+policyResponseBodyChallenge: &policyResponseBodyChallenge
+  riskAssessmentStatus: 'CHALLENGE'
+  transactionInfo: '#string'
+
+policyResponseBodyNull: &policyResponseBodyNull null
+
+policyStatusFailure: &policyStatusFailure 'FAILURE'
+
+policyStatusInvalid: &policyStatusInvalid 'INVALID'
+
+policyStatusSuccess: &policyStatusSuccess 'SUCCESS'
+
+downstreamApiErrorInformation: &downstreamApiErrorInformation
+  id: '202020'
+  text: 'Downstream API error'
+  developerText: ''
+
+schemaValidationFailureErrorInformation: &schemaValidationFailureErrorInformation
+  id: '0'
+  text: 'Schema Validation Failure'
+  developerText: ''
+
+################################################# RESPONSES #################################################
+smart_stepup_missing_authToken_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.auth-token: is missing but it is required]'
+
+smart_stepup_missing_domain_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.domain: is missing but it is required]'
+
+smart_stepup_missing_eventName_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.eventName: is missing but it is required]'
+
+smart_stepup_missing_referenceId_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.referenceId: is missing but it is required]'
+
+smart_stepup_missing_referenceIdType_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.referenceIdType: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_fields_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web: is missing but it is required, $.riskAssessment.mobile: is missing but it is required, $.riskAssessment.partnerSignals: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_fields_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.deviceFingerPrint: is missing but it is required, $.riskAssessment.web.userCookie: is missing but it is required, $.riskAssessment.web.sessionId: is missing but it is required, $.riskAssessment.web.browserFingerprint: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_userCookie_resp1:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.userCookie: is missing but it is required, $.riskAssessment.web.browserFingerprint: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_userCookie_resp2:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.deviceFingerPrint: is missing but it is required, $.riskAssessment.web.userCookie: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_sessionId_resp1:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.sessionId: is missing but it is required, $.riskAssessment.web.browserFingerprint: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_sessionId_resp2:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.deviceFingerPrint: is missing but it is required, $.riskAssessment.web.sessionId: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_web_deviceFingerPrint_browserFingerprint_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.web.deviceFingerPrint: is missing but it is required, $.riskAssessment.web.browserFingerprint: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_mobile_fields_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.mobile.mobileSdkInfo: is missing but it is required, $.riskAssessment.mobile.deviceIdentifier: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_mobile_mobileSdkInfo_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.mobile.mobileSdkInfo: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_mobile_deviceIdentifier_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.mobile.deviceIdentifier: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_partnerSignals_fields_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.partnerSignals.riskSignalData: is missing but it is required, $.riskAssessment.partnerSignals.riskSignalSource: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_partnerSignals_riskSignalData_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.partnerSignals.riskSignalData: is missing but it is required]'
+
+smart_stepup_missing_riskAssessment_partnerSignals_riskSignalSource_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.riskAssessment.partnerSignals.riskSignalSource: is missing but it is required]'
+
+smart_stepup_unsupported_domain_value_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.domain: does not have a value in the enumeration [COF-CONSUMER, COF-PARTNERSHIP, COF-COMMERCIAL]]'
+
+smart_stepup_unsupported_eventName_value_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusFailure
+  errorInformation:
+    <<: *downstreamApiErrorInformation
+    developerText: 'The risk domain policy "risk_assessment_smart_stepup" version "1.0" (post method) returned the following error "{errorInfo={id=0, text=Schema Validation Failure, developerText=[$.payload.eventName: does not have a value in the enumeration [CARD.SERVICING.MOBILE.EASE-IOS.VIRTUAL_CARD, AUTO.SERVICING.WEB.EASE-OBO.OBO_EXAMPLE, CARD.SERVICING.WEB.EASE.VIRTUAL_CARD, BANK.SERVICING.WEB.EASE.BENEFICIARY, CARD.SERVICING.WEB.EASE.CANADA_PIN, CARD.SERVICING.WEB.EASE.BALANCE_TRANSFER, CARD.SERVICING.WEB.EASE.MANAGE_AUTHORIZED_USERS, CARD.SERVICING.WEB.EASE.DIGITAL_CARD, CARD.SERVICING.WEB.EASE.CASH_ADV_PIN, BANK.SERVICING.WEB.EASE.DEBIT_CARD_PIN, BANK.SERVICING.WEB.EASE.DEBIT_CARD_REISSUE, BANK.SERVICING.WEB.EASE.DEBIT_CARD_REORDER, BANK.SERVICING.WEB.EASE.DEBIT_ATM_LIMIT, BANK.SERVICING.WEB.EASE.DEBIT_SPEND_LIMIT, SBBANK.SERVICING.WEB.EASE.SB_WIRE_TRANSFER, SERVICING.WEB.EASE.EXTERNAL_ACCOUNT_SETUP, BANK.SERVICING.WEB.EASE.ADD_EXTERNAL_ACCOUNT, BANK.SERVICING.WEB.EASE.AOC_ACCEPT, SERVICING.WEB.EASE.ADD_EXTERNAL_ACCOUNT, SERVICING.WEB.EASE.CONVERT_EXTERNAL_ACCOUNT, CARD.SERVICING.WEB.EASE.GOOGLE_PAY, CARD.SERVICING.WEB.EASE.PAYPAL, CARD.SERVICING.WEB.EASE.REPLACE_CARD, SERVICING.WEB.ENTERPRISE.SERVICING.WEB]]}, policyStatus=INVALID, results=null}"'
+
+smart_stepup_unsupported_partnerName_value_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.partnerName: does not have a value in the enumeration [Google Pay, Apple Pay, Paypal, Stripe]]'
+
+smart_stepup_unsupported_referenceIdType_value_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.referenceIdType: does not have a value in the enumeration [SSOID, Account reference ID, Profile reference ID]]'
+
+smart_stepup_unsupported_subDomain_value_resp:
+  policyResponseBody: *policyResponseBodyNull
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.subDomain: does not have a value in the enumeration [CARD, BANK, DIRECT, COBRANDED, PRIVATE-LABEL, PRIVATE-LABEL-COMMERCIAL]]'
+
+smart_stepup_challenge_success_resp:
+  policyResponseBody: *policyResponseBodyChallenge
+  policyStatus: *policyStatusSuccess

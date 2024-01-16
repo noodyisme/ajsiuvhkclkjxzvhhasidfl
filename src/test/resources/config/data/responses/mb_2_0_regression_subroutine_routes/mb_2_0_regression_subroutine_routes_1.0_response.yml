@@ -1,0 +1,11 @@
+mb_2_0_regression_subroutine_routes_successful_1_resp:
+  policyResponseBody:
+    lastName: 'Fairbank'
+    currentTime: '#regex \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,6}){0,1}Z'
+  policyStatus: 'SUCCESS'
+
+mb_2_0_regression_subroutine_routes_successful_2_resp:
+  policyResponseBody:
+    lastName: 'Bond'
+    currentTime: '#regex \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,6}){0,1}Z'
+  policyStatus: 'SUCCESS'

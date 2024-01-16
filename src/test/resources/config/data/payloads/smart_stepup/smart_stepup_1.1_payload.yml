@@ -1,0 +1,284 @@
+################################################## ANCHORS ##################################################
+testString: &testString 'test'
+auth-token: &auth-token '0b4973df-2ed5-43bf-ae41-f823ac46c36c.AMD20PvR2tSjcahosyk5k45hq3pxWuEM5AmeyGd448OAcrlTOFY4AnW7hAzl7Z6AFA6tP8Xi4bLfz2w6mUWtj44KcRUW5vcIBNdAUar5VVZeuoghHQXQTGTROLqmbkoRRCLZqJ4hVKWNXQ9BhlIUMes3x2bQuXDPXTPhJUSk56vQkaA8Sep2rdRGgcrGukP3wMQdlpM27a90EA2C9JzL88evyc5vI04LdEJhgzzfC261WjZ4KC9tqFHLk3w6d3BWklQmo'
+
+eventName: &eventName 'BANK.SERVICING.WEB.EASE.BENEFICIARY'
+
+domain: &domain 'COF-CONSUMER'
+
+referenceId: &referenceId '4Hy+4pjBlK68gYEHTBxQVnvIN60+co8Kj2odU8TNE6hI6RwOBOUutjqM/SAUXwz5'
+
+referenceIdType: &referenceIdType 'SSOID'
+
+userCookie: &userCookie '5f34ffac-0569-4119-86bc-fb903714c066'
+
+sessionId: &sessionId 'utbvwd45i4dklo45pdlpixn2'
+
+# using double quotes and backslashes to break this long string over multiple lines, as per this Stack Overflow answer: https://stackoverflow.com/a/43354815
+riskSignalData: &riskSignalData "eyJ1c2VyQWdlbnQiOiJtb3ppbGxhLzUuMCAobWFjaW50b3NoOyBpbnRlbCBtYWMgb3MgeCAxMF8xNF82KSBhcHBsZXdlYmtpdC82MDUuMS4xNSAoa2h0bWwsIGxpa2UgZ2Vja28pIHZlcnNpb24vMTMuMC4zIHNhZmFyaS82MDUuMS4xNSIsInRpbWV6b25lIjp7InRpbWV6b25lIjoiLTA2OjAwIn0sInNjcmVlbiI6eyJ3aWR0aCI6IjE0NDAiLCJoZWlnaHQiOiI5MDAiLCJhdmFpbFdpZHRoIjoiMTQ0MCIsImF2YWlsSGVpZ2h0IjoiODM0IiwiY29sb3JEZXB0aCI6IjI0IiwiZm9udFNtb290aGluZ0VuYWJsZWQiOiJ0cnVlIn0sImxhbmd1YWdlIjp7Imxhbmd1YWdlIjoiZW4tVVMifSwiZm9udHMiOnsiaW5zdGFsbGVkRm9udHMiOlsiQXJpYWwiLCJBcmlhbCBSb3VuZGVkIE1UIEJvbGQiLCJDb3VyaWVyIiwiQ291cmllciBOZXciLCJJbXBhY3QiLCJUaW1lcyIsIlRpbWVzIE5ldyBSb21hbiIsIlZlcmRhbmEiXX0sInBsdWdpbnMiOnsiaW5zdGFsbGVkUGx1Z2lucyI6W119LCJjb29raWVFbmFibGVkIjoidHJ1ZSIsImphdmFFbmFibGVkIjoidHJ1ZSIsImNhbnZhcyI6Ijc1OTFmZDIwNjQxOGQ1OWFhOGNlNDIyY2E0Yjc0Zjg0ODMxZDc1ZGY4ZTU3YjA3Y2QyNGFhNDE0YWE2NTc5Iiwid2ViR0wiOnsibWFudWZhY3R1cmVyIjoiSW50IEluYy4iLCJncHUiOiJJbnRlbCBJcmlzIFBybyBPcGVuR0wgRW5naW5lIiwidmVyc2lvbiI6IldlYkdMIDEuMCIsInNoYWRpbmdMYW5ndWFnZVZlcnNpb24iOiJXZWJHTCBHTFNMIEVTIDEuMCAoMS4yMCkiLCJ2ZW5kb3IiOiJXZWJLaXQifSwid2ViR0xIYXNoIjoiNjc4NzhiZTQyY2QyODQ2ZjkxYjEwZTdiYjFlYjAxMmI2NDY5MjI1MWQ3NDFkOTViNjAwNmM2NmIyYWFjNzAiLCJ0cnVlQnJvd3NlciI6IlNhZmFyaSIsImF1ZGlvRm9ybWF0cyI6WyJhdWRpby8zZ3BwIiwiYXVkaW8vM2dwcDIiLCJhdWRpby9hYWMiLCJhdWRpby9iYXNpYyIsImF1ZGlvL2ZsYWMiLCJhdWRpby9tcGVnIiwiYXVkaW8vbXA0IGNvZGVjcz1tcDRhLjQwLjIiLCJhdWRpby9tcDQgY29kZWNzPWFjLTMiLCJhdWRpby9tcDQgY29kZWNzPWVjLTMiLCJhdWRpby93YXYgY29kZWNzPTEiLCJhdWRpby94LWFpZmYiLCJhdWRpby94LW1wZWd1cmwiXSwiZG9Ob3RUcmFjayI6InVuc3BlY2lmaWVkIiwiaGFyZHdhcmVDb25jdXJyZW5jeSI6InVuZGVmaW5lZCIsInRvdWNoU3VwcG9ydCI6eyJtYXhUb3VjaFBvaW50cyI6InVuZGVmaW5lZCIsInN0YXJ0IjoiZmFsc2UifSwid2ViRHJpdmVyIjpmYWxzZSwiYWRCbG9jayI6ImZhbHNlIiwiZGV2aWNlTWVtb3J5IjoidW5kZWZpbmVkIiwic3RvcmFnZSI6eyJsb2NhbCI6InRydWUiLCJzZXNzaW9uIjoidHJ1ZSJ9LCJhdWRpb1ZpZGVvRGV2aWNlcyI6W3sia2luZCI6ImF1ZGlvaW5wdXQiLCJnaWQiOiIiLCJpZCI6IiJ9LHsia2luZCI6InZpZGVvaW5wdXQiLCJnaWQiOiIiLCJpZCI6IiJ9XSwidGNuIjoiMTMxNjciLCJicm93c2VyIjp7Im5hbWUiOiJTYWZhcmkiLCJtYWpvclZlcnNpb24iOiIxMyJ9LCJzeXN0ZW0iOnsib3BlcmF0aW5nU3lzdGVtIjoiTWFjIE9TIFgiLCJvc1ZlcnNpb24iOiIxMC4xNC42IiwicGxhdGZvcm0iOiJNYWNJbnRlbCJ9LCJsYXRlbmN5Ijp7InJlcXVlc3RUaW1lIjoiMjE0IiwibmV0d29ya0xhdGVuY3kiOiIxMjk3In0sImZvcm1GaWVsZHMiOnsidXJsIjoiaHR0cHM6Ly9iZnAtaXQuY2xvdWRkcXRleHQuY2FwaXRhbG9uZS5jb20vYmZwLWNsaWVudC5odG1sIiwiZm9ybUlucHV0cyI6W119LCJ2ZXJzaW9uIjoiMy4wLjAiLCJ0aW1lc3RhbXAiOiIyMDE5LTExLTAxVDE1OjEwOjI3LjI4NFoiLCJjaGVja3N1bSI6IjVkZGE5YWVmMWY5OWYzZWFjYjQyMDMxMDU2YTdjZTRiOTcwNzRmNzFiYmE1ZGY4OWI3MTZkZmMzMWUwZmM3MDgiLCJydCI6WyIxIiwiMCIsIjkiLCIwIiwiMTY2IiwiMTkiLCIwIiwiMCIsIjEiLCIwIiwiMCIsIjIwIiwiMjkiLCIyNSIsIjAiLCIxNTgiLCIwIiwiMCIsIjAiLCIwIiwiMSIsIjAiLCIxIiwiMSIsIjAiLCIxIiwiMCIsIjIiLCIxIiwiMCIsIjAiLCI3NiIsIjEiLCI1MTQiXX0%3D"
+
+riskSignalSource: &riskSignalSource 'GOOGLE'
+
+riskAssessment: &riskAssessmentMobileMobileSdkInfo
+  web:
+    deviceFingerPrint: *riskSignalData
+    userCookie: *userCookie
+    sessionId: *sessionId
+
+################################################# PAYLOADS ##################################################
+smart_stepup_missing_authToken_req:
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_missing_domain_req:
+  auth-token: *testString
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_missing_eventName_req:
+  auth-token: *testString
+  domain: *domain
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_missing_referenceId_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_missing_referenceIdType_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_missing_riskAssessment_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+
+smart_stepup_missing_riskAssessment_fields_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: { }
+
+smart_stepup_missing_riskAssessment_web_fields_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web: { }
+
+smart_stepup_missing_riskAssessment_web_userCookie_req1:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      deviceFingerPrint: *testString
+      sessionId: *testString
+
+smart_stepup_missing_riskAssessment_web_userCookie_req2:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      browserFingerprint: *testString
+      sessionId: *testString
+
+smart_stepup_missing_riskAssessment_web_sessionId_req1:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      deviceFingerPrint: *testString
+      userCookie: *testString
+
+smart_stepup_missing_riskAssessment_web_sessionId_req2:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      browserFingerprint: *testString
+      userCookie: *testString
+
+smart_stepup_missing_riskAssessment_web_deviceFingerPrint_browserFingerprint_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      userCookie: *testString
+      sessionId: *testString
+
+smart_stepup_missing_riskAssessment_mobile_fields_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    mobile: { }
+
+smart_stepup_missing_riskAssessment_mobile_mobileSdkInfo_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    mobile:
+      deviceIdentifier: *testString
+
+smart_stepup_missing_riskAssessment_mobile_deviceIdentifier_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    mobile:
+      mobileSdkInfo: *testString
+
+smart_stepup_missing_riskAssessment_partnerSignals_fields_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    partnerSignals: { }
+
+smart_stepup_missing_riskAssessment_partnerSignals_riskSignalData_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    partnerSignals:
+      riskSignalSource: *riskSignalSource
+
+smart_stepup_missing_riskAssessment_partnerSignals_riskSignalSource_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    partnerSignals:
+      riskSignalData: *riskSignalData
+
+smart_stepup_unsupported_domain_value_req:
+  auth-token: *testString
+  domain: *testString
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_unsupported_eventName_value_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: 'test'
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_unsupported_partnerName_value_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  partnerName: *testString
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_unsupported_referenceIdType_value_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *testString
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_unsupported_subDomain_value_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+  subDomain: *testString
+
+smart_stepup_riskAssessment_web_success_req1:
+  auth-token: *auth-token
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      deviceFingerPrint: *riskSignalData
+      userCookie: *userCookie
+      sessionId: *sessionId
+
+smart_stepup_riskAssessment_web_success_req2:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    web:
+      browserFingerprint: *testString
+      userCookie: *testString
+      sessionId: *testString
+
+smart_stepup_riskAssessment_mobile_success_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment: *riskAssessmentMobileMobileSdkInfo
+
+smart_stepup_riskAssessment_partnerSignals_success_req:
+  auth-token: *testString
+  domain: *domain
+  eventName: *eventName
+  referenceId: *referenceId
+  referenceIdType: *referenceIdType
+  riskAssessment:
+    partnerSignals:
+      riskSignalData: *riskSignalData
+      riskSignalSource: *riskSignalSource

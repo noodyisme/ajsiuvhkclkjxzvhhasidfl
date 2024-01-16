@@ -1,0 +1,87 @@
+############################ validating Behaviour sec payload with mandatory fields ########################
+
+behaviour_sec_successfull_req:
+  Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+  customerBehaviorInsightId: '23456'
+  Client-Correlation-Id: '12345'
+  vendorSolution: 'ACCOUNT_OPENING'
+  vendor-name: 'BIND_JOURNEY'
+
+behaviour_sec_Profile_Reference_Id_successfull_req:
+    Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+    customerBehaviorInsightId: '23456'
+    Client-Correlation-Id: '12345'
+    vendorSolution: 'ACCOUNT_OPENING'
+    vendor-name: 'BIND_JOURNEY'
+
+behaviour_sec_vendorSolution_ato_successfull_req:
+    Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+    customerBehaviorInsightId: '23456'
+    Client-Correlation-Id: '12345'
+    vendorSolution: 'ACCOUNT_OPENING'
+    vendor-name: 'BIND_JOURNEY'
+
+behaviour_sec_empty_profile_referece_id_successfull_req:
+  Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+  customerBehaviorInsightId: '23456'
+  Client-Correlation-Id: '12345'
+  vendorSolution: 'ACCOUNT_OPENING'
+  vendor-name: 'BIND_JOURNEY'
+
+behaviour_sec_empty_vendorSolution_successfull_req:
+  Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+  customerBehaviorInsightId: '23456'
+  Client-Correlation-Id: '12345'
+  vendorSolution: 'ACCOUNT_OPENING'
+  vendor-name: 'BIND_JOURNEY'
+
+behaviour_sec_invalid_vendorSolution_successfull_req:
+  Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+  customerBehaviorInsightId: '23456'
+  Client-Correlation-Id: '12345'
+  vendorSolution: 'ACCOUNT_OPENING'
+  vendor-name: 'BIND_JOURNEY'
+
+behaviour_sec_empty_vendorApiAction_successfull_req:
+  Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+  customerBehaviorInsightId: '23456'
+  Client-Correlation-Id: '12345'
+  vendorSolution: 'ACCOUNT_OPENING'
+  vendor-name: ''
+
+behaviour_sec_invalid_vendorApiAction_successfull_req:
+  Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+  customerBehaviorInsightId: '23456'
+  Client-Correlation-Id: '12345'
+  vendorSolution: 'ACCOUNT_OPENING'
+  vendor-name: 'Test'
+
+behaviour_sec_missed_vendorSolution_req:
+  Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+  customerBehaviorInsightId: '23456'
+  Client-Correlation-Id: '12345'
+  vendor-name: 'BIND_JOURNEY'
+
+behaviour_sec_missed_profile_reference_id_req:
+  customerBehaviorInsightId: '23456'
+  Client-Correlation-Id: '12345'
+  vendorSolution: 'ACCOUNT_OPENING'
+  vendor-name: 'BIND_JOURNEY'
+
+behaviour_sec_missed_vendorApiAction_req:
+  Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+  customerBehaviorInsightId: '23456'
+  Client-Correlation-Id: '12345'
+  vendorSolution: 'ACCOUNT_OPENING'
+
+behaviour_sec_missed_client_correlation_id_req:
+  Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+  customerBehaviorInsightId: '23456'
+  vendorSolution: 'ACCOUNT_OPENING'
+  vendor-name: 'BIND_JOURNEY'
+
+behaviour_sec_missed_customerBehaviorInsightId_req:
+  Profile-Reference-Id: 'k7lyMdW6+TpOnt/WTDWVYLXTR81Pjv+UQUC0nGleAH4v7UfZPOb3jWccv9iMjmhF'
+  Client-Correlation-Id: '12345'
+  vendorSolution: 'ACCOUNT_OPENING'
+  vendor-name: 'BIND_JOURNEY'

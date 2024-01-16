@@ -1,0 +1,93 @@
+mb_2_0_p2p_resp:
+  policyResponseBody:
+    policy: testing
+  policyStatus: SUCCESS
+
+mb_2_0_p2p_1dot2_resp:
+  policyResponseBody: null
+  policyStatus: FAILURE
+  errorInformation:
+    id: '203000'
+    text: Policy to Policy Component Error
+    developerText: '#string'
+
+mb_2_0_p2p_1dot3_resp:
+  id: '200001'
+  text: Our system experienced an error. Please try again later.
+  actions: [ ]
+  developerText: Requested resource not found
+  errorDetails:
+    - id: '200001'
+      text: null
+      developerText: '#string'
+
+mb_2_0_p2p_1dot4_resp:
+  policyResponseBody:
+    customerReferenceId: abc123
+  policyStatus: SUCCESS
+
+mb_2_0_p2p_1dot9_resp:
+  policyResponseBody: null
+  policyStatus: FAILURE
+  errorInformation:
+    id: '203000'
+    text: Policy to Policy Component Error
+    developerText: '#string'
+
+mb_2_0_p2p_1dot10_resp:
+  policyResponseBody: null
+  policyStatus: FAILURE
+  errorInformation:
+    id: '203000'
+    text: Policy to Policy Component Error
+    developerText: '#string'
+
+mb_2_0_p2p_1dot11_resp:
+  policyResponseBody: null
+  policyStatus: INVALID
+  errorInformation:
+    id: '0'
+    text: Schema Validation Failure
+    developerText: '#string'
+
+mb_2_0_p2p_1dot12_resp:
+  policyResponseBody: null
+  policyStatus: FAILURE
+  errorInformation:
+    id: '203000'
+    text: Policy to Policy Component Error
+    developerText: '#string'
+
+mb_2_0_p2p_1dot13_resp:
+  policyResponseBody:
+    policy: testing
+  policyStatus: SUCCESS
+
+mb_2_0_p2p_1dot13_invalid_resp:
+  policyResponseBody: null
+  policyStatus: FAILURE
+  errorInformation:
+    id: '201218'
+    text: Invalid Business Event
+    developerText: '#string'
+
+mb_2_0_p2p_1dot14_resp:
+  policyResponseBody: null
+  policyStatus: FAILURE
+  errorInformation:
+    id: '203000'
+    text: Policy to Policy Component Error
+    developerText: '#string'
+
+mb_2_0_p2p_1dot15_resp:
+  policyResponseBody: null
+  policyStatus: FAILURE
+  errorInformation:
+    id: '203000'
+    text: Policy to Policy Component Error
+    developerText: '#string'
+
+mb_2_0_p2p_1dot16_resp:
+  policyResponseBody:
+    policy: testing
+  policyStatus: SUCCESS

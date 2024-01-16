@@ -1,0 +1,25 @@
+{
+  "customerReferenceId": "test_customerReferenceId",
+  "fullNameScore": 0.99,
+  "taxIdScore": -1.0,
+  "lastNameScore": 111,
+  "dateOfBirthScore": 111,
+  "middleNameScore": 111,
+  "documentData": {
+    "documentStatus": "Passed",
+    "expirationDate": "2050-05-25",
+    "issueDate": "2016-10-04",
+    "replacementDate": "2016-10-04"
+  },
+  "phoneNumberScore": 0.0,
+  "addressScore": {
+    "addressLine1Score": 0.0,
+    "addressLine2Score": 0.0,
+    "cityScore": 0.0,
+    "postalCodeScore": 0.0,
+    "stateCodeScore": 0.0,
+    "countryCodeScore": 0.0
+  },
+  "matchingStatus": "Passed",
+  "firstNameScore": 0.95
+}

@@ -1,0 +1,91 @@
+################################################## ANCHORS ##################################################
+policyStatusInvalid: &policyStatusInvalid 'INVALID'
+
+policyStatusSuccess: &policyStatusSuccess 'SUCCESS'
+
+schemaValidationFailureErrorInformation: &schemaValidationFailureErrorInformation
+  id: '0'
+  text: 'Schema Validation Failure'
+
+################################################# RESPONSES #################################################
+cardfraud_empath_obv_missing_addressLine1_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.addressLine1: is missing but it is required]'
+
+cardfraud_empath_obv_missing_city_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.city: is missing but it is required]'
+
+cardfraud_empath_obv_missing_countryCode_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.countryCode: is missing but it is required]'
+
+cardfraud_empath_obv_missing_firstName_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.firstName: is missing but it is required]'
+
+cardfraud_empath_obv_missing_lastName_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.lastName: is missing but it is required]'
+
+cardfraud_empath_obv_missing_postalCode_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.postalCode: is missing but it is required]'
+
+cardfraud_empath_obv_missing_stateCode_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.stateCode: is missing but it is required]'
+
+cardfraud_empath_obv_unsupported_countryCode_value_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.countryCode: does not have a value in the enumeration [US, CA]]'
+
+cardfraud_empath_obv_unsupported_mobilePhoneNumber_value_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.mobilePhoneNumber: does not match the regex pattern ^\d{10}$]'
+
+cardfraud_empath_obv_unsupported_postalCode_value_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.postalCode: does not match the regex pattern ^\d{5}$]'
+
+cardfraud_empath_obv_unsupported_stateCode_value_resp:
+  policyResponseBody: null
+  policyStatus: *policyStatusInvalid
+  errorInformation:
+    <<: *schemaValidationFailureErrorInformation
+    developerText: '[$.stateCode: does not have a value in the enumeration [AL, AK, AR, AZ, CA, CO, CT, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VA, VT, WA, WI, WV, WY, AS, DC, GU, PR, VI]]'
+
+cardfraud_empath_obv_success_resp:
+  policyResponseBody:
+    users: '#array'
+  policyStatus: *policyStatusSuccess

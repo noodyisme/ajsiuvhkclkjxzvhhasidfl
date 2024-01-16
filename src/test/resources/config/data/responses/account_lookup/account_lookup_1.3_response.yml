@@ -1,0 +1,296 @@
+########  Anchors #############################################################
+
+id_FL: &id_FL 'cKJ7CRGUp9PU7z2PcZC4+g=='
+id_GA_good: &id_GA_good 'v7sEVXl7IIJ7QcfbgAhhkg=='
+id_business: &id_business 'HQJoxyvTBjiDSNrl939z1g=='
+id_PR_dob: &id_PR_dob_badname 'BFLxedvC9GWNZFPzRuJQzQ=='
+id_PR_dob_goodname: &id_PR_dob_goodname '9oA5JW+moCV09ZU2Chl0RA=='
+id_PR_no_dob_goodname: &id_PR_no_dob_goodname 'AI0Sx+EQsMV0PF9Q46+SMA=='
+id_MN_noexpiry: &id_MN_noexpiry 'OiU9Xz44DdMXmPiW29h4Zg=='
+id_abc: &id_abc 'abc'
+id_fgk: &id_fgk 'fgk'
+
+schema_validation_failure: &schema_validation_failure
+    id: '0'
+    text: Schema Validation Failure
+
+policyResponseBody_blank_policyStatus_INVALID: &policyResponseBody_blank_policyStatus_INVALID
+  policyResponseBody:
+  policyStatus: INVALID
+
+######## Required Fields Missing Tests ########################################
+
+account_lookup_missing_govtIdRequest_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.govtIdRequest: is missing but it is required]"
+
+account_lookup_missing_customerReferenceIds_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.customerReferenceIds: is missing but it is required]"
+
+account_lookup_missing_brandCode_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.brandCode: is missing but it is required]"
+
+account_lookup_missing_originator_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.originator: is missing but it is required]"
+
+######## Required govtIdRequest Fields Missing Tests ##########################
+
+account_lookup_missing_govtIdRequest_barcode_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.govtIdRequest.barcode: is missing but it is required]"
+
+account_lookup_missing_govtIdRequest_deviceId_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.govtIdRequest.deviceId: is missing but it is required]"
+
+account_lookup_missing_govtIdRequest_businessUnit_field_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.govtIdRequest.businessUnit: is missing but it is required]"
+
+account_lookup_missing_govtIdRequest_model_field_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.govtIdRequest.model: is missing but it is required]"
+
+account_lookup_missing_govtIdRequest_copyText_field_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.govtIdRequest.copyText: is missing but it is required]"
+
+account_lookup_missing_govtIdRequest_configId_field_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.govtIdRequest.configId: is missing but it is required]"
+
+######## Invalid Values in Required Fields Tests ##############################
+
+account_lookup_invalid_originator_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.originator: does not have a value in the enumeration [APPLYANDBUY, ASSOCIATE,
+    INLANEBYOD, INLANESCO, KIOSK, OUTOFLANEBYOD, PHONE, POS, TABLET, TEXTTOAPPLY, UNS, WEB, RECOURSE,
+    POSTBOOK, REALTIME, PREAPPROVALAPPLYANDBUY, PREAPPROVALUNS, PREAPPROVALASSOCIATE, PREAPPROVALINLANESCO,
+    PREAPPROVALOUTOFLANEBYOD, PREAPPROVALPOS, PREAPPROVALAFF]]"
+
+account_lookup_invalid_brandCode_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.brandCode: does not have a value in the enumeration [BASSPRO, BERGDORFGOODMANPLCC,
+    CABELAS, GMBP, GMEF, GMSB, IBTCR, IBTPA, IBTRA, JOURNEY, MENARDSPLCC, NEIMANMARCUSPLCC, PLATINUM,
+    PLATINUM_PREFERRED, PLAYSTATION, QUICKSILVER, QUICKSILVERONE, SAKSCB, SAKSOFFFIFTHPLCC, SAKSPLCC,
+    SAKSPLCCDA, SAVOR, SAVORONE, SECUREDCARD, SONY, SPARK750ESB, SPARKCASH, SPARKCASHRM, SPARKCASHSELECT,
+    SPARKCASHTS, SPARKCLASSIC, SPARKMILES, SPARKMILESSELECT, SPARKPRO, UPCR, UPPA, UPRA, VENTURE, VENTUREONE,
+    WALMARTCB, WALMARTPLCCDA, WALMARTPLUS, KEYREWARDSWSICB, KEYREWARDSWSIPLCC, POTTERYBARNCB, POTTERYBARNPLCC,
+    WESTELMCB, WESTELMPLCC, WILLIAMSSONOMACB, WILLIAMSSONOMAPLCC, SPORTSMANS]]"
+
+account_lookup_missing_customerReferenceIds_Null_response:
+  <<: *policyResponseBody_blank_policyStatus_INVALID
+  errorInformation:
+    <<: *schema_validation_failure
+    developerText: "[$.customerReferenceIds: there must be a minimum of 1 items in the array]"
+
+######## Error Responses from Endpoints #######################################
+
+account_lookup_invalid_location_response:
+  policyResponseBody: null
+  policyStatus: FAILURE
+  errorInformation:
+    id: "202020"
+    text: Downstream API error
+    developerText: 'The verification domain policy "barcode_retrieve" version "1.1"
+     (post method) returned the following error "{errorInfo={id=0, text=Schema Validation Failure,
+     developerText=[$.location: does not have a value in the enumeration [AL, AK, AR, AZ, CA, CO, CT,
+     DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ,
+     NM, NV, NY, OH, OK, OR, PA, RI, SC, SD, TN, TX, UT, VA, VT, WA, WI, WV, WY, AS, DC, GU, PR, VI]]},
+     policyStatus=INVALID, results=null}"'
+
+account_lookup_empty_model_response:
+  policyResponseBody:
+  policyStatus: FAILURE
+  errorInformation:
+    id: '202020'
+    text: Downstream API error
+    developerText: 'The verification domain policy "barcode_retrieve" version "1.1"
+      (post method) returned the following error "{errorInfo={id=0, text=Schema Validation
+      Failure, developerText=[$.model: must be at least 1 characters long]}, policyStatus=INVALID,
+      results=null}"'
+
+account_lookup_invalid_customerRefId_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_abc
+        customerMatchStatus: NonDefinitive
+        matchFailureReason:
+          id: '202020'
+          text: Downstream API error
+          developerText: '#string'
+    documentValidityStatus: Passed
+    documentFailureReason: null
+  policyStatus: SUCCESS
+
+######## Failing Policy Functionality Tests ###########################################
+
+account_lookup_govtIdRequest_barcode_invalid_response:
+  policyResponseBody:
+    documentValidityStatus: Unknown
+    documentFailureReason: BadPicture
+  policyStatus: SUCCESS
+
+account_lookup_dob_mismatch_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_FL
+        customerMatchStatus: Failed
+        matchFailureReason: DateOfBirthMismatch
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_expiration_date_expired_over90days_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_FL
+        customerMatchStatus: Failed
+        matchFailureReason: DateOfBirthMismatch
+    documentValidityStatus: Failed
+    documentFailureReason: Expired
+  policyStatus: SUCCESS
+
+account_lookup_pr_dob_match_name_mismatch_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_PR_dob_badname
+        customerMatchStatus: Failed
+        matchFailureReason: fullNameMismatch
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_pr_no_dob_name_mismatch_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_GA_good
+        customerMatchStatus: Failed
+        matchFailureReason: NoDateOfBirthNameMismatch
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_pr_dob_mismatch_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_PR_dob_goodname
+        customerMatchStatus: Failed
+        matchFailureReason: DateOfBirthMismatch
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_business_customerReferenceId_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_business
+        customerMatchStatus: NonDefinitive
+        matchFailureReason:
+          id: '200002'
+          text: Unexpected error
+          developerText: '#string'
+    documentValidityStatus: Passed
+    documentFailureReason: null
+  policyStatus: SUCCESS
+
+account_lookup_fl_no_dob_response:
+  policyResponseBody:
+    documentValidityStatus: Failed
+    documentFailureReason: invalidId
+  policyStatus: SUCCESS
+
+######## Passing (Happy Path) Test ############################################
+
+account_lookup_successful_matching_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_GA_good
+        customerMatchStatus: Passed
+        matchFailureReason:
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_invalid_skipInvalidCustomerRefId_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_GA_good
+        customerMatchStatus: Passed
+        matchFailureReason:
+      - customerReferenceId: *id_business
+        customerMatchStatus: NonDefinitive
+        matchFailureReason:
+          id: '200002'
+          text: 'Unexpected error'
+          developerText: '#string'
+      - customerReferenceId: *id_FL
+        customerMatchStatus: Failed
+        matchFailureReason: DateOfBirthMismatch
+      - customerReferenceId: *id_fgk
+        customerMatchStatus: NonDefinitive
+        matchFailureReason:
+          id: '202020'
+          text: 'Downstream API error'
+          developerText: '#string'
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_successful_mn_no_expiry_dob_match_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_MN_noexpiry
+        customerMatchStatus: Passed
+        matchFailureReason:
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_pr_with_no_dob_matching_customer_with_dob_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_PR_dob_goodname
+        customerMatchStatus: Passed
+        matchFailureReason:
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+
+account_lookup_pr_with_no_dob_matching_customer_with_no_dob_response:
+  policyResponseBody:
+    matchingResult:
+      - customerReferenceId: *id_PR_no_dob_goodname
+        customerMatchStatus: Passed
+        matchFailureReason:
+    documentValidityStatus: Passed
+    documentFailureReason:
+  policyStatus: SUCCESS
+

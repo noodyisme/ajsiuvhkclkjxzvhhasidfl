@@ -1,0 +1,150 @@
+############################ validating govid_barcode_prefil_journey payload with mandatory fields ########################
+
+govid_barcode_prefil_journey_required_fields_req:
+  govtIdRequest:
+    barcode: QAoeDUlEQ0hLOTg5ODk1MDIwMURMMDAzNTAzNDkwMC1WMTNETDFaQVNBTVBMRQoxWlZBVkVSWQoxWlhKCjFaWUlJSQoxWkIxNzcgUk9PU1RFUiBMQU5FCjFaVUFQVCAzRAoxWkNQRU9SSUEKMVpEQVoKMVpFNTEyODMKMVpGRzc1NTY2NDU0CjFaR0QKMVpIQUJDRAoxWklYUFQKMVpLMzg0CjFaTE1hbGUKMVpONzUKMVpPMTgzCjFaUEhhemVsCjFaUUJhbGQKMVpSQVoKMVpTQVJJWk9OQQoxWldZZXMKMVoxRG9jQ2F0ZWdvcnl+REwKMVoyfklzUmVhbElEflllcwoxWjN+SXNEdXB+WWVzCjFaNH5EdXBEYXRlfjA0LzI1LzIwMTYKMVo1fkRvY1R5cGV+RHJpdmVyIExpY2Vuc2UKMlpBMDkKMlpCMzAKMlpDMjA1MAoyWkQxMgoyWkUxNQoyWkYxOTY4CjJaRzA0CjJaSDI1CjJaSTIwMTYK
+    businessUnit: CARDFRAUD
+    deviceId: '123'
+    model: REALTIMEPOSTBOOK
+    copyText: RTMDAPP
+    linkExpiryTimestamp: '2021-10-29T22:08:00.000Z'
+    location: VA
+  originator: PHONE
+  brandCode: KEYREWARDSWSICB
+
+############################ validating govid_barcode_prefil_journey payload with Missing barcode values in Mandatory fields ########################
+
+govid_barcode_prefil_journey_missing_barcode_req:
+  govtIdRequest:
+    deviceId: '1234'
+    businessUnit: 'cardfraud'
+    model: 'test'
+    copyText: 'karate'
+    location: VA
+  originator: PHONE
+  brandCode: KEYREWARDSWSICB
+
+############################ validating govid_barcode_prefil_journey payload with Missing barCode ,deviceId values in Mandatory fields ########################
+
+govid_barcode_prefil_journey_missing_barcodedeviceId_req:
+  govtIdRequest:
+    businessUnit: 'cardfraud'
+    model: 'test'
+    copyText: 'karate'
+    location: VA
+  originator: PHONE
+  brandCode: KEYREWARDSWSICB
+
+############################ validating govid_barCode_prefil_journey payload with Missing all Mandatory fields ########################
+
+govid_barcode_prefil_journey_missing_allFields_req:
+  govtIdRequest:
+
+############################ validating govid_barCode_prefil_journey payload with missing linkExpiryTimestamp ########################
+
+govid_barcode_prefil_journey_missing_linkExpiryTimestamp_req:
+  govtIdRequest:
+    barcode: QAoeDUFOU0kgNjM2MDAxMDMwMTAyREwwMDQxMDI1OFpOMDI5OTAwNzBETERDQUIgICAKRENCRSAgICAgICAgIApEQ0RQUyAgICAKREJBMDUxNjIwMTkKRENTUk9EUklHVUVaICAgICAgICAgICAgICAgIApEQ1RBTlksUyAgICAgICAgICAgICAgICAgICAgCkRCRDA1MTgyMDE2CkRCQjA1MTYxOTgyCkRCQzIKREFZQlJPCkRBVTUwNiAgIApEQUc0IEJMVUUgSkFZIERSICAgICAgICAgICAgCkRBSUJSRU5UV09PRCAgICAgICAgICAgCkRBSk5ZCkRBSzExNzE3MDAwMCAgCkRBUTQxODcxMzUxMQpEQ0ZQTktMTkJYVzIwCkRDR1VTQQ1aTlpOQVJPRFJJR1VFWkBBTllAUyAgICAgClpOQi9ac2VwMCcrV3MuI3IhJTY9KFJqVShHR1xWZ1pmcE0laz4pSFZLTzw
+    businessUnit: CARDFRAUD
+    deviceId: '123'
+    model: REALTIMEPOSTBOOK
+    copyText: RTMDAPP
+    location: VA
+  originator: PHONE
+  brandCode: KEYREWARDSWSICB
+
+############################ validating govid_barCode_prefil_journey payload with Invalid businessUnit ########################
+
+govid_barcode_prefil_journey_invalid_businessunit_req:
+  govtIdRequest:
+    barcode: QAoeDUFOU0kgNjM2MDAxMDMwMTAyREwwMDQxMDI1OFpOMDI5OTAwNzBETERDQUIgICAKRENCRSAgICAgICAgIApEQ0RQUyAgICAKREJBMDUxNjIwMTkKRENTUk9EUklHVUVaICAgICAgICAgICAgICAgIApEQ1RBTlksUyAgICAgICAgICAgICAgICAgICAgCkRCRDA1MTgyMDE2CkRCQjA1MTYxOTgyCkRCQzIKREFZQlJPCkRBVTUwNiAgIApEQUc0IEJMVUUgSkFZIERSICAgICAgICAgICAgCkRBSUJSRU5UV09PRCAgICAgICAgICAgCkRBSk5ZCkRBSzExNzE3MDAwMCAgCkRBUTQxODcxMzUxMQpEQ0ZQTktMTkJYVzIwCkRDR1VTQQ1aTlpOQVJPRFJJR1VFWkBBTllAUyAgICAgClpOQi9ac2VwMCcrV3MuI3IhJTY9KFJqVShHR1xWZ1pmcE0laz4pSFZLTzw
+    businessUnit: test
+    deviceId: '123'
+    model: REALTIMEPOSTBOOK
+    copyText: RTMDAPP
+    location: VA
+  originator: PHONE
+  brandCode: KEYREWARDSWSICB
+
+############################ validating govid_barCode_prefil_journey payload with Invalid location ########################
+
+govid_barcode_prefil_journey_invalid_location_req:
+  govtIdRequest:
+    barcode: QAoeDUFOU0kgNjM2MDAxMDMwMTAyREwwMDQxMDI1OFpOMDI5OTAwNzBETERDQUIgICAKRENCRSAgICAgICAgIApEQ0RQUyAgICAKREJBMDUxNjIwMTkKRENTUk9EUklHVUVaICAgICAgICAgICAgICAgIApEQ1RBTlksUyAgICAgICAgICAgICAgICAgICAgCkRCRDA1MTgyMDE2CkRCQjA1MTYxOTgyCkRCQzIKREFZQlJPCkRBVTUwNiAgIApEQUc0IEJMVUUgSkFZIERSICAgICAgICAgICAgCkRBSUJSRU5UV09PRCAgICAgICAgICAgCkRBSk5ZCkRBSzExNzE3MDAwMCAgCkRBUTQxODcxMzUxMQpEQ0ZQTktMTkJYVzIwCkRDR1VTQQ1aTlpOQVJPRFJJR1VFWkBBTllAUyAgICAgClpOQi9ac2VwMCcrV3MuI3IhJTY9KFJqVShHR1xWZ1pmcE0laz4pSFZLTzw
+    businessUnit: test
+    deviceId: '123'
+    model: REALTIMEPOSTBOOK
+    copyText: RTMDAPP
+    location: t
+  originator: PHONE
+  brandCode: KEYREWARDSWSICB
+
+############################ validating govid_barCode_prefil_journey payload with InvalidBarcode fields ########################
+
+govid_barcode_prefil_journey_invalidBarCode_req:
+  govtIdRequest:
+    barcode: abcd
+    businessUnit: CARDFRAUD
+    deviceId: '123'
+    model: REALTIMEPOSTBOOK
+    copyText: RTMDAPP
+    linkExpiryTimestamp: '2021-10-29T22:08:00.000Z'
+    location: VA
+  originator: PHONE
+  brandCode: KEYREWARDSWSICB
+
+############################ validating govid_barCode_prefil_journey payload with empty barcode value ########################
+
+govid_barcode_prefil_journey_emptyBarCode_req:
+  govtIdRequest:
+    barcode: ''
+    businessUnit: CARDFRAUD
+    deviceId: '123'
+    model: REALTIMEPOSTBOOK
+    copyText: RTMDAPP
+    linkExpiryTimestamp: '2021-10-29T22:08:00.000Z'
+    location: VA
+  originator: PHONE
+  brandCode: KEYREWARDSWSICB
+
+############################ validating govid_barCode_prefil_journey payload with empty linkExpiryTimestamp value ########################
+
+govid_barcode_prefil_journey_emptyLinkExpiry_req:
+  govtIdRequest:
+    barcode: 'abcd'
+    businessUnit: CARDFRAUD
+    deviceId: '123'
+    model: REALTIMEPOSTBOOK
+    copyText: RTMDAPP
+    linkExpiryTimestamp: ''
+    location: VA
+  originator: PHONE
+  brandCode: KEYREWARDSWSICB
+
+############################ validating govid_barCode_prefil_journey payload with empty businessunit andlocation value ########################
+
+govid_barcode_prefil_journey_emptyBusinessUnitLocation_req:
+  govtIdRequest:
+    barcode: 'abcd'
+    businessUnit: ''
+    deviceId: '123'
+    model: REALTIMEPOSTBOOK
+    copyText: RTMDAPP
+    location: ''
+    linkExpiryTimestamp: '2021-10-29T22:08:00.000Z'
+  originator: PHONE
+  brandCode: KEYREWARDSWSICB
+
+############################ validating govid_barCode_prefil_journey payload with empty model value ########################
+
+govid_barcode_prefil_journey_emptyModel_req:
+  brandCode: WILLIAMSSONOMAPLCC
+  originator: POS
+  applicationRefId: x%2BGUsOH4tN23sGiHhYCfjymCBl7nUzh4Pds0pHwEs%2BU%3D
+  govtIdRequest:
+    barcode: QAoeDUFOU0kgNjM2MDAwMDMwMDAxREwwMDMxMDQ0N0RMRENBTk9ORQpEQ0JOT05FICAgICAgCkRDRE5PTkUgCkRCQTAxMzEyMDIxCkRDU1JJQ0hNT05EICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKRENUVklSR0lOSUEsTUNLRU5aSUUgU0FNUExFICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREJEMDMwMjIwMTYKREJCMDExMjE5NzYKREJDMgpEQVlCTFUKREFVMDY4IGluCkRBRzIzMDAgVyBCUk9BRCBTVCBBUFQgNUIgICAgICAgICAgICAgCkRBSVJJQ0hNT05EICAgICAgICAgICAgCkRBSlZBCkRBSzIzMjY5MDk5OSAgCkRBUVQ2OTEwMTkzMSAgICAgICAgICAgICAgICAKRENGMDc1MzE3NjM4ICAgICAgICAgICAgICAgIApEQ0dVU0EKRENITk9ORQpEREMwMDAwMDAwMApEREIxMjEwMjAwOApEREROCkREQU4KRENLMDA2MDUwMDExMTU2MDY0MSAgICAgICAgIApEQ0FOT05FDQ==
+    deviceId: value
+    businessUnit: CARDFRAUD
+    model: ''
+    copyText: DEFAULT
+    location: VA
